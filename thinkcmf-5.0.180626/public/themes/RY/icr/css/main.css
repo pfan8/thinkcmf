@@ -882,16 +882,18 @@ footer{
     overflow: hidden;
 }
 .page{
-    width:290px;
+    width:400px;
     float: right;
     height:30px;
+    text-align: right;
+    margin-right: -60px;
 }
 .page .next{
-    width:60px;
+    width:100px;
     height:30px;
 }
 .page .previous{
-    width:60px;
+    width:100px;
     height:30px;
 }
 .page div{
@@ -899,6 +901,7 @@ footer{
     margin-top: 60px;
     font-size: 20px;
     color: #222d54;
+    text-align: right;
 }
 .page-list div{
     margin-top:0px;
@@ -906,8 +909,11 @@ footer{
 .page-list .list-item{
     width: 40px;
     height: 30px;
-    text-align: center;
+    text-align: right;
 
+}
+.page-list .active a{
+    color: #fc384c;
 }
 .page-list .active{
     color: #fc384c;
