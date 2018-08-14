@@ -219,7 +219,7 @@ class TeacherController extends AdminBaseController
         $teacher_model = new TeacherModel();
         //通过教师姓名
         $teacher_name = $this->request->param("teacher_name","");
-        $teacher_list = new Collection();
+        $teacher_list = $teacher_model->getTeacherList();
         if ($teacher_name != "")
         {
             $teacher_list = $teacher_model->getTeacherByName($teacher_name);
@@ -241,6 +241,7 @@ class TeacherController extends AdminBaseController
                 $teacher_list = $this->removeRedundentTeacher($teacher_list, $temp_list);
         }
         $this->transformToHtml($teacher_list);
+        $this->setCIDList_Html($teacher_list);
         $this->assign('teachers', $teacher_list);
         $this->assign('teacher_name', $teacher_name);
         $this->assign('cid', $cid);

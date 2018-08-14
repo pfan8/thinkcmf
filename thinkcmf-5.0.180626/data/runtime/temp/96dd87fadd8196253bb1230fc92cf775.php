@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:48:"themes/admin_simpleboot3/admin\course\index.html";i:1533972272;s:93:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\admin_simpleboot3\public\header.html";i:1529914518;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:48:"themes/admin_simpleboot3/admin\course\index.html";i:1534251340;s:93:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\admin_simpleboot3\public\header.html";i:1529914518;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,10 +105,9 @@
             <thead>
             <tr>
                 <th width="40">ID</th>
-                <th width="80">名称</th>
-                <th width="50">等级</th>
+                <th>名称</th>
+                <th width="80">等级</th>
                 <th>描述</th>
-                <th>目标</th>
                 <th>图</th>
             </tr>
             </thead>
@@ -119,7 +118,6 @@
                     <td><?php echo $vo['name']; ?></td>
                     <td><?php echo $vo['level']; ?></td>
                     <td><?php echo $vo['describe']; ?></td>
-                    <td><?php echo $vo['goal']; ?></td>
                     <td><img src="<?php echo $vo['icon']; ?>" height="100" width="100"></td>
                     <td width="140">
                         <a href="<?php echo url('course/edit',array('id'=>$vo['id'])); ?>"><?php echo lang('EDIT'); ?></a>

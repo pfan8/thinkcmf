@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:49:"themes/admin_simpleboot3/admin\teacher\index.html";i:1534052032;s:93:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\admin_simpleboot3\public\header.html";i:1529914518;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:49:"themes/admin_simpleboot3/admin\teacher\index.html";i:1534247619;s:93:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\admin_simpleboot3\public\header.html";i:1529914518;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,8 +88,8 @@
         <li><a href="<?php echo url('teacher/add'); ?>"><?php echo lang('ADMIN_TEACHER_ADD'); ?></a></li>
     </ul>
     <form class="well form-inline margin-top-20" method="post" action="<?php echo url('teacher/search'); ?>">
-        uid:
-        <input type="text" class="form-control" name="teacher_name" style="width: 110px;" value="<?php echo $teacher_name; ?>" placeholder="请输入教师姓名">
+        教师姓名:
+        <input type="text" class="form-control" name="teacher_name" style="width: 130px;" value="<?php echo $teacher_name; ?>" placeholder="请输入教师姓名">
         cid:
         <input type="text" class="form-control" name="cid" style="width: 110px;" value="<?php echo $cid; ?>" placeholder="请输入课程ID">
         性别（男1/女2）：

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:46:"themes/admin_simpleboot3/admin\course\add.html";i:1534162964;s:93:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\admin_simpleboot3\public\header.html";i:1529914518;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:46:"themes/admin_simpleboot3/admin\course\add.html";i:1534239550;s:93:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\admin_simpleboot3\public\header.html";i:1529914518;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,12 +106,6 @@
             <label class="col-sm-2 control-label">描述:</label>
             <div class="col-md-6 col-sm-10">
                 <input type="text" class="form-control" name="describe" value="">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">目标（换行分隔）:</label>
-            <div class="col-md-6 col-sm-10">
-                <textarea class="form-control" name="goal" rows="5" cols="57"></textarea>
             </div>
         </div>
         <div class="form-group">

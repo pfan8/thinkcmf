@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:24:"themes/RY/icr\\home.html";i:1534226380;s:23:"themes/RY/icr/head.html";i:1534235063;s:76:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\RY\public\head.html";i:1529914518;s:80:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\RY\public\function.html";i:1529914518;s:79:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\RY\public\scripts.html";i:1529914518;s:33:"../public/themes/RY/icr/foot.html";i:1534077926;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:24:"themes/RY/icr\\home.html";i:1534226380;s:23:"themes/RY/icr/head.html";i:1534238727;s:76:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\RY\public\head.html";i:1529914518;s:80:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\RY\public\function.html";i:1529914518;s:79:"E:\php\PHPTutorial\WWW\thinkcmf-5.0.180626\public\themes\RY\public\scripts.html";i:1529914518;s:33:"../public/themes/RY/icr/foot.html";i:1534077926;}*/ ?>
 <!DOCTYPE html>
 <meta charset="utf-8" lang="zh_cn">
 <head>
@@ -110,7 +110,7 @@ function _sp_helloworld3(){
         <div class="menu">
             <ul>
                 <li class="<?php echo $home_active; ?>" onclick="{location='<?php echo url('/'); ?>'}">首页</li>
-                <li class="<?php echo $course_active; ?>" onclick="{location='<?php echo url('/icr/course'); ?>'">课程内容</li>
+                <li class="<?php echo $course_active; ?>" onclick="{location='<?php echo url('/icr/course'); ?>'}">课程内容</li>
                 <li class="<?php echo $teacher_active; ?>" onclick="{location='<?php echo url('/icr/teacher'); ?>'}">优质师资</li>
                 <li class="<?php echo $school_active; ?>" onclick="{location='<?php echo url('/icr/school'); ?>'}">校区风采</li>
                 <li class="<?php echo $recruit_active; ?>" onclick="{location='<?php echo url('/icr/recruit'); ?>'}">人才招聘</li>

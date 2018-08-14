@@ -13,6 +13,7 @@ namespace app\admin\controller;
 use app\icr\model\CourseModel;
 use app\icr\model\TeacherModel;
 use cmf\controller\AdminBaseController;
+use think\Collection;
 use think\Validate;
 
 /**
@@ -39,6 +40,7 @@ class CourseController extends AdminBaseController
         $courseModel = new CourseModel();
 
         $courses = $courseModel->getCourseList();
+        $this->convertCourses($courses);
         $this->assign('courses', $courses);
         $this->assign('course_name','');
         $this->assign('teacher_name','');
@@ -117,6 +119,7 @@ class CourseController extends AdminBaseController
         //前端默认选择课程等级
         $option_html = $this->getOptionHtml($course['level']);
         $this->assign('option_html',$option_html);
+        $this->convertLevel($course);
         $this->assign($arrNavCat);
         return $this->fetch();
     }
@@ -187,7 +190,6 @@ class CourseController extends AdminBaseController
         //通过课程名称查找
         $course_name = $this->request->param("course_name","");
         $course_list = $course_model->getCourseList();
-//        echo "<script type='text/javascript'>alert($content)</script>";
         if ($course_name != "")
         {
             $course_list = $course_model->getCourseByName($course_name)->toArray();
@@ -203,9 +205,7 @@ class CourseController extends AdminBaseController
                 foreach ($tid_list as $tid)
                 {
                     $temp_list = $course_model->getCourseByTeacher($tid);
-//                    echo "<script type='text/javascript'>alert(\"here\")</script>";
                     if(!empty($temp_list))
-//                        $course_list->intersect($temp_list);
                         $course_list = $this->removeRedundentCourse($course_list, $temp_list);
                 }
             }
@@ -219,6 +219,7 @@ class CourseController extends AdminBaseController
 //                $course_list->intersect($temp_list);
                 $course_list = $this->removeRedundentCourse($course_list, $temp_list);
         }
+        $this->convertCourses($course_list);
         $this->assign('courses', $course_list);
         $this->assign('course_name', $course_name);
         $this->assign('teacher_name', $teacher_name);
@@ -249,14 +250,12 @@ class CourseController extends AdminBaseController
         //验证
         $rule = [
             'name'  => 'require',
-            'level'   => 'require|number|between:1,9',
+            'level'   => 'require',
         ];
 
         $msg = [
             'name.require' => '课程名必须',
             'level.require'   => '课程等级必须',
-            'level.between'  => '课程等级只能在1-9之间',
-            'level.number'        => '课程等级只能是数字',
         ];
         return new Validate($rule, $msg);
     }
@@ -264,14 +263,38 @@ class CourseController extends AdminBaseController
     private function getOptionHtml($level=0)
     {
         $option_html = "<option>请选择</option>";
-        for($op = 1; $op <= 9; $op++)
+        $course_model = new CourseModel();
+        $levels = $course_model->getLevelList();
+        $max_level = count($levels);
+        for($i = 0; $i < $max_level; $i++)
         {
-            if ($op == $level)
-                $option_html .= "<option selected=\"selected\">" . $op . "</option>";
+            $op = $course_model->getCourseCategoryByID($levels[$i]['category_id'])['name'] . " " . $levels[$i]['level'];
+            if ($levels[$i]['id'] == $level)
+                $option_html .= "<option selected=\"selected\" value=".$levels[$i]['id'].">" . $op . "</option>";
             else
-                $option_html .= "<option>" . $op . "</option>";
+                $option_html .= "<option value=".$levels[$i]['id'].">" . $op . "</option>";
         }
         return $option_html;
+    }
+
+    public function convertCourses(&$courses)
+    {
+        $result = new Collection();
+        foreach ($courses as $course) {
+            $this->convertLevel($course);
+            $result->push($course);
+        }
+        $courses = $result;
+    }
+
+    public function convertLevel(&$course){
+        $course_model = new CourseModel();
+        $levels = $course_model->getLevelList();
+        $lid = $course['level'];
+        foreach ($levels as $level) {
+            if ($level['id'] == $lid)
+                $course['level'] = $course_model->getCourseCategoryByID($level['category_id'])['name'] . " " . $level['level'];
+        }
     }
 
 }
