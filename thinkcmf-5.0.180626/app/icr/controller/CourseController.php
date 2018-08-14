@@ -42,12 +42,10 @@ class CourseController extends HomebaseController{
             $feedback_text->push($feedback);
         }
         $level = empty($data['level']) ? 1 : $data['level'];
-        echo $level;
-        $course_level = $this->getCourseByLevel($level);
-        if (empty($course_level['goal']))
-            $goal_array = explode("\n", $course_level[0]['goal']);
-        else
-            $goal_array = explode("\n", $course_level['goal']);
+        $category = $course_model->getCategoryByLevelID($level);
+        $goal_array = [];
+        if (empty($category['goal']))
+            $goal_array = explode("\n", $category['goal']);
         $goal_len = count($goal_array);
         if($goal_len < 6)
         {

@@ -21,6 +21,7 @@ class IndexController extends HomebaseController{
         if (!empty($data["login_user"])) {
             $head_controller->setLoginHtml($data["login_user"]);
         }
+
         $schoolModel=new SchoolModel();
         $city_list = $schoolModel->getCityList();
         if(isset($city_list[0])&&isset($city_list[0]['city'])){
@@ -29,6 +30,13 @@ class IndexController extends HomebaseController{
         }
 
         return $this->fetch(':home');
+    }
+    //保存城市
+    public function saveCity(){
+        $data = $this->request->param();
+        if(isset($data['city'])){
+            session('city',$data['city']);
+        }
     }
     //提交预约
     public function mmmp(){

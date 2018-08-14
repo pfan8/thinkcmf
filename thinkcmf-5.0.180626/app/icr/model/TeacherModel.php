@@ -180,7 +180,7 @@ class TeacherModel extends Model
      */
     public function getTeacherByName($name)
     {
-        return Db::name('icr_teacher')->where('name',$name)->select();
+        return Db::name('icr_teacher')->where('name','like','%'.$name.'%')->select();
     }
 
     /**
@@ -264,11 +264,9 @@ class TeacherModel extends Model
         if(empty($tid['tid'])) {
             $teacher_list = [];
             foreach ($tid as $value) {
-                array_push($teacher_list, Db::name('icr_teacher')->where('id',$value)->find());
+                array_push($teacher_list, Db::name('icr_teacher')->where('id',$value['tid'])->find());
             }
             return $teacher_list;
-        } else {
-            return Db::name('icr_teacher')->where('id',$tid[0])->find();
         }
     }
 

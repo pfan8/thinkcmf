@@ -24,7 +24,13 @@ class HeadController extends HomebaseController{
         $this->assign('join_active', "");
         $this->assign('about_active', "");
         $school_model = new SchoolModel();
-        $this->assign('city_list',$school_model->getCityList());
+        $city_list = $school_model->getCityList();
+        $this->assign('city_list',$city_list);
+        $city = session('city');
+        if(!$city){
+            $city = $city_list[0]['city'];
+        }
+        $this->assign('city_name',$city);
         $this->setLoginHtml();
     }
 

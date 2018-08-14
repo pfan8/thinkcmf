@@ -24,10 +24,9 @@
             <thead>
             <tr>
                 <th width="40">ID</th>
-                <th width="80">名称</th>
-                <th width="50">等级</th>
+                <th>名称</th>
+                <th width="80">等级</th>
                 <th>描述</th>
-                <th>目标</th>
                 <th>图</th>
             </tr>
             </thead>
@@ -38,7 +37,6 @@
                     <td>{$vo.name}</td>
                     <td>{$vo.level}</td>
                     <td>{$vo.describe}</td>
-                    <td>{$vo.goal}</td>
                     <td><img src="{$vo.icon}" height="100" width="100"></td>
                     <td width="140">
                         <a href="{:url('course/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
