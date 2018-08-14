@@ -817,6 +817,7 @@ footer{
 }
 .headteacher{
     height:330px;
+    visibility:hidden
 }
 .teacher-avatar{
     float: left;

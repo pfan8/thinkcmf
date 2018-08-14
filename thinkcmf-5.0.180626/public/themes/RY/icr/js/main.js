@@ -185,4 +185,15 @@ $(function(){
             xgdiv(page_index);
         })
     }
+    $(".teacher-item").mouseover(function(){
+        $(".headteacher").find(".teacher-avatar img")[0].src =$(this).find('img').attr('src');
+        $(".headteacher").css('visibility','visible');
+        var info = $(this).find(".info");
+        $(".information").find(".name").html(info.find(".name").html());
+        $(".information").find(".content").html(info.data("content"));
+        $(".information").find(".idea").html(info.data('idea'));
+    })
+    $(".teacher-item").mouseleave(function(){
+        $(".headteacher").css('visibility','hidden');
+    })
 });

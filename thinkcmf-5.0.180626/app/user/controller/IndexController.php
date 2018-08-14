@@ -10,6 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\user\controller;
 
+use app\admin\controller\SlideController;
 use app\user\model\UserModel;
 use cmf\controller\HomeBaseController;
 

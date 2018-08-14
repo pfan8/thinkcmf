@@ -1,19 +1,22 @@
 <include file="themes/RY/icr/head.html" />
 <div class="main-img">
     <div class="img_list">
+        <slides id="'1'">
+            <a href="{$vo.url|default=''}"><img src="{:cmf_get_image_url($vo.image)}" alt=""></a>
+        </slides>
+        <noslides id="'1'">
+          请到后台设置幻灯片
+        </noslides>
 
-        <a href="http://www.baidu.com"><img src="/themes/RY/icr/imgs/banner1.jpg" /></a>
-        <a href="http://www.baidu.com"><img src="/themes/RY/icr/imgs/banner2.jpg" /></a>
-        <a href="http://www.baidu.com"><img src="/themes/RY/icr/imgs/banner3.jpg" /></a>
-        <a href="http://www.baidu.com"><img src="/themes/RY/icr/imgs/banner4.jpg" /></a>
     </div>
     <div class="clear"></div>
     <div class="img_an">
         <div class="an-margin">
-            <div data-id="1"  id="an-1"></div>
-            <div data-id="2"  id="an-2"></div>
-            <div data-id="3"  id="an-3"></div>
-            <div data-id="4"  id="an-4"></div>
+            <php>$j=1;</php>
+            <slides id="'2'">
+                <div data-id="{$j}"  id="an-{$j}"></div>
+                <php>$j++;</php>
+            </slides>
         </div>
     </div>
 </div>

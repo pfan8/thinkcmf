@@ -8,6 +8,7 @@
  */
 namespace app\icr\controller;
 
+use app\admin\controller\SlideController;
 use app\icr\model\SchoolModel;
 use cmf\controller\HomeBaseController;
 
