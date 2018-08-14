@@ -268,7 +268,7 @@ class CourseController extends AdminBaseController
         $max_level = count($levels);
         for($i = 0; $i < $max_level; $i++)
         {
-            $op = $course_model->getCourseCategoryByID($levels[$i]['category_id'])['name'] . " " . $levels[$i]['level'];
+            $op = $course_model->getCategoryByID($levels[$i]['category_id'])['name'] . " " . $levels[$i]['level'];
             if ($levels[$i]['id'] == $level)
                 $option_html .= "<option selected=\"selected\" value=".$levels[$i]['id'].">" . $op . "</option>";
             else
@@ -293,7 +293,7 @@ class CourseController extends AdminBaseController
         $lid = $course['level'];
         foreach ($levels as $level) {
             if ($level['id'] == $lid)
-                $course['level'] = $course_model->getCourseCategoryByID($level['category_id'])['name'] . " " . $level['level'];
+                $course['level'] = $course_model->getCategoryByID($level['category_id'])['name'] . " " . $level['level'];
         }
     }
 
