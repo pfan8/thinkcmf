@@ -163,7 +163,8 @@ ul{
     margin:0 auto;
     overflow: hidden;
     position: relative;
-    margin-top:10px
+    margin-top:10px;
+    z-index:2;
 }
 .main-img .img_list img{
     display: block;
@@ -212,6 +213,7 @@ ul{
 .reserve{
     width: 1440px;
     margin: 0 auto;
+    z-index: 1;
 }
 .listen{
     position: relative;
@@ -220,6 +222,7 @@ ul{
     width: 400px;
     height: 600px;
     background-image: url("../imgs/listen-img.svg");
+    z-index: 9999;
 }
 .agreement{
     position:absolute;
@@ -242,7 +245,13 @@ ul{
     font-size: 20px;
 }
 .input_text::placeholder{
+    height:50px;
+    line-height: 50px;
     padding-top: -20px;
+}
+.input_text::-webkit-input-placeholder{
+    height:50px;
+    line-height: 50px;
 }
 
 .input_button{
