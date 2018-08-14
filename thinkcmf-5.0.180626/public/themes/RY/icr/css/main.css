@@ -68,6 +68,7 @@ ul{
     width: 1440px;
     height: 80px;
     margin: 0 auto;
+    padding-left: 27px;
 }
 .logo{
     width: 290px;
@@ -125,12 +126,16 @@ ul{
     color: #ffffff;
     border-radius: 20px;
     height: 40px;
+    box-shadow: 2px 2px 4px
+    rgba(0, 0, 0, 0.3)
 }
 .menu ul .active{
     background:#fc384c;
     color: #ffffff;
     border-radius: 20px;
     height: 40px;
+    box-shadow: 2px 2px 4px
+    rgba(0, 0, 0, 0.3);
 }
 .menu ul .active a{
     color: #ffffff;
@@ -156,12 +161,48 @@ ul{
     width: 100%;
     height:600px;
     margin:0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-top:10px
+}
+.main-img .img_list img{
+    display: block;
+    float: left;
+}
+.main-img .img_list{
+    display: block;
+    float: left;
+    height:600px;
+    position: absolute;
+}
+.main-img .img_an{
+    position: absolute;
+    top:550px;
+    width: 100%;
+}
+.main-img .img_an .an-margin{
+    width: 200px;
+    height:10px;
+    display: block;
+    margin: 0 auto;
+}
+.main-img .img_an .an-margin div{
+    float: left;
+    width: 10px;
+    height:10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #bdbdbd;
+}
+.main-img .img_an .an-margin div:last-of-type{
+    margin-right: 0;
+}
+.main-img .img-an .an-margin .active{
+    background-color: #ffffff;
 }
 .main-img img{
-    min-width: 1440px;
-    width: 100%;
-    min-height: 600px;
-    max-height:900px;
+    width: 1440px;
+    height: 600px;
 }
 .main-reserve{
     position: absolute;
@@ -189,7 +230,7 @@ ul{
     display: block;
     float: left;
 }
-.agreement div{
+.agreement a{
     float:left;
     color: #3d4d55;
     font-size: 12px;
@@ -1927,7 +1968,6 @@ select::-ms-expand { display: none; }
 }
 .city_content{
     width: 100%;
-    height:140px;
     position: absolute;
     top:7px;
     color: #FFFFFF;
@@ -1937,6 +1977,8 @@ select::-ms-expand { display: none; }
     width: 360px;
     margin:0 auto;
     margin-top:30px;
+    margin-bottom: 30px;
+    padding:0 auto;
 }
 .city_content ul li{
     float: left;
@@ -1957,4 +1999,27 @@ select::-ms-expand { display: none; }
     position: absolute;
     left:200px;
 
+}
+.user-agreement{
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 1100px;
+    color: #002e6d;
+}
+.user-agreement h1{
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 37px;
+}
+.user-agreement .h2{
+    width: 100%;
+    text-align: center;
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
 }

@@ -29,13 +29,13 @@ function popup(){
 
 $(function(){
     $("[name='yy']").click(popup);
-    $(".agreement").click(function(){
-        if($(this).find('i').hasClass("fa-square-o")){
-            $(this).find('i').removeClass('fa-square-o')
-            $(this).find('i').addClass('fa-check-square-o')
+    $(".agreement i").click(function(){
+        if($(this).hasClass("fa-square-o")){
+            $(this).removeClass('fa-square-o')
+            $(this).addClass('fa-check-square-o')
         }else{
-            $(this).find('i').removeClass('fa-check-square-o')
-            $(this).find('i').addClass('fa-square-o')
+            $(this).removeClass('fa-check-square-o')
+            $(this).addClass('fa-square-o')
         }
     });
     $(".radios-item").mouseover(function(){
@@ -146,4 +146,43 @@ $(function(){
         $(".l_r_window").show();
         $("#register_click").click();
     })
+    $(".position").click(function(){
+        $(".city_list").toggle();
+    })
+    //轮播
+    if($(".main-img .img_list").length>0){
+        var page_index = 1;
+        xgdiv(page_index);
+        var count = $(".img_list img").length;
+        $(".img_list").width(count*1440);
+        $(".an-margin").width(count*20-10);
+        var sif=function(){
+            page_index++;
+            if(page_index<=count){
+                $(".img_list").animate({
+                    marginLeft:-(page_index-1)*1440
+                });
+            }else{
+                $(".img_list").css("margin-left",0);
+                page_index=1;
+            }
+            xgdiv(page_index);
+        };
+        var si = setInterval(sif,5000);
+        function xgdiv(page_index){
+            $(".an-margin div").css('background-color',"#bdbdbd");
+            $("#an-"+page_index).css('background-color',"#ffffff");
+        }
+        $(".an-margin div").click(function(){
+            page_index = $(this).data("id");
+            if(page_index==0){
+                $(".img_list").css("margin-left",0)
+            }else{
+                $(".img_list").animate({
+                    marginLeft:-(page_index-1)*1440
+                });
+            }
+            xgdiv(page_index);
+        })
+    }
 });
