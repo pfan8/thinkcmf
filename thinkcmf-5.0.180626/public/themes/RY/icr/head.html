@@ -20,13 +20,13 @@
         <div class="logo"><img src="/themes/RY/icr/imgs/logo.svg" /></div>
         <div class="position">
             <i class="fa fa-map-marker fa-2x"></i>
-            <span class="location">当前位置:&nbsp;&nbsp;&nbsp;&nbsp;广州
+            <span class="location">当前位置:&nbsp;&nbsp;&nbsp;&nbsp;{$city_name}
                 <div class="city_list">
                     <div class="jt"></div>
                     <div class="city_content">
                         <ul>
                             <volist name="city_list" id="vo">
-                                 <li><a href="#">{$vo.city}</a></li>
+                                 <li><a href="javascript:void(0);" name="city_list">{$vo.city}</a></li>
                             </volist>
                             <div class="clear"></div>
                         </ul>
@@ -143,4 +143,14 @@
         </div>
     </div>
 </section>
+
 <include file="public@scripts"/>
+<script type="text/javascript">
+    $(function(){
+       $("[name='city_list']").click(function(){
+           $.post("{:url('index/saveCity')}",{'city':$(this).html()},function(e){
+               location.reload();
+           })
+       })
+    })
+</script>
