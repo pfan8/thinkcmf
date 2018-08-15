@@ -48,6 +48,7 @@ class CourseController extends HomebaseController{
         $levels = $course_model->getCourseLevelsByCategoryID($s_category);
         $goal_array = [];
         $goal_len = 0;
+        $category = $course_model->getCategoryByID($s_category);
         if (!empty($category['goal'])) {
             $goal_array = explode("\n", $category['goal']);
             $goal_len = count($goal_array);
