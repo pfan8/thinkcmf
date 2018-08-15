@@ -195,6 +195,7 @@ class RecruitController extends HomebaseController{
         }
         while (count($recruits) < 3) {
             $recruit = [
+                'id' => 0,
                 'icon' => '/themes/RY/icr/imgs/timg.jpg',
                 'position' => '待添加',
                 'desc' => '待添加',

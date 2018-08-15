@@ -201,7 +201,7 @@ class TeacherController extends HomebaseController{
             $this->transformToHtml($teacher);
             $teachers->push($teacher);
         }
-        while (count($teachers) < 6) {
+        while (count($teachers) < 9) {
             $teacher = [
                 'icon' => '/themes/RY/icr/imgs/timg.jpg',
                 'name' => '待添加',
@@ -229,17 +229,9 @@ class TeacherController extends HomebaseController{
 
     private function getTeacherLimitFromPage($page)
     {
-        switch ($page) {
-            case 1:
-                return "0,6";
-            case 2:
-                return "6,12";
-            case 3:
-                return "12,18";
-            case 4:
-                return "18,24";
-            default:
-                return 100;
-        }
+        $tep = 9;
+        $limit_start = ($page-1) * $tep;
+        $limit_end = $page * $tep;
+        return $limit_start . "," . $limit_end;
     }
 }

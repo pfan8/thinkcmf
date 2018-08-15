@@ -105,18 +105,11 @@
             <h1>实测孩子英语水平</h1>
             <div class="test-form">
                 <form>
-                    <div class="input">
-                        <input placeholder="您的孩子多大了？" />
-                    </div>
-                    <div class="input">
-                        <input placeholder="您的孩子能识别字母吗？" />
-                    </div>
-                    <div class="input">
-                        <input placeholder="您的孩子可以阅读英语吗？" />
-                    </div>
-                    <div class="input">
-                        <input placeholder="您希望孩子学习英语的原因是？" />
-                    </div>
+                    <volist name="question_list" id="vo">
+                        <div class="input">
+                            <input placeholder={$vo.question} />
+                        </div>
+                    </volist>
                     <div class="submit">
                         <input type="text" id="phone" placeholder="请输入您的手机号" />
                         <input type="submit" id="yy_submit" value="预约免费测试">

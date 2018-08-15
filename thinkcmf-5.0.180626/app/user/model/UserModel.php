@@ -308,4 +308,11 @@ class UserModel extends Model
         cmf_update_current_user($userInfo);
         return 0;
     }
+
+    public function getQuestionList($limit=4)
+    {
+        return Db::name("icr_book_question")
+            ->limit($limit)
+            ->select();
+    }
 }

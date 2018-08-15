@@ -18,7 +18,9 @@ class RecruitdetailController extends HomebaseController{
         $head_controller = new HeadController();
         $head_controller->setHeaderActive("recruit");
         $recruit_model = new RecruitModel();
-        $recruit = $recruit_model->getRecruitByID(1);
+        $param = $this->request->param();
+        $id = empty($param['id']) ? 0 : $param['id'];
+        $recruit = $recruit_model->getRecruitByID($id);
         $desc = $this->transformDesc($recruit['desc']);
         $require = $this->transformRequire($recruit['require']);
         $this->assign('recruit', $recruit);

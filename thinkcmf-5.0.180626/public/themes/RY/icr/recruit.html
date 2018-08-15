@@ -14,7 +14,7 @@
                     </div>
                     <div class="job-info"><?=$recruit[0]['position']?></div>
                     <div class="job-button"><input class="div-blue" type="button" value="查看职位详情"
-                                                   onclick="{location='../icr/recruitdetail'}"/></div>
+                                                   onclick="location='../icr/RecruitDetail?id={$recruit[0][\'id\']}'"/></div>
                 </div>
                 <div class="desc div-blue">
                     <div class="title">
@@ -45,7 +45,8 @@
                         <i class="fa fa-user-circle-o"></i>
                     </div>
                     <div class="job-info"><?=$recruit[1]['position']?></div>
-                    <div class="job-button"><input class="div-red" type="button" value="查看职位详情" /></div>
+                    <div class="job-button"><input class="div-red" type="button" value="查看职位详情"
+                                                   onclick="location='../icr/RecruitDetail?id={$recruit[1][\'id\']}'"/></div>
                 </div>
                 <div class="desc div-red"></div>
                 <div class="arrow div-red"></div>
@@ -57,7 +58,8 @@
                         <i class="fa fa-user-circle-o"></i>
                     </div>
                     <div class="job-info"><?=$recruit[2]['position']?></div>
-                    <div class="job-button"><input class="div-orange" type="button" value="查看职位详情" /></div>
+                    <div class="job-button"><input class="div-orange" type="button" value="查看职位详情"
+                                                   onclick="location='../icr/RecruitDetail?id={$recruit[2][\'id\']}'"/></div>
                 </div>
                 <div class="desc div-orange"></div>
                 <div class="arrow div-orange"></div>

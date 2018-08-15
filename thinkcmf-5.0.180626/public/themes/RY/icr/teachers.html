@@ -8,27 +8,28 @@
         <div class="teachers">
             <div class="clear"></div>
             <div class="teacher-list">
-                <div class="teacher-row">
-                    <div class="teacher-item"><div class="img"><img src="<?=$teacher[0]['icon']?>" /></div><div class="info"data-content="<?=$teacher[0]['resume']?>" data-idea ="<?=$teacher[0]['idea']?>" ><div class="name"><?=$teacher[0]['name']?></div><div class="title"><?=$teacher[0]['position']?></div></div></div>
-                    <div class="teacher-item"><div class="img"><img src="<?=$teacher[1]['icon']?>" /></div><div class="info"data-content="<?=$teacher[1]['resume']?>" data-idea ="<?=$teacher[1]['idea']?>" ><div class="name"><?=$teacher[1]['name']?></div><div class="title"><?=$teacher[1]['position']?></div></div></div>
-                    <div class="teacher-item"><div class="img"><img src="<?=$teacher[2]['icon']?>" /></div><div class="info"data-content="<?=$teacher[2]['resume']?>" data-idea ="<?=$teacher[2]['idea']?>" ><div class="name"><?=$teacher[2]['name']?></div><div class="title"><?=$teacher[2]['position']?></div></div></div>
-                </div>
-                <div class="teacher-row">
-                    <div class="teacher-item"><div class="img"><img src="<?=$teacher[3]['icon']?>" /></div><div class="info" data-content="<?=$teacher[3]['resume']?>" data-idea ="<?=$teacher[3]['idea']?>" ><div class="name"><?=$teacher[3]['name']?></div><div class="title"><?=$teacher[3]['position']?></div></div></div>
-                    <div class="teacher-item"><div class="img"><img src="<?=$teacher[4]['icon']?>" /></div><div class="info"data-content="<?=$teacher[4]['resume']?>" data-idea ="<?=$teacher[4]['idea']?>" ><div class="name"><?=$teacher[4]['name']?></div><div class="title"><?=$teacher[4]['position']?></div></div></div>
-                    <div class="teacher-item"><div class="img"><img src="<?=$teacher[5]['icon']?>" /></div><div class="info"data-content="<?=$teacher[5]['resume']?>" data-idea ="<?=$teacher[5]['idea']?>" ><div class="name"><?=$teacher[5]['name']?></div><div class="title"><?=$teacher[5]['position']?></div></div></div>
-                </div>
+                <volist name="teacher" id="vo">
+                    <eq name="mod" value="3"><div class="teacher-row"></eq>
+                    <div class="teacher-item">
+                        <div class="img"><img src="{$vo['icon']}" /></div>
+                        <div class="info"data-content="{$vo['resume']}" data-idea ="{$vo['idea']}" >
+                            <div class="name">{$vo['name']}</div>
+                            <div class="title">{$vo['position']}</div>
+                        </div>
+                    </div>
+                    <eq name="mod" value="3"></div></eq>
                 <div class="clear"></div>
+                </volist>
             </div>
             <div class="page">
-                <div class="previous">上一页</div>
+                <div class="previous"><a href="{:url('teacher/index', array('page'=>$page-1))}">上一页</a></div>
                 <div class="page-list">
-                    <div class="list-item active"><a href="{:url('teacher/index', array('page'=>1))}">1</a></div>
-                    <div class="list-item"><a href="{:url('teacher/index', array('page'=>2))}">2</a></div>
-                    <div class="list-item"><a href="{:url('teacher/index', array('page'=>3))}">3</a></div>
-                    <div class="list-item"><a href="{:url('teacher/index', array('page'=>4))}">4</a></div>
+                    <div class="{$page==1?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>1))}">1</a></div>
+                    <div class="{$page==2?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>2))}">2</a></div>
+                    <div class="{$page==3?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>3))}">3</a></div>
+                    <div class="{$page==4?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>4))}">4</a></div>
                 </div>
-                <div class="next">下一页</div>
+            <div class="next"><a href="{:url('teacher/index', array('page'=>$page+1))}">下一页</a></div>
             </div>
         </div>
     </div>
