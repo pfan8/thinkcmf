@@ -1,20 +1,7 @@
 /*
 公共js
  */
-var popup_html="<div id='popup' class='popup'>" +
-    "<div class='wd'>" +
-    "<div class='wd-title'>免费预约试听</div>" +
-    "<div class='wd-title2'>思明中心：厦门市思明区莲前西路2号莲富大厦3H</div>" +
-    "<form>" +
-    "<div class='input-text'>" +
-    "<div class='course-level'><input type='text' placeholder='预约试听课程级别'/><i class='fa fa-caret-down fa-2x'></i></div>"+
-    "<input type='text' placeholder='输入手机号预约课程试听' />" +
-    "<input type='submit' value='确认预约试听'>" +
-    "</div>" +
-    "</form>" +
-    "<div class='cease'>&times;</div>" +
-    "</div>" +
-    "</div>";
+
 var techthers="                <div class=\"headteacher\">\n" +
     "                    <div class=\"teacher-avatar\">\n" +
     "                        <img src =\"\"/>\n" +
@@ -33,6 +20,9 @@ function popup(){
         $(".cease").click(function(){
             $("#popup").remove();
         });
+        $(".course-level i").click(function(){
+            $('.course-level select').click();
+        })
     }
 
 }

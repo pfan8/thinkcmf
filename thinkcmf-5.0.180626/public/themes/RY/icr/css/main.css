@@ -512,6 +512,8 @@ footer{
     padding: 30px;
     box-sizing: border-box;
     margin-top: 47px;
+    position: relative;
+    bottom: 20px;
 }
 .course h1{
     width: 100%;
@@ -592,6 +594,8 @@ footer{
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
+    position: relative;
+    bottom: 20px;
 }
 .course-more a{
     color: #fc384c;
@@ -773,6 +777,8 @@ footer{
     margin-right: 30px;
     margin-bottom: 30px;
     box-sizing: border-box;
+    cursor:pointer;
+    cursor:hand;
 }
 .path .list .active{
     color: #ffffff;
@@ -887,6 +893,16 @@ footer{
     margin: 0 auto;
     margin-top: 20px;
 
+}
+select{
+    outline: none;
+    border: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+option{
+    text-align:center;
 }
 .teacher-item{
     position: relative;
@@ -1638,7 +1654,7 @@ margin: 0 auto;
     width: 500px;
     height: 400px;
     margin: 0 auto;
-    top:300px;
+    top:100px;
     left: 50%;
     border-radius: 10px;
     margin-left: -250px;
@@ -1678,7 +1694,7 @@ margin: 0 auto;
     border: solid 1px #3d4d55;
     height:46px !important;
     margin-top: 25px;
-
+    text-align: center;
 }
 .input-text input:-ms-input-placeholder{
     text-align: center;
@@ -1689,9 +1705,27 @@ margin: 0 auto;
 .input-text input::-webkit-input-placeholder{
     text-align: center;
 }
-.course-level input{
+.course-level{
+    height:46px;
+    border-radius: 8px;
+    border: solid 1px #3d4d55;
+    width:400px;
+    margin: 0 auto;
+    margin-top: 25px;
+
+}
+.course-level select{
+    width:95%;
+    height:95%;
+    display: block;
+    margin: 0 auto;
     position: relative;
     top:0;
+    color: #3d4d55;
+text-align-last: center;
+}
+.course-level select option{
+    padding-left: 100px;
 }
 .course-level i{
     position: absolute;
