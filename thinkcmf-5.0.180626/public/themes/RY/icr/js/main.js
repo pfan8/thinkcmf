@@ -15,6 +15,17 @@ var popup_html="<div id='popup' class='popup'>" +
     "<div class='cease'>&times;</div>" +
     "</div>" +
     "</div>";
+var techthers="                <div class=\"headteacher\">\n" +
+    "                    <div class=\"teacher-avatar\">\n" +
+    "                        <img src =\"\"/>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"information\">\n" +
+    "                        <div class=\"name\"></div>\n" +
+    "                        <div class=\"content\"></div>\n" +
+    "                        <div class=\"idea\"></div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"clear\"></div>\n" +
+    "                </div>"
 function popup(){
     var id  = 'popup';
     if(!$('#'+id).html()){
@@ -185,15 +196,21 @@ $(function(){
             xgdiv(page_index);
         })
     }
-    $(".teacher-item").mouseover(function(){
+    var itf = function(){
+        var html = $(this).parent(".teacher-row").html();
+        $(this).parent(".teacher-row").html(techthers);
+        $(".headteacher").data('html',html);
         $(".headteacher").find(".teacher-avatar img")[0].src =$(this).find('img').attr('src');
         $(".headteacher").css('visibility','visible');
         var info = $(this).find(".info");
         $(".information").find(".name").html(info.find(".name").html());
         $(".information").find(".content").html(info.data("content"));
         $(".information").find(".idea").html(info.data('idea'));
-    })
-    $(".teacher-item").mouseleave(function(){
-        $(".headteacher").css('visibility','hidden');
-    })
+        $(".headteacher").mouseleave(function(){
+            $(this).parent(".teacher-row").html($(this).data('html'))
+            $(".teacher-item").mouseover(itf);
+        })
+    }
+    $(".teacher-item").mouseover(itf)
+
 });
