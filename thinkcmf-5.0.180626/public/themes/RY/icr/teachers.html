@@ -8,8 +8,9 @@
         <div class="teachers">
             <div class="clear"></div>
             <div class="teacher-list">
+                <php>$j=0;</php>
                 <volist name="teacher" id="vo">
-                    <eq name="mod" value="3"><div class="teacher-row"></eq>
+                   <if condition="$j%3==0"><div class="teacher-row"></if>
                     <div class="teacher-item">
                         <div class="img"><img src="{$vo['icon']}" /></div>
                         <div class="info"data-content="{$vo['resume']}" data-idea ="{$vo['idea']}" >
@@ -17,9 +18,10 @@
                             <div class="title">{$vo['position']}</div>
                         </div>
                     </div>
-                    <eq name="mod" value="3"></div></eq>
-                <div class="clear"></div>
+                    <php>$j++;</php>
+                    <if condition="$j%3==0"></div></if>
                 </volist>
+            <div class="clear"></div>
             </div>
             <div class="page">
                 <div class="previous"><a href="{:url('teacher/index', array('page'=>$page-1))}">上一页</a></div>
