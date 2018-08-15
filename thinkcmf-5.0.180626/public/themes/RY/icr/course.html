@@ -2,21 +2,21 @@
 <script type="text/javascript">
     function searchLevel(self) {
         var id = self.id;
-        var s_level = 1;
+        var s_category = 1;
         switch(id) {
             case 'level1':
-                s_level = 1;
+                s_category = 1;
                 break;
             case 'level2':
-                s_level = 2;
+                s_category = 2;
                 break;
             case 'level3':
-                s_level = 3;
+                s_category = 3;
                 break;
             default:
                 break;
         }
-        location.href="{:url('course/index')}?s_level="+s_level;
+        location.href="{:url('course/index')}?s_category="+s_category;
     }
 </script>
 <div class="main-img">
@@ -35,10 +35,17 @@
             <div class="course-detail">
                 <h1>课程内容</h1>
                 <div class="h2">
-                    <select>
-                        <option selected="selected">Level 1专为小童开设的互动课程</option>
-                        <option selected="selected">Level 2专为小童开设的互动课程</option>
-                        <option selected="selected">Level 3专为小童开设的互动课程</option>
+                    <select id="selectID">
+                        <php>
+                            foreach($levels as $vo)
+                            { if ($s_level != $vo['id']){</php>
+                            <option id="{$vo.id}" class="level-option">
+                        <php>}else{</php>
+                            <option id="{$vo.id}" class="level-option" selected="selected">
+                        <php>}</php>
+                                    Level {$vo.id}&nbsp;&nbsp;&nbsp;&nbsp;{$vo.name}
+                            </option>
+                        <php>}</php>
                     </select>
                     <i class="fa fa-chevron-down"></i>
                 </div>
@@ -173,3 +180,12 @@
     </div>
 </div>
 <include file="../public/themes/RY/icr/foot.html" />
+<script type="text/javascript">
+    $(function () {
+        $("#selectID").change(function () {
+            // var selectOption = $('#selectOption option:selected');
+            var level_id = $(this).find("option:checked").attr("id");
+            location.href = "{:url('course/index')}?s_level=" + level_id;
+        })
+    });
+</script>

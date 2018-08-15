@@ -83,7 +83,7 @@ class CourseLevelController extends AdminBaseController
 
         if ($data['category_id'] == "请选择")
             $this->error("一类等级必须",url('CourseLevel/add'));
-        if (!preg_match('/\d+/',$data['level']))
+        if (!preg_match('/^\d+$/',$data['level']))
             $this->error("二类等级必须是数字",url('CourseLevel/add'));
 
         $course_model = new CourseModel();

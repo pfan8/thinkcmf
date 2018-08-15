@@ -25,15 +25,15 @@
             </div>
             <div class="page">
                 <php>if($count/9<=1){</php>
-                <div class="{$page==$i?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>$i))}">1</a></div>
+                <div class="list-item active"><a href="{:url('teacher/index', array('page'=>1))}">1</a></div>
                  <php>}else{</php>
                     <div class="previous"><a href="{:url('teacher/index', array('page'=>$page-1))}">上一页</a></div>
                     <div class="page-list">
-                    <php>for($i=1;$i<=$count/9;$i++){</php>
+                    <php>for($i=1;$i<$count/9;$i++){</php>
                         <div class="{$page==$i?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>$i))}">$i</a></div>
                      <php>}</php>
-                  </div>
-<div class="next"><a href="{:url('teacher/index', array('page'=>$page+1))}">下一页</a></div>
+                     </div>
+                    <div class="next"><a href="{:url('teacher/index', array('page'=>$page+1))}">下一页</a></div>
                  <php>}</php>
             </div>
         </div>

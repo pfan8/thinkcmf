@@ -17,16 +17,20 @@ class CourseController extends HomebaseController{
 
     // 首页
     public function index(){
-        $data = $this->request->post();
         $head_controller = new HeadController();
         $head_controller->setHeaderActive("course");
         $course_model = new CourseModel();
         $param = $this->request->param();
-        $s_level = empty($param['s_level']) ? 1: $param['s_level'];
-        $level_class = $this->getSearchLevel($s_level);
-        $this->assign('level_class', $level_class);
-        $page = empty($data['page']) ? 1 : $data['page'];
-//        $limit = $this->getCourseLimitFromPage($page);
+        $s_category = empty($param['s_category']) ? 1: $param['s_category'];
+        if ($s_category != 1){
+            $s_level = $course_model->getCourseLevelsByCategoryID($s_category)[0]['id'];
+        } else if (!empty($param['s_level'])) {
+            $s_level = $param['s_level'];
+            $s_category = $course_model->getCourseLevelByID($s_level)['category_id'];
+        } else {
+            $s_level = 1;
+        }
+        $level_class = $this->getSearchLevel($s_category);
         $course = $course_model->getCourseByLevel($s_level);
         $feedback_model = new FeedbackModel();
         $feedback_video = $feedback_model->getFeedbackByType(2);
@@ -41,12 +45,13 @@ class CourseController extends HomebaseController{
             $feedback_model->transformContentToHtml($feedback);
             $feedback_text->push($feedback);
         }
-        $level = empty($data['level']) ? 1 : $data['level'];
-        $category = $course_model->getCategoryByLevelID($level);
+        $levels = $course_model->getCourseLevelsByCategoryID($s_category);
         $goal_array = [];
-        if (empty($category['goal']))
+        $goal_len = 0;
+        if (!empty($category['goal'])) {
             $goal_array = explode("\n", $category['goal']);
-        $goal_len = count($goal_array);
+            $goal_len = count($goal_array);
+        }
         if($goal_len < 6)
         {
             for ($goal_len; $goal_len <= 6;$goal_len++)
@@ -57,6 +62,10 @@ class CourseController extends HomebaseController{
         $this->complementCourse($course);
         $this->complementFeedback($feedback_video);
         $this->complementFeedback($feedback_text);
+        $this->assign('levels',$levels);
+        $this->assign('level_class', $level_class);
+        $this->assign('s_level',$s_level);
+        $this->assign('s_category',$s_category);
         $this->assign('course', $course);
         $this->assign('feedback_video', $feedback_video);
         $this->assign('feedback_text', $feedback_text);
