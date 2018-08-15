@@ -27,7 +27,7 @@
             <input class="input_button" type="button" value="免费预约试听"/>
             <div class="agreement">
                 <i class="fa fa-square-o"></i>
-                <a href="{:url('/icr/user-agreement')}">同意《 I CAN READ 用户协议》</a>
+                <a href="{:url('/icr/user_agreement')}">同意《 I CAN READ 用户协议》</a>
             </div>
         </div>
     </div>
@@ -167,12 +167,29 @@
             var marker = new BMap.Marker(point);
             map.addOverlay(marker);
         }
+        function editInfo(data){
+            var html =" <div class=\"info-item\">\n" +
+                "                                <div class=\"name\">"+data['name']+"</div>\n" +
+                "                                <div class=\"info-position\">\n" +
+                "                                    <i class=\"fa fa-map-marker\"></i>\n" +
+                "                                    <div>"+data['location']+"</div>\n" +
+                "                                </div>\n" +
+                "                                <div class=\"clear\"></div>\n" +
+                "                                <div class=\"info-submit\" name=\"yy\">免费预约试听</div>\n" +
+                "                            </div>";
+            $(".info").append(html);
+            $("[name='yy']").click(popup);
+        }
         var map = new BMap.Map("map");
         $.get("{:url('index/getSchoolList')}?city="+city,function(e){
+            $(".info").html('');
             for(var i=0;i<e.data.length;i++){
-                var pint = e.data[i]['coordinate'].split(',');
-                var point = new BMap.Point(pint[0],pint[1]);
-                addMarker(point)
+                if(e.data[i]['coordinate']){
+                    var pint = e.data[i]['coordinate'].split(',');
+                    var point = new BMap.Point(pint[0],pint[1]);
+                    addMarker(point)
+                }
+                editInfo(e.data[i]);
             }
             map.centerAndZoom(point, 15);
         });

@@ -1087,8 +1087,10 @@ footer{
 }
 .recruit-detail .h2{
     color: #37474f;
-    width: 300px;
+    width: 100%;
+    text-align: center;
     margin: 0 auto;
+    margin-top: 20px;
     font-size: 30px;
 }
 .detail-item{
