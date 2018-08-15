@@ -13,7 +13,8 @@ var techthers="                <div class=\"headteacher\">\n" +
     "                    </div>\n" +
     "                    <div class=\"clear\"></div>\n" +
     "                </div>"
-function popup(){
+
+var popup=function(){
     var id  = 'popup';
     if(!$('#'+id).html()){
         $('body').prepend(popup_html);
@@ -22,14 +23,12 @@ function popup(){
         });
         $(".course-level i").click(function(){
             $('.course-level select').click();
-        })
+        });
+        $(".wd-title2").html($(this).parents('.info-item').find(".name").html()+"："+$(this).parents('.info-item').find(".info-position div").html())
     }
-
 }
-
-
 $(function(){
-    $("[name='yy']").click(popup);
+    $("[name='yy']").click();
     $(".agreement i").click(function(){
         if($(this).hasClass("fa-square-o")){
             $(this).removeClass('fa-square-o')

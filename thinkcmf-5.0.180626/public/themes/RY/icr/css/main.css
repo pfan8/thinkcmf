@@ -664,16 +664,26 @@ footer{
 .input{
     margin: 0 auto;
     margin-top: 20px;
-}
-.input input{
-    height:60px;
     width: 500px;
-    margin: 0 auto;
+    height:60px;
     display: block;
     font-size: 18px;
-    text-align:center;
     border: 0;
     border-radius: 30px;
+    background-color: #FFFFFF;
+    background-image: url("../imgs/select-2-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 450px;
+}
+.input select{
+    width: 80%;
+    height:100%;
+    display: block;
+    text-align-last: center;
+    font-size: 18px;
+    color: #384850;
+    margin: 0 auto;
+
 }
 .input input::-webkit-input-placeholder{
     text-align: center;
