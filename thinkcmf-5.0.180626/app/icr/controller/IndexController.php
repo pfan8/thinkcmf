@@ -9,6 +9,7 @@
 namespace app\icr\controller;
 
 use app\admin\controller\SlideController;
+use app\icr\model\CourseModel;
 use app\icr\model\SchoolModel;
 use app\user\model\UserModel;
 use cmf\controller\HomeBaseController;
@@ -30,6 +31,11 @@ class IndexController extends HomebaseController{
             $school_list = $schoolModel->getSchoolByCity($city_list[0]['city'])->toArray();//加载第一个校区列表
             $this->assign('school_list',$school_list);
         }
+        $course_model = new CourseModel();
+        $category_list = $course_model->getCategoryList();
+        $this->completeCategoryList($category_list);
+        $this->assign('category_list',$category_list);
+
         $user_model = new UserModel();
         $question_list = $user_model->getQuestionList();
         $this->completeQuestionList($question_list);
@@ -58,9 +64,27 @@ class IndexController extends HomebaseController{
         while (count($question_list) < 4) {
             $question = [
                 ['id' => 0],
-                ['question' => '待定']
+                ['question' => '待定'],
+                ['answer1' => '待定'],
+                ['answer2' => '待定'],
+                ['answer3' => '待定'],
+                ['answer4' => '待定'],
             ];
             $question_list->push($question);
+        }
+    }
+
+    public function completeCategoryList(&$category_list) {
+        while (count($category_list) < 4) {
+            $category = [
+                ['id' => 0],
+                ['question' => '待定'],
+                ['answer1' => '待定'],
+                ['answer2' => '待定'],
+                ['answer3' => '待定'],
+                ['answer4' => '待定'],
+            ];
+            $category_list->push($category);
         }
     }
 }

@@ -75,6 +75,13 @@ class CourseController extends HomebaseController{
         return $this->fetch(':course');
     }
 
+    public function getBookCourseCategoryList() {
+        $course_model = new CourseModel();
+        $category_list = $course_model->getCategoryList();
+        $result = $category_list;
+        $this->result($result,0,'success','json');
+    }
+
     /**
      * 添加课程
      * @param $data

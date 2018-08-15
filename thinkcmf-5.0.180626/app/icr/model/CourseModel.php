@@ -134,8 +134,7 @@ class CourseModel extends Model
     {
         Db::name('icr_book_question')
             ->where('id',$data['id'])
-            ->update(['question' => $data['question'],]
-            );
+            ->update($data);
     }
 
     /**

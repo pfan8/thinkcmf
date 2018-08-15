@@ -105,30 +105,17 @@
             <h1>实测孩子英语水平</h1>
             <div class="test-form">
                 <form>
-                    <div class="input">
-                        <select>
-                            <option hidden selected>问题1？</option>
-                            <option>答案4</option>
-                            <option>答案3</option>
-                            <option>答案2</option>
-                        </select>
-                    </div>
-                    <div class="input">
-                        <select>
-                            <option hidden selected>问题1？</option>
-                            <option>答案4</option>
-                            <option>答案3</option>
-                            <option>答案2</option>
-                        </select>
-                    </div>
-                    <div class="input">
-                        <select>
-                            <option hidden selected>问题1？</option>
-                            <option>答案4</option>
-                            <option>答案3</option>
-                            <option>答案2</option>
-                        </select>
-                    </div>
+                    <volist name="question_list" id="vo">
+                        <div class="input">
+                            <select id="question_select{$vo.id}">
+                                <option hidden selected>{$vo.question}</option>
+                                <option>{$vo.answer1==""?"空":$vo.answer1}</option>
+                                <option>{$vo.answer2==""?"空":$vo.answer1}</option>
+                                <option>{$vo.answer3==""?"空":$vo.answer1}</option>
+                                <option>{$vo.answer4==""?"空":$vo.answer1}</option>
+                            </select>
+                        </div>
+                    </volist>
                     <div class="submit">
                         <input type="text" id="phone" placeholder="请输入您的手机号" />
                         <input type="submit" id="yy_submit" value="预约免费测试">
@@ -185,9 +172,9 @@
         "<div class='course-level'>" +
         "<select>" +
         "<option  hidden selected>预约试听课程级别</option>" +
-        "<option>课程一</option>" +
-        "<option>课程一</option>" +
-        "<option>课程一</option>" +
+        "<option>{$category_list[0]['name']}课程适合2～5岁</option>" +
+        "<option>{$category_list[0]['name']}课程适合5～7岁</option>" +
+        "<option>{$category_list[0]['name']}课程适合7～12岁</option>" +
         "</select>" +
         "<i class='fa fa-caret-down fa-2x'></i></div>"+
         "<input type='text' placeholder='输入手机号预约课程试听' />" +
