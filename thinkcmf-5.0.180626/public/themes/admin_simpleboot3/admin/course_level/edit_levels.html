@@ -2,6 +2,11 @@
 </head>
 <body>
 <div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('CourseLevel/index')}">一级等级菜单</a></li>
+        <li><a href="{:url('CourseLevel/add')}">添加二级等级</a></li>
+        <li class="active"><a href="{:url('CourseLevel/editLevels',array('category_id'=>$category['id']))}">{$category['name']}课程二级等级管理</a></li>
+    </ul>
     <form class="form-horizontal js-ajax-form margin-top-20" method="post" action="{:url('CourseLevel/editLevelPost')}">
         <table class="table table-hover table-bordered">
             <thead>
@@ -9,6 +14,7 @@
                 <th width="50">ID</th>
                 <th width="150">二类等级</th>
                 <th width="150">等级名称</th>
+                <th>课程目标</th>
             </tr>
             </thead>
             <tbody>
@@ -17,6 +23,7 @@
                     <td>{$vo.id}</td>
                     <td>{$vo.level}</td>
                     <td><input type="text" class="form-control" name="{$vo.id}" value="{$vo.name}"></td>
+                    <td><textarea class="form-control" name="goal" rows="5" cols="57">{$vo.goal}</textarea></td>
                     <td width="140">
                         <a class="js-ajax-delete" href="{:url('CourseLevel/delete',array('id'=>$vo['id']))}">{:lang('DELETE')}</a>
                     </td>

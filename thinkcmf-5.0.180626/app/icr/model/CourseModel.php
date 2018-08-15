@@ -58,10 +58,13 @@ class CourseModel extends Model
      */
     public function insertCourseLevel($data)
     {
-        $course_existed = Db::name('icr_course_level')->where($data)->find();
+        $course_existed = Db::name('icr_course_level')
+            ->where('category_id',$data['category_id'])
+            ->where('level',$data['level'])
+            ->find();
         if(!empty($course_existed)){
-            echo "已添加过！";
-            return;
+            $msg = "已添加过！";
+            return $msg;
         }
         Db::name('icr_course_level')->insert($data);
     }
@@ -144,8 +147,7 @@ class CourseModel extends Model
     {
         Db::name('icr_course_category')
             ->where('id',$data['id'])
-            ->update(['name' => $data['name'],
-                    'goal' => $data['goal'],]
+            ->update(['name' => $data['name'],]
             );
     }
 
@@ -154,11 +156,12 @@ class CourseModel extends Model
      * @param $data
      * @return
      */
-    public function updateLevelNameByID($id,$name)
+    public function updateLevelByID($data)
     {
         Db::name('icr_course_level')
-            ->where('id',$id)
-            ->update(['name' => $name,]
+            ->where('id',$data['id'])
+            ->update(['name' => $data['name'],
+                    'goal' => $data['goal'],]
             );
     }
 

@@ -82,12 +82,13 @@ class CourseLevelController extends AdminBaseController
         $data = $this->request->post();
 
         if ($data['category_id'] == "请选择")
-            $this->error("一类等级必须",url('CourseLevel/add'));
+            $this->error("一类等级必须");
         if (!preg_match('/^\d+$/',$data['level']))
-            $this->error("二类等级必须是数字",url('CourseLevel/add'));
+            $this->error("二类等级必须是数字");
 
         $course_model = new CourseModel();
-        $course_model->insertCourseLevel($data);
+        $msg = $course_model->insertCourseLevel($data);
+        $this->error($msg);
         $this->success(lang('ADD_SUCCESS'), url('CourseLevel/index'));
     }
 
@@ -97,6 +98,8 @@ class CourseLevelController extends AdminBaseController
         $category_id = empty($data['category_id']) ? 0 : $data['category_id'];
         $course_model = new CourseModel();
         $course_levels = $course_model->getCourseLevelsByCategoryID($category_id);
+        $category = $course_model->getCategoryByID($category_id);
+        $this->assign('category',$category);
         $this->assign('course_levels',$course_levels);
         return $this->fetch("edit_levels");
     }
@@ -130,7 +133,7 @@ class CourseLevelController extends AdminBaseController
         $levels = $course_model->getLevelList();
         foreach ($levels as $level) {
             if (!empty($arrData[$level['id']])) {
-                $course_model->updateLevelNameByID($level['id'],$arrData[$level['id']]);
+                $course_model->updateLevelByID($level['id'],$arrData[$level['id']]);
             }
         }
 

@@ -86,7 +86,7 @@ class PictureController extends AdminBaseController
         $validate = $this->getPictureValidate();
         if(!$validate->check($data)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('picture/add'));
+            $this->error(lang($msg));
         }
         $school_model = new SchoolModel();
         $school_model->insertPicture($data);

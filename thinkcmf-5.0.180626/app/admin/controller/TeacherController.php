@@ -90,7 +90,7 @@ class TeacherController extends AdminBaseController
         $validate = $this->getTeacherValidate();
         if(!$validate->check($data)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('teacher/add'));
+            $this->error(lang($msg));
         }
         $teacher_model = new TeacherModel();
         $tid = $teacher_model->insertTeacher($data);
@@ -102,7 +102,7 @@ class TeacherController extends AdminBaseController
             {
                 $is_course_exist = $course_model->getCourseByID($cid);
                 if (empty($is_course_exist))
-                    return $this->error(lang("没有该课程"), url('teacher/add'));
+                    return $this->error(lang("没有该课程"));
                 else
                 {
                     $teacher_model->addCourseToTeacher($tid, $cid);
@@ -164,7 +164,7 @@ class TeacherController extends AdminBaseController
         $validate = $this->getTeacherValidate();
         if(!$validate->check($arrData)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('teacher/edit',array('id' => $arrData['id'])));
+            $this->error(lang($msg));
         }
         $teacher_model->updateTeacher($arrData);
         $course_model = new CourseModel();
@@ -176,7 +176,7 @@ class TeacherController extends AdminBaseController
             {
                 $is_course_exist = $course_model->getCourseByID($cid);
                 if (empty($is_course_exist))
-                    return $this->error(lang("没有该课程"), url('teacher/index'));
+                    return $this->error(lang("没有该课程"));
                 else {
                     $teacher_model->addCourseToTeacher($arrData['id'], $cid);
                 }
@@ -210,7 +210,7 @@ class TeacherController extends AdminBaseController
 
         $teacher_model->deleteTeacher($id);
         $teacher_model->deleteCourses($id);
-        return $this->success(lang("DELETE_SUCCESS"), url("teacher/index"));
+        return $this->success(lang("DELETE_SUCCESS"));
 
     }
 

@@ -86,13 +86,13 @@ class ActivityController extends AdminBaseController
         $validate = $this->getActivityValidate();
         if(!$validate->check($data)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('activity/add'));
+            $this->error(lang($msg));
         }
         $activity_model = new SchoolModel();
         $sid = $activity_model->getSchoolByID($data['sid']);
         if(empty($sid))
         {
-            $this->error(lang("没有该校区"), url('activity/add',array('sid' => $data['sid'])));
+            $this->error(lang("没有该校区"));
         }
         $activity_model->insertActivity($data);
         $this->success(lang('ADD_SUCCESS'), url('activity/index',array('sid' => $data['sid'])));
@@ -145,12 +145,12 @@ class ActivityController extends AdminBaseController
         $validate = $this->getActivityValidate();
         if(!$validate->check($arrData)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('activity/edit',array('id' => $arrData['id'])));
+            $this->error(lang($msg));
         }
         $sid = $activity_model->getSchoolByID($arrData['sid']);
         if(empty($sid))
         {
-            $this->error(lang("没有该校区"), url('activity/edit',array('id' => $arrData['id'])));
+            $this->error(lang("没有该校区"));
         }
         $activity_model->updateActivity($arrData);
         $this->success(lang("EDIT_SUCCESS"), url('activity/index',array('sid' => $arrData['sid'])));

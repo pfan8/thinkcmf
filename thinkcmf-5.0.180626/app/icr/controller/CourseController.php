@@ -49,8 +49,9 @@ class CourseController extends HomebaseController{
         $goal_array = [];
         $goal_len = 0;
         $category = $course_model->getCategoryByID($s_category);
-        if (!empty($category['goal'])) {
-            $goal_array = explode("\n", $category['goal']);
+        $level = $course_model->getCourseLevelByID($s_level);
+        if (!empty($level['goal'])) {
+            $goal_array = explode("\n", $level['goal']);
             $goal_len = count($goal_array);
         }
         if($goal_len < 6)
@@ -84,7 +85,6 @@ class CourseController extends HomebaseController{
         $describe = $_GET['describe'];
         $level = $_GET['level'];
         $type = $_GET['type'];
-        $goal = $_GET['goal'];
         $teacher_id = $_GET['teacher_id'];
 
         $data = [
@@ -92,7 +92,6 @@ class CourseController extends HomebaseController{
             'describe' => $describe,
             'level' => $level,
             'type' => $type,
-            'goal' => $goal,
             'teacher_id' => $teacher_id,
         ];
 
@@ -134,7 +133,6 @@ class CourseController extends HomebaseController{
         $describe = $_GET['describe'];
         $level = $_GET['level'];
         $type = $_GET['type'];
-        $goal = $_GET['goal'];
         $icon = $_GET['icon'];
         $teacher_id = $_GET['teacher_id'];
 
@@ -144,7 +142,6 @@ class CourseController extends HomebaseController{
             'describe' => $describe,
             'level' => $level,
             'type' => $type,
-            'goal' => $goal,
             'icon' => $icon,
             'teacher_id' => $teacher_id,
         ];

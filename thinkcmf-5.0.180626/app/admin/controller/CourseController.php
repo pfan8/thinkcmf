@@ -89,7 +89,7 @@ class CourseController extends AdminBaseController
         $validate = $this->getCourseValidate();
         if(!$validate->check($data)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('course/add'));
+            $this->error(lang($msg));
         }
         $course_model = new CourseModel();
         $course_model->insertCourse($data);
@@ -148,7 +148,7 @@ class CourseController extends AdminBaseController
         if(!$validate->check($arrData)){
             $msg = $validate->getError();
 //            $this->assign($arrData);
-            $this->error(lang($msg), url('course/edit',array('id' => $arrData['id'])));
+            $this->error(lang($msg));
         }
         $course_model->updateCourse($arrData);
         $this->success(lang("EDIT_SUCCESS"), url("course/index"));

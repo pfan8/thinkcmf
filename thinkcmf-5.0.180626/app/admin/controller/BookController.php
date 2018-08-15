@@ -88,13 +88,13 @@ class BookController extends AdminBaseController
         $validate = $this->getBookValidate();
         if(!$validate->check($data)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('book/add'));
+            $this->error(lang($msg));
         }
         $book_model = new CourseModel();
         $course_model = new CourseModel();
         $is_course_exist = $course_model->getCourseByID($data['cid']);
         if(!$is_course_exist)
-            return $this->error(lang("没有该课程"), url('book/add'));
+            return $this->error(lang("没有该课程"));
         $book_model->bookCourse($data);
         $this->success(lang('ADD_SUCCESS'), url('book/index'));
     }
@@ -149,7 +149,7 @@ class BookController extends AdminBaseController
         $validate = $this->getBookValidate();
         if(!$validate->check($arrData)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('book/edit',array('id' => $arrData['id'])));
+            $this->error(lang($msg));
         }
         $book_model->updateBook($arrData);
         $this->success(lang("EDIT_SUCCESS"), url("book/index"));

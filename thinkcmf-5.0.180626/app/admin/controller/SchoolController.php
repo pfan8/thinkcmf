@@ -88,7 +88,7 @@ class SchoolController extends AdminBaseController
         $validate = $this->getSchoolValidate();
         if(!$validate->check($data)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('school/add'));
+            $this->error(lang($msg));
         }
         $school_model = new SchoolModel();
         $school_model->insertSchool($data);
@@ -142,7 +142,7 @@ class SchoolController extends AdminBaseController
         $validate = $this->getSchoolValidate();
         if(!$validate->check($arrData)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('school/edit',array('id' => $arrData['id'])));
+            $this->error(lang($msg));
         }
         $school_model->updateSchool($arrData);
         $this->success(lang("EDIT_SUCCESS"), url("school/index"));
