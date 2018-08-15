@@ -203,11 +203,9 @@ $(function(){
     $(".teacher-item").mouseover(itf)
     $(".video").click(function(){
         $(this).hide();
+        $(".video video").trigger("pause")
     })
     $(".video video").click(function(){
         return false;
-    })
-    $(".radios-item").click(function(){
-
     })
 });
