@@ -21,8 +21,10 @@ class TeacherController extends HomebaseController{
         $data = $this->request->param();
         $page = empty($data['page']) ? 1 : $data['page'];
         $limit = $this->getTeacherLimitFromPage($page);
+        $count = $teacher_model->getTeacherCount();
         $teacher = $teacher_model->getTeacherList($limit);
-        $this->complementTeacher($teacher);
+        //$this->complementTeacher($teacher);
+        $this->assign('count',$count);
         $this->assign('page',$page);
         $this->assign('teacher', $teacher);
         return $this->fetch(':teachers');

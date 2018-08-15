@@ -32,6 +32,12 @@ class TeacherModel extends Model
                 ->select();
         }
     }
+    /**
+     * 获取教师总数
+     */
+    public function getTeacherCount(){
+        return Db::name('icr_teacher')->count();
+    }
 
     /**
      * 添加教师

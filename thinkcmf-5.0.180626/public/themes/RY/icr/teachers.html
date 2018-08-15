@@ -4,7 +4,7 @@
     <img src="/themes/RY/icr/imgs/banner3.jpg" />
 </div>
 <div class="main">
-    <div class="item">
+    <php class="item">
         <div class="teachers">
             <div class="clear"></div>
             <div class="teacher-list">
@@ -24,14 +24,17 @@
             <div class="clear"></div>
             </div>
             <div class="page">
-                <div class="previous"><a href="{:url('teacher/index', array('page'=>$page-1))}">上一页</a></div>
-                <div class="page-list">
-                    <div class="{$page==1?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>1))}">1</a></div>
-                    <div class="{$page==2?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>2))}">2</a></div>
-                    <div class="{$page==3?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>3))}">3</a></div>
-                    <div class="{$page==4?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>4))}">4</a></div>
-                </div>
-            <div class="next"><a href="{:url('teacher/index', array('page'=>$page+1))}">下一页</a></div>
+                <php>if($count/9<=1){</php>
+                <div class="{$page==$i?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>$i))}">1</a></div>
+                 <php>}else{</php>
+                    <div class="previous"><a href="{:url('teacher/index', array('page'=>$page-1))}">上一页</a></div>
+                    <div class="page-list">
+                    <php>for($i=1;$i<=$count/9;$i++){</php>
+                        <div class="{$page==$i?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>$i))}">$i</a></div>
+                     <php>}</php>
+                  </div>
+<div class="next"><a href="{:url('teacher/index', array('page'=>$page+1))}">下一页</a></div>
+                 <php>}</php>
             </div>
         </div>
     </div>
