@@ -11,7 +11,7 @@ namespace app\icr\controller;
 use app\icr\model\RecruitModel;
 use cmf\controller\HomeBaseController;
 
-class RecruitdetailController extends HomebaseController{
+class RecruitDetailController extends HomebaseController{
 
     // 首页
     public function index(){
