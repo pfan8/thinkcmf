@@ -1,0 +1,35 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('BookQuestion/index')}">{:lang('ADMIN_BOOK_QUESTION_INDEX')}</a></li>
+        <li><a href="{:url('BookQuestion/add')}">{:lang('ADMIN_BOOK_QUESTION_ADD')}</a></li>
+    </ul>
+    <form action="{:url('Rbac/listorders')}" method="post" class="margin-top-20">
+        <php> $is_main=array("1"=>'是',"0"=>'否');</php>
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th width="40">ID</th>
+                <th width>预约问题</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="book_questions" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.question}</td>
+                    <td>
+                        <a href="{:url('BookQuestion/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                        <a class="js-ajax-delete" href="{:url('BookQuestion/delete',array('id'=>$vo['id']))}">{:lang('DELETE')}</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

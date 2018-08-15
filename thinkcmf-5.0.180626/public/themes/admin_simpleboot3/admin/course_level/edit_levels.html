@@ -1,0 +1,37 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <form class="form-horizontal js-ajax-form margin-top-20" method="post" action="{:url('CourseLevel/editLevelPost')}">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th width="150">二类等级</th>
+                <th width="150">等级名称</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="course_levels" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.level}</td>
+                    <td><input type="text" class="form-control" name="{$vo.id}" value="{$vo.name}"></td>
+                    <td width="140">
+                        <a class="js-ajax-delete" href="{:url('CourseLevel/delete',array('id'=>$vo['id']))}">{:lang('DELETE')}</a>
+                    </td>
+                </tr>
+            </foreach>
+
+            </tbody>
+        </table>
+
+        <div class="col-lg-5  pull-right">
+            <button type="submit" class="btn btn-primary js-ajax-submit">{:lang("SAVE")}</button>
+            <a class="btn btn-default" href="{:url('courseLevel/index')}">返回</a>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
