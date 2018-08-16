@@ -883,8 +883,12 @@ footer{
 }
 .information .content{
     font-size:18px;
+    height: 90px;
     margin-top: 20px;
     font-weight: 500;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .idea{
     font-weight:600;
