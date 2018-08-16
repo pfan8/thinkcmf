@@ -883,8 +883,12 @@ footer{
 }
 .information .content{
     font-size:18px;
+    height: 90px;
     margin-top: 20px;
     font-weight: 500;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .idea{
     font-weight:600;
@@ -1818,7 +1822,7 @@ text-align-last: center;
     background-color: rgba(0, 0, 0, 0.6);
     height:100%;
     width:100%;
-    z-index: 9999;
+    z-index: 999999;
 }
 .window{
     position: relative;
