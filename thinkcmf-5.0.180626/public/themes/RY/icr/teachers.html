@@ -29,8 +29,8 @@
                  <php>}else{</php>
                     <div class="previous"><a href="{:url('teacher/index', array('page'=>$page-1))}">上一页</a></div>
                     <div class="page-list">
-                    <php>for($i=1;$i<$count/9;$i++){</php>
-                        <div class="{$page==$i?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>$i))}">$i</a></div>
+                    <php>for($i=1;$i<=($count/9)+1;$i++){</php>
+                        <div class="{$page==$i?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>$i))}">{$i}</a></div>
                      <php>}</php>
                      </div>
                     <div class="next"><a href="{:url('teacher/index', array('page'=>$page+1))}">下一页</a></div>
