@@ -212,8 +212,7 @@ class CourseModel extends Model
             ->find();
         if(empty($result))
         {
-            echo "课程不存在";
-            return;
+            return "课程不存在";
         }
         Db::name('icr_course')
             ->where('id',$cid)

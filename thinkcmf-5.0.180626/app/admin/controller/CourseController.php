@@ -150,7 +150,9 @@ class CourseController extends AdminBaseController
 //            $this->assign($arrData);
             $this->error(lang($msg));
         }
-        $course_model->updateCourse($arrData);
+        $msg = $course_model->updateCourse($arrData);
+        if(!empty($msg))
+            $this->error($msg);
         $this->success(lang("EDIT_SUCCESS"), url("course/index"));
 
     }
@@ -268,7 +270,7 @@ class CourseController extends AdminBaseController
         $max_level = count($levels);
         for($i = 0; $i < $max_level; $i++)
         {
-            $op = $course_model->getCategoryByID($levels[$i]['category_id'])['name'] . " " . $levels[$i]['level'];
+            $op = $course_model->getCategoryByID($levels[$i]['category_id'])['name'] . " " . $levels[$i]['name'];
             if ($levels[$i]['id'] == $level)
                 $option_html .= "<option selected=\"selected\" value=".$levels[$i]['id'].">" . $op . "</option>";
             else
@@ -293,7 +295,7 @@ class CourseController extends AdminBaseController
         $lid = $course['level'];
         foreach ($levels as $level) {
             if ($level['id'] == $lid)
-                $course['level'] = $course_model->getCategoryByID($level['category_id'])['name'] . " " . $level['level'];
+                $course['level'] = $course_model->getCategoryByID($level['category_id'])['name'] . " " . $level['name'];
         }
     }
 
