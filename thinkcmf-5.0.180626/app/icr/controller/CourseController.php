@@ -23,7 +23,10 @@ class CourseController extends HomebaseController{
         $param = $this->request->param();
         $s_category = empty($param['s_category']) ? 1: $param['s_category'];
         if ($s_category != 1){
-            $s_level = $course_model->getCourseLevelsByCategoryID($s_category)[0]['id'];
+            if (count($course_model->getCourseLevelsByCategoryID($s_category)) == 0)
+                $s_level = 0;
+            else
+                $s_level = $course_model->getCourseLevelsByCategoryID($s_category)[0]['id'];
         } else if (!empty($param['s_level'])) {
             $s_level = $param['s_level'];
             $s_category = $course_model->getCourseLevelByID($s_level)['category_id'];
