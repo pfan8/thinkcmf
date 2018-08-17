@@ -88,7 +88,8 @@ class CourseLevelController extends AdminBaseController
 
         $course_model = new CourseModel();
         $msg = $course_model->insertCourseLevel($data);
-        $this->error($msg);
+        if(!empty($msg))
+            $this->error($msg);
         $this->success(lang('ADD_SUCCESS'), url('CourseLevel/index'));
     }
 
@@ -129,16 +130,22 @@ class CourseLevelController extends AdminBaseController
     {
 
         $course_model = new CourseModel();
-        $arrData  = $this->request->post();
+        $update_levels  = $this->request->post();
         $levels = $course_model->getLevelList();
-        foreach ($levels as $level) {
-            if (!empty($arrData[$level['id']])) {
-                $course_model->updateLevelByID($level['id'],$arrData[$level['id']]);
+        foreach ($levels as $current_level) {
+            if (!empty($update_levels['level:'.$current_level['id']])) {
+                if (!preg_match('/^\d+$/',$update_levels['level:'.$current_level['id']]))
+                    $this->error("二类等级必须是数字");
+                $update_level = [
+                    "id" => $current_level['id'],
+                    "level" => $update_levels['level:'.$current_level['id']],
+                    "name" => $update_levels['name:'.$current_level['id']],
+                    "goal" => $update_levels['goal:'.$current_level['id']],
+                ];
+                $course_model->updateLevelByID($update_level);
             }
         }
-
         $this->success(lang("EDIT_SUCCESS"), url("CourseLevel/index"));
-
     }
 
     /**

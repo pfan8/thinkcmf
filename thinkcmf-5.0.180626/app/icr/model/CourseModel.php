@@ -61,6 +61,8 @@ class CourseModel extends Model
         $course_existed = Db::name('icr_course_level')
             ->where('category_id',$data['category_id'])
             ->where('level',$data['level'])
+            ->where('name',$data['name'])
+            ->where('goal',$data['goal'])
             ->find();
         if(!empty($course_existed)){
             $msg = "已添加过！";

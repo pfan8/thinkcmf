@@ -21,9 +21,9 @@
             <foreach name="course_levels" item="vo">
                 <tr>
                     <td>{$vo.id}</td>
-                    <td>{$vo.level}</td>
-                    <td><input type="text" class="form-control" name="{$vo.id}" value="{$vo.name}"></td>
-                    <td><textarea class="form-control" name="goal" rows="5" cols="57">{$vo.goal}</textarea></td>
+                    <td><input type="text" class="form-control" name="level:{$vo.id}" value="{$vo.level}"></td>
+                    <td><input type="text" class="form-control" name="name:{$vo.id}" value="{$vo.name}"></td>
+                    <td><textarea class="form-control" name="goal:{$vo.id}" rows="5" cols="57">{$vo.goal}</textarea></td>
                     <td width="140">
                         <a class="js-ajax-delete" href="{:url('CourseLevel/delete',array('id'=>$vo['id']))}">{:lang('DELETE')}</a>
                     </td>
