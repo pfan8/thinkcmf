@@ -13,7 +13,7 @@
                    <if condition="$j%3==0"><div class="teacher-row"></if>
                     <div class="teacher-item">
                         <div class="img"><img src="{$vo['icon']}" /></div>
-                        <div class="info"data-content="{$vo['resume']}" data-idea ="{$vo['idea']}" >
+                        <div class="info"data-content="{$vo['resume']|msubstr=0,100}" data-idea ="{$vo['idea']}" >
                             <div class="name">{$vo['name']}</div>
                             <div class="title">{$vo['position']}</div>
                         </div>
