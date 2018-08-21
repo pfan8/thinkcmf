@@ -26,15 +26,19 @@
             <div class="page">
                 <php>if($count/9<=1){</php>
                 <div class="list-item active"><a href="{:url('teacher/index', array('page'=>1))}">1</a></div>
-                 <php>}else{</php>
+                 <php>}else{
+                        if($page != 1){</php>
                     <div class="previous"><a href="{:url('teacher/index', array('page'=>$page-1))}">上一页</a></div>
+                <php>}</php>
                     <div class="page-list">
                     <php>for($i=1;$i<=($count/9)+1;$i++){</php>
                         <div class="{$page==$i?"list-item active":"list-item"}"><a href="{:url('teacher/index', array('page'=>$i))}">{$i}</a></div>
                      <php>}</php>
                      </div>
+                <php>if($page < ceil(($count/9))) {</php>
                     <div class="next"><a href="{:url('teacher/index', array('page'=>$page+1))}">下一页</a></div>
-                 <php>}</php>
+                     <php>}</php>
+                <php>}</php>
             </div>
         </div>
     </div>
