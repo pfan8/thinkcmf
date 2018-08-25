@@ -887,6 +887,8 @@ footer{
     margin-top: 20px;
     font-weight: 500;
     overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .idea{
     font-weight:600;
@@ -1176,7 +1178,6 @@ option{
 }
 .tab-content .active{
     background-color: #ffffff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
     color: #fc384c;
 }
 .tab-item{

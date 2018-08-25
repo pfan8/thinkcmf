@@ -1,25 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="404" height="604" viewBox="0 0 404 604">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="404px" height="604px" viewBox="0 0 404 604" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>listen_img</title>
+    <desc>Created with Sketch.</desc>
     <defs>
-        <filter id="a" width="103.5%" height="102.3%" x="-1.8%" y="-.8%" filterUnits="objectBoundingBox">
-            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
-            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
-            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+        <filter x="-1.8%" y="-0.8%" width="103.5%" height="102.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
             <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"/>
-                <feMergeNode in="SourceGraphic"/>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
             </feMerge>
         </filter>
     </defs>
-    <g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(2)">
-        <path fill="#FFF" fill-opacity=".01" d="M0 0h400v600H0z"/>
-        <circle cx="200" cy="395" r="185" fill="#FFF" stroke="#FC384C" stroke-width="18"/>
-        <circle cx="118" cy="128" r="50" fill="#FFF" stroke="#FC384C" stroke-width="18"/>
-        <circle cx="118" cy="128" r="20" fill="#B7C9D3"/>
-        <circle cx="276" cy="122" r="50" fill="#FFF" stroke="#FC384C" stroke-width="18"/>
-        <circle cx="276" cy="122" r="20" fill="#B7C9D3"/>
-        <path stroke="#FC384C" stroke-width="18" d="M124.705 179.94c4.761 16.921 11.815 30.836 21.16 41.744M261.865 174.94c-4.762 16.921-11.815 30.836-21.16 41.744"/>
-        <text fill="#002F6C" font-family="MEllePRC-Xbold, MElle PRC" font-size="36" font-weight="bold">
-            <tspan x="117.22" y="295">价值800元</tspan>  <tspan x="59.05" y="338" font-size="30"> 英语试听课免费啦！</tspan>
-        </text>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标切图" transform="translate(-426.000000, -4.000000)">
+            <g id="listen_img" filter="url(#filter-1)" transform="translate(428.000000, 4.000000)">
+                <rect id="Rectangle-3" fill-opacity="0.01" fill="#FFFFFF" x="0" y="0" width="400" height="600"></rect>
+                <circle id="Oval-5" stroke="#FC384C" stroke-width="18" fill="#FFFFFF" cx="200" cy="391" r="185"></circle>
+                <text id="价值800元-英语试听课免费啦！" font-family="FZLTTHK--GBK1-0, Lantinghei SC" font-size="40" font-weight="600" line-spacing="44" fill="#002F6C">
+                    <tspan x="95.234375" y="311">价值800元</tspan>
+                    <tspan x="307.265625" y="312.09375" font-size="36"></tspan>
+                    <tspan x="54.5" y="356.09375" font-size="36">  </tspan>
+                    <tspan x="75.359375" y="356.09375" font-size="30">英语试听课免费啦！</tspan>
+                </text>
+                <circle id="Oval-6" stroke="#FC384C" stroke-width="18" fill="#FFFFFF" cx="118" cy="124" r="50"></circle>
+                <circle id="Oval-7" fill="#B7C9D3" cx="118" cy="124" r="20"></circle>
+                <circle id="Oval-6-Copy" stroke="#FC384C" stroke-width="18" fill="#FFFFFF" cx="276" cy="118" r="50"></circle>
+                <circle id="Oval-7-Copy" fill="#B7C9D3" cx="276" cy="118" r="20"></circle>
+                <path d="M124.70455,175.940478 C129.46626,192.861275 136.519718,206.77591 145.864925,217.684384" id="Path-2" stroke="#FC384C" stroke-width="18"></path>
+                <path d="M240.70455,170.940478 C245.46626,187.861275 252.519718,201.77591 261.864925,212.684384" id="Path-2-Copy" stroke="#FC384C" stroke-width="18" transform="translate(251.284737, 191.812431) scale(-1, 1) translate(-251.284737, -191.812431) "></path>
+            </g>
+        </g>
     </g>
 </svg>

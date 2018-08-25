@@ -1,185 +1,249 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="998" height="580" viewBox="0 0 998 580">
-    <g fill="none" fill-rule="evenodd">
-        <path fill="#FC384C" d="M0 239h110v100H0zM0 499h110v40H0z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="12" font-weight="400">
-            <tspan x="11.53" y="522"> CEFR </tspan> <tspan x="50.47" y="522" font-family="PingFang-SC-Medium, PingFang SC">欧洲标准</tspan> <tspan x="98.47" y="522"> </tspan>
-        </text>
-        <path fill="#FC384C" d="M0 540h110v40H0z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="12" font-weight="400">
-            <tspan x="7.644" y="563">Cambridge </tspan> <tspan x="79.356" y="563" font-family="PingFang-SC-Medium, PingFang SC">剑桥</tspan>
-        </text>
-        <path fill="#FC384C" d="M0 340h110v158H0z"/>
-        <text fill="#FFF" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold">
-            <tspan x="39" y="414">目标</tspan> <tspan x="39" y="436">达成</tspan>
-        </text>
-        <text fill="#FFF" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold">
-            <tspan x="39" y="284">课程</tspan> <tspan x="39" y="306">大纲</tspan>
-        </text>
-        <path fill="#FC384C" d="M0 158h110v80H0z"/>
-        <text fill="#FFF" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold">
-            <tspan x="39" y="193">课程</tspan> <tspan x="39" y="215">级别</tspan>
-        </text>
-        <path fill="#FFF9FA" d="M111 239h110v260H111z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12" letter-spacing="1.714">
-            <tspan x="139.071" y="272">听力训练</tspan> <tspan x="139.071" y="293">口语交流</tspan> <tspan x="139.071" y="314">词汇积累</tspan>
-        </text>
-        <path fill="#FFF9FA" d="M222 239h110v260H222z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12" letter-spacing="1.714">
-            <tspan x="250.071" y="272">自我表达</tspan> <tspan x="250.071" y="293">对话沟通</tspan> <tspan x="250.071" y="314">音素意识</tspan>
-        </text>
-        <path fill="#FFF9FA" d="M333 239h110v260H333zM111 158h110v80H111zM222 158h110v80H222zM333 158h110v80H333z"/>
-        <path fill="#FFF9FA" d="M333 158h110v80H333zM111 340h332v158H111z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12">
-            <tspan x="182" y="381">‧ 参与故事表演、看图说话</tspan> <tspan x="182" y="398">‧ 运用特定教学资源扩充词汇量 </tspan> <tspan x="182" y="415">‧ 使用语法正确的语句会话 </tspan> <tspan x="182" y="432">‧ 辨别单词的首音、中位音及尾音</tspan> <tspan x="182" y="449">‧ 口头实操，混合及分解单词的音素</tspan> <tspan x="182" y="466">‧ 理解音素/字母的关系 </tspan>
-        </text>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12" letter-spacing="1.714">
-            <tspan x="347.357" y="272">听辨独立音素</tspan> <tspan x="340.5" y="293">混合、分解音素</tspan> <tspan x="361.071" y="314">舞台表演</tspan>
-        </text>
-        <path fill="#FFFBF7" d="M444 239h110v260H444z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12" letter-spacing="1.714">
-            <tspan x="458.357" y="272">识别单词音素</tspan> <tspan x="465.214" y="293">解码故事书</tspan> <tspan x="458.357" y="314">深度理解阅读</tspan>
-        </text>
-        <path fill="#FFFBF7" d="M555 239h110v260H555z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12" letter-spacing="1.714">
-            <tspan x="583.071" y="272">阅读小说</tspan> <tspan x="583.071" y="293">口试答题</tspan> <tspan x="583.071" y="314">练习写作</tspan>
-        </text>
-        <path fill="#FFFBF7" d="M666 239h110v260H666z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12" letter-spacing="1.714">
-            <tspan x="694.071" y="272">图卡游戏</tspan> <tspan x="680.357" y="293">词汇句式累计</tspan> <tspan x="694.071" y="314">会话交流</tspan>
-        </text>
-        <path fill="#FFFBF7" d="M446 340h332v158H446z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12">
-            <tspan x="474" y="367">‧ 不使用变音标记与音素分读签独立阅读并解码新的</tspan> <tspan x="474" y="386"> 和熟悉的单词 </tspan> <tspan x="474" y="405">‧ 通过有节奏和表达的方式阅读 </tspan> <tspan x="474" y="424">‧ 使用语法正确的语句回答阅读理解问题</tspan> <tspan x="474" y="443">‧ 利用ICR拼写清单扩大词汇量 </tspan> <tspan x="474" y="462">‧ 理解语句的组成结构</tspan> <tspan x="474" y="481">‧ 撰写简单的语句</tspan>
-        </text>
-        <path fill="#FFF" d="M777 239h110v260H777z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12" letter-spacing="1.714">
-            <tspan x="805.071" y="272">作文策划</tspan> <tspan x="805.071" y="293">创意写作</tspan> <tspan x="791.357" y="314">阅读儿童文学</tspan>
-        </text>
-        <path fill="#FFF" d="M888 239h110v260H888z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12" letter-spacing="1.714">
-            <tspan x="902.357" y="272">课程知识学习</tspan> <tspan x="902.357" y="293">使用技巧阅读</tspan> <tspan x="902.357" y="314">提升应试技巧</tspan>
-        </text>
-        <path fill="#FFF" d="M777 340h221v158H777z"/>
-        <text fill="#002E6D" font-family="PingFangSC-Regular, PingFang SC" font-size="12">
-            <tspan x="797" y="376">‧ 明确学习目标</tspan> <tspan x="797" y="395">‧ 学会运用主要应试技巧 </tspan> <tspan x="797" y="414">‧ 以下领域的关键元素</tspan> <tspan x="797" y="433">‧ 培养学生表达自己想法的能力 </tspan> <tspan x="797" y="452">‧ 培养学生从书籍、报纸、文章和</tspan> <tspan x="797" y="471"> 杂志中收集信息的能力 </tspan>
-        </text>
-        <path fill="#FC384C" d="M30 50h50c16.569 0 30 13.431 30 30v40H0V80c0-16.569 13.431-30 30-30z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400">
-            <tspan x="31.46" y="90">Stage</tspan>
-        </text>
-        <path fill="#FC384C" d="M141 50h272c16.569 0 30 13.431 30 30v40H111V80c0-16.569 13.431-30 30-30z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400">
-            <tspan x="249.26" y="90">Level 1</tspan>
-        </text>
-        <path fill="#FC384C" d="M474 40h50c16.569 0 30 13.431 30 30v50H444V70c0-16.569 13.431-30 30-30z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400">
-            <tspan x="470.108" y="85">Level 2</tspan>
-        </text>
-        <path fill="#FC384C" d="M585 30h50c16.569 0 30 13.431 30 30v60H555V60c0-16.569 13.431-30 30-30z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400">
-            <tspan x="581.26" y="80">Level 3</tspan>
-        </text>
-        <path fill="#FC384C" d="M696 20h50c16.569 0 30 13.431 30 30v70H666V50c0-16.569 13.431-30 30-30z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400">
-            <tspan x="691.36" y="75">Level 4</tspan>
-        </text>
-        <path fill="#FC384C" d="M807 10h50c16.569 0 30 13.431 30 30v80H777V40c0-16.569 13.431-30 30-30z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400">
-            <tspan x="803.284" y="70">Level 5</tspan>
-        </text>
-        <path fill="#FC384C" d="M918 0h50c16.569 0 30 13.431 30 30v90H888V30c0-16.569 13.431-30 30-30z"/>
-        <text fill="#FFF" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400">
-            <tspan x="913.288" y="65">Level 6</tspan>
-        </text>
-        <path fill="#FC384C" d="M777 121h221v36H777z"/>
-        <text fill="#FFF" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold">
-            <tspan x="825.1" y="145">适合7～12岁学员</tspan>
-        </text>
-        <path fill="#FC384C" d="M444 121h332v36H444z"/>
-        <text fill="#FFF" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold">
-            <tspan x="552.9" y="145">适合5～7岁学员</tspan>
-        </text>
-        <path fill="#FC384C" d="M111 121h332v36H111z"/>
-        <text fill="#FFF" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold">
-            <tspan x="219.4" y="145">适合2～5岁学员</tspan>
-        </text>
-        <path fill="#FC384C" d="M0 121h110v36H0z"/>
-        <text fill="#FFF" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold">
-            <tspan x="23" y="145">年龄阶段</tspan>
-        </text>
-        <path fill="#D8E9EF" d="M111 498h887v1H111zM111 339h887v1H111zM111 539h887v1H111z"/>
-        <text fill="#002E6D" font-family="PlutoSansRegular, Pluto Sans" font-size="16">
-            <tspan x="124.228" y="204">Discover 1</tspan>
-        </text>
-        <text fill="#002E6D" font-family="PlutoSansRegular, Pluto Sans" font-size="16">
-            <tspan x="234.028" y="204">Discover 2</tspan>
-        </text>
-        <text fill="#002E6D" font-family="PlutoSansRegular, Pluto Sans" font-size="16">
-            <tspan x="345.076" y="204">Discover 3</tspan>
-        </text>
-        <path fill="#FFFBF7" d="M444 158h110v80H444zM555 158h110v80H555zM666 158h110v80H666z"/>
-        <path fill="#FFFBF7" d="M666 158h110v80H666z"/>
-        <text fill="#002E6D" font-family="PlutoSansRegular, Pluto Sans" font-size="16">
-            <tspan x="457.208" y="193">I Can Read</tspan> <tspan x="481.136" y="213">1 &amp; 2</tspan>
-        </text>
-        <text fill="#002E6D" font-family="PlutoSansRegular, Pluto Sans" font-size="16">
-            <tspan x="567.208" y="193">I Can Read</tspan> <tspan x="589.608" y="213">3 &amp; 4</tspan>
-        </text>
-        <text fill="#002E6D" font-family="PlutoSansRegular, Pluto Sans" font-size="16">
-            <tspan x="679.208" y="193">I Can Read</tspan> <tspan x="701.616" y="213">5 &amp; 6</tspan>
-        </text>
-        <path fill="#FFF" d="M777 158h110v80H777zM888 158h110v80H888z"/>
-        <path fill="#FFF" d="M888 158h110v80H888z"/>
-        <path fill="#FFFBF7" d="M444 499h110v40H444zM555 499h110v40H555zM666 499h110v40H666z"/>
-        <path fill="#FFFBF7" d="M666 499h110v40H666z"/>
-        <path fill="#FFF" d="M777 499h110v40H777zM888 499h110v40H888z"/>
-        <path fill="#FFF" d="M888 499h110v40H888z"/>
-        <path fill="#FFFBF7" d="M444 540h110v40H444zM555 540h110v40H555zM666 540h110v40H666z"/>
-        <path fill="#FFFBF7" d="M666 540h110v40H666z"/>
-        <path fill="#FFF" d="M777 540h110v40H777zM888 540h110v40H888z"/>
-        <path fill="#FFF" d="M888 540h110v40H888z"/>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="472.05" y="565">Movers</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="570.411" y="565">Flyers/KET</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="707.479" y="565">PET</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="818.101" y="565">FCE</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="928.146" y="565">CAE</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="491.093" y="524">A1</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="601.543" y="524">A2</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="712.684" y="524">B1</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="822.634" y="524">B2</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="934.516" y="524">C1</tspan>
-        </text>
-        <text fill="#002E6D" font-family="PlutoSansRegular, Pluto Sans" font-size="16">
-            <tspan x="801.328" y="193">English</tspan> <tspan x="813.136" y="213">1 &amp; 2</tspan>
-        </text>
-        <text fill="#002E6D" font-family="PlutoSansRegular, Pluto Sans" font-size="16">
-            <tspan x="913.328" y="193">English</tspan> <tspan x="923.608" y="213">3 &amp; 4</tspan>
-        </text>
-        <path fill="#FFF9FA" d="M111 499h332v40H111zM111 540h332v40H111z"/>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="247" y="565">Starters</tspan>
-        </text>
-        <text fill="#000" font-family="PlutoSansRegular, Pluto Sans" font-size="14">
-            <tspan x="232" y="524">Leading to A1</tspan>
-        </text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="998px" height="580px" viewBox="0 0 998 580" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>course_img</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标切图" transform="translate(-1070.000000, -98.000000)">
+            <g id="course_img" transform="translate(1070.000000, 98.000000)">
+                <rect id="Rectangle-10-Copy-9" fill="#E8614A" x="0" y="239" width="110" height="100"></rect>
+                <rect id="Rectangle-10-Copy-10" fill="#E8614A" x="0" y="499" width="110" height="40"></rect>
+                <text id="CEFR-欧洲标准" font-family="PlutoSansMedium, Pluto Sans" font-size="12" font-weight="400" fill="#FFFFFF">
+                    <tspan x="11.53" y="522"> CEFR </tspan>
+                    <tspan x="50.47" y="522" font-family="PingFang-SC-Medium, PingFang SC">欧洲标准</tspan>
+                    <tspan x="98.47" y="522"> </tspan>
+                </text>
+                <rect id="Rectangle-10-Copy-23" fill="#E8614A" x="0" y="540" width="110" height="40"></rect>
+                <text id="Cambridge-剑桥" font-family="PlutoSansMedium, Pluto Sans" font-size="12" font-weight="400" fill="#FFFFFF">
+                    <tspan x="7.644" y="563">Cambridge </tspan>
+                    <tspan x="79.356" y="563" font-family="PingFang-SC-Medium, PingFang SC">剑桥</tspan>
+                </text>
+                <rect id="Rectangle-10-Copy-22" fill="#E8614A" x="0" y="340" width="110" height="158"></rect>
+                <text id="目标达成" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="39" y="414">目标</tspan>
+                    <tspan x="39" y="436">达成</tspan>
+                </text>
+                <text id="课程大纲" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="39" y="284">课程</tspan>
+                    <tspan x="39" y="306">大纲</tspan>
+                </text>
+                <rect id="Rectangle-10-Copy-24" fill="#E8614A" x="0" y="158" width="110" height="80"></rect>
+                <text id="课程级别" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="39" y="193">课程</tspan>
+                    <tspan x="39" y="215">级别</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-15" fill="#F5941F" x="111" y="239" width="110" height="260"></rect>
+                <text id="听力训练-口语交流-词汇积累" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="1.71428573" fill="#FFFFFF">
+                    <tspan x="139.071429" y="272">听力训练</tspan>
+                    <tspan x="139.071429" y="293">口语交流</tspan>
+                    <tspan x="139.071429" y="314">词汇积累</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-14" fill="#F5941F" x="222" y="239" width="110" height="260"></rect>
+                <text id="自我表达-对话沟通-音素意识" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="1.71428573" fill="#FFFFFF">
+                    <tspan x="250.071429" y="272">自我表达</tspan>
+                    <tspan x="250.071429" y="293">对话沟通</tspan>
+                    <tspan x="250.071429" y="314">音素意识</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-13" fill="#F5941F" x="333" y="239" width="110" height="260"></rect>
+                <rect id="Rectangle-11-Copy-18" fill="#F5941F" x="111" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-17" fill="#F5941F" x="222" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-16" fill="#FFF9FA" x="333" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-19" fill="#F5941F" x="333" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11" fill="#FFFFFF" x="111" y="340" width="332" height="158"></rect>
+                <text id="‧-参与故事表演、看图说话-‧-运用特定" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#002E6D">
+                    <tspan x="182" y="381">‧  参与故事表演、看图说话</tspan>
+                    <tspan x="182" y="398">‧  运用特定教学资源扩充词汇量 </tspan>
+                    <tspan x="182" y="415">‧  使用语法正确的语句会话 </tspan>
+                    <tspan x="182" y="432">‧  辨别单词的首音、中位音及尾音</tspan>
+                    <tspan x="182" y="449">‧  口头实操，混合及分解单词的音素</tspan>
+                    <tspan x="182" y="466">‧  理解音素/字母的关系  </tspan>
+                </text>
+                <text id="听辨独立音素-混合、分解音素-舞台表演" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="1.71428573" fill="#FFFFFF">
+                    <tspan x="347.357143" y="272">听辨独立音素</tspan>
+                    <tspan x="340.5" y="293">混合、分解音素</tspan>
+                    <tspan x="361.071429" y="314">舞台表演</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-12" fill="#20346A" x="444" y="239" width="110" height="260"></rect>
+                <text id="识别单词音素-解码故事书-深度理解阅读" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="1.71428573" fill="#FFFFFF">
+                    <tspan x="458.357143" y="272">识别单词音素</tspan>
+                    <tspan x="465.214286" y="293">解码故事书</tspan>
+                    <tspan x="458.357143" y="314">深度理解阅读</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-11" fill="#ED354C" x="555" y="239" width="110" height="260"></rect>
+                <text id="阅读小说-口试答题-练习写作" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="1.71428573" fill="#FFFFFF">
+                    <tspan x="583.071429" y="272">阅读小说</tspan>
+                    <tspan x="583.071429" y="293">口试答题</tspan>
+                    <tspan x="583.071429" y="314">练习写作</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-10" fill="#3AB549" x="666" y="239" width="110" height="260"></rect>
+                <text id="图卡游戏-词汇句式累计-会话交流" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="1.71428573" fill="#FFFFFF">
+                    <tspan x="694.071429" y="272">图卡游戏</tspan>
+                    <tspan x="680.357143" y="293">词汇句式累计</tspan>
+                    <tspan x="694.071429" y="314">会话交流</tspan>
+                </text>
+                <rect id="Rectangle-11" fill="#FFFFFF" x="444" y="340" width="332" height="158"></rect>
+                <text id="‧-不使用变音标记与音素分读签独立阅读并" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#002E6D">
+                    <tspan x="474" y="367">‧  不使用变音标记与音素分读签独立阅读并解码新的</tspan>
+                    <tspan x="474" y="386">   和熟悉的单词 </tspan>
+                    <tspan x="474" y="405">‧  通过有节奏和表达的方式阅读 </tspan>
+                    <tspan x="474" y="424">‧  使用语法正确的语句回答阅读理解问题</tspan>
+                    <tspan x="474" y="443">‧  利用ICR拼写清单扩大词汇量 </tspan>
+                    <tspan x="474" y="462">‧  理解语句的组成结构</tspan>
+                    <tspan x="474" y="481">‧  撰写简单的语句</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-9" fill="#1692B2" x="777" y="239" width="110" height="260"></rect>
+                <text id="作文策划-创意写作-阅读儿童文学" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="1.71428573" fill="#FFFFFF">
+                    <tspan x="805.071429" y="272">作文策划</tspan>
+                    <tspan x="805.071429" y="293">创意写作</tspan>
+                    <tspan x="791.357143" y="314">阅读儿童文学</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-8" fill="#722671" x="888" y="239" width="110" height="260"></rect>
+                <text id="课程知识学习-使用技巧阅读-提升应试技巧" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="1.71428573" fill="#FFFFFF">
+                    <tspan x="902.357143" y="272">课程知识学习</tspan>
+                    <tspan x="902.357143" y="293">使用技巧阅读</tspan>
+                    <tspan x="902.357143" y="314">提升应试技巧</tspan>
+                </text>
+                <rect id="Rectangle-11" fill="#FFFFFF" x="777" y="340" width="221" height="158"></rect>
+                <text id="‧-明确学习目标-‧-学会运用主要应试技" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" fill="#002E6D">
+                    <tspan x="797" y="376">‧  明确学习目标</tspan>
+                    <tspan x="797" y="395">‧  学会运用主要应试技巧 </tspan>
+                    <tspan x="797" y="414">‧  以下领域的关键元素</tspan>
+                    <tspan x="797" y="433">‧  培养学生表达自己想法的能力 </tspan>
+                    <tspan x="797" y="452">‧  培养学生从书籍、报纸、文章和</tspan>
+                    <tspan x="797" y="471">   杂志中收集信息的能力 </tspan>
+                </text>
+                <path d="M30,50 L80,50 C96.5685425,50 110,63.4314575 110,80 L110,120 L0,120 L-3.55271368e-15,80 C-5.58177493e-15,63.4314575 13.4314575,50 30,50 Z" id="Rectangle-10-Copy-17" fill="#E8614A"></path>
+                <text id="Stage" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400" fill="#FFFFFF">
+                    <tspan x="31.46" y="90">Stage</tspan>
+                </text>
+                <path d="M141,50 L413,50 C429.568542,50 443,63.4314575 443,80 L443,120 L111,120 L111,80 C111,63.4314575 124.431458,50 141,50 Z" id="Rectangle-10-Copy-16" fill="#F5941F"></path>
+                <text id="Level-1" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400" fill="#FFFFFF">
+                    <tspan x="249.26" y="90">Level 1</tspan>
+                </text>
+                <path d="M474,40 L524,40 C540.568542,40 554,53.4314575 554,70 L554,120 L444,120 L444,70 C444,53.4314575 457.431458,40 474,40 Z" id="Rectangle-10-Copy-21" fill="#20346A"></path>
+                <text id="Level-2" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400" fill="#FFFFFF">
+                    <tspan x="470.108" y="85">Level 2</tspan>
+                </text>
+                <path d="M585,30 L635,30 C651.568542,30 665,43.4314575 665,60 L665,120 L555,120 L555,60 C555,43.4314575 568.431458,30 585,30 Z" id="Rectangle-10-Copy-14" fill="#ED354C"></path>
+                <text id="Level-3" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400" fill="#FFFFFF">
+                    <tspan x="581.26" y="80">Level 3</tspan>
+                </text>
+                <path d="M696,20 L746,20 C762.568542,20 776,33.4314575 776,50 L776,120 L666,120 L666,50 C666,33.4314575 679.431458,20 696,20 Z" id="Rectangle-10-Copy-13" fill="#3AB549"></path>
+                <text id="Level-4" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400" fill="#FFFFFF">
+                    <tspan x="691.36" y="75">Level 4</tspan>
+                </text>
+                <path d="M807,10 L857,10 C873.568542,10 887,23.4314575 887,40 L887,120 L777,120 L777,40 C777,23.4314575 790.431458,10 807,10 Z" id="Rectangle-10-Copy-20" fill="#1692B2"></path>
+                <text id="Level-5" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400" fill="#FFFFFF">
+                    <tspan x="803.284" y="70">Level 5</tspan>
+                </text>
+                <path d="M918,0 L968,0 C984.568542,-3.04359188e-15 998,13.4314575 998,30 L998,120 L888,120 L888,30 C888,13.4314575 901.431458,3.04359188e-15 918,0 Z" id="Rectangle-10-Copy-19" fill="#722671"></path>
+                <text id="Level-6" font-family="PlutoSansMedium, Pluto Sans" font-size="16" font-weight="400" fill="#FFFFFF">
+                    <tspan x="913.288" y="65">Level 6</tspan>
+                </text>
+                <rect id="Rectangle-44" fill="#FFFFFF" x="777" y="121" width="221" height="36"></rect>
+                <text id="适合8～14岁学员" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold" fill="#002E6D">
+                    <tspan x="825.1" y="145">适合8～14岁学员</tspan>
+                </text>
+                <rect id="Rectangle-44-Copy" fill="#FFFFFF" x="444" y="121" width="332" height="36"></rect>
+                <text id="适合5～10岁学员" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold" fill="#002E6D">
+                    <tspan x="548.1" y="145">适合5～10岁学员</tspan>
+                </text>
+                <rect id="Rectangle-44-Copy-2" fill="#FFFFFF" x="111" y="121" width="332" height="36"></rect>
+                <text id="适合2.5～7岁学员" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold" fill="#002E6D">
+                    <tspan x="212.424" y="145">适合2.5～7岁学员</tspan>
+                </text>
+                <rect id="Rectangle-44-Copy-3" fill="#E8614A" x="0" y="121" width="110" height="36"></rect>
+                <text id="年龄阶段" font-family="PingFang-SC-Bold, PingFang SC" font-size="16" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="23" y="145">年龄阶段</tspan>
+                </text>
+                <rect id="Rectangle-12" fill="#D8E9EF" x="111" y="498" width="887" height="1"></rect>
+                <rect id="Rectangle-12-Copy-2" fill="#D8E9EF" x="111" y="339" width="887" height="1"></rect>
+                <rect id="Rectangle-12-Copy" fill="#D8E9EF" x="111" y="539" width="887" height="1"></rect>
+                <text id="ICR-Discover-1" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="115.575" y="204">ICR Discover 1</tspan>
+                </text>
+                <text id="ICR-Discover-2" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="225.525" y="204">ICR Discover 2</tspan>
+                </text>
+                <text id="ICR-Discover-3" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="336.567" y="204">ICR Discover 3</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-23" fill="#20346A" x="444" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-22" fill="#ED354C" x="555" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-21" fill="#FFFBF7" x="666" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-20" fill="#3AB549" x="666" y="158" width="110" height="80"></rect>
+                <text id="ICR-1-&amp;-2" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="469.557" y="203">ICR 1 &amp; 2</tspan>
+                </text>
+                <text id="ICR-3-&amp;-4" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="578.72" y="203">ICR 3 &amp; 4</tspan>
+                </text>
+                <text id="ICR-5-&amp;-6" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="690.727" y="203">ICR 5 &amp; 6</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-26" fill="#1692B2" x="777" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-25" fill="#FFFFFF" x="888" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-24" fill="#722671" x="888" y="158" width="110" height="80"></rect>
+                <rect id="Rectangle-11-Copy-33" fill="#20346A" x="444" y="499" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-32" fill="#ED354C" x="555" y="499" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-31" fill="#FFFBF7" x="666" y="499" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-30" fill="#3AB549" x="666" y="499" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-29" fill="#1692B2" x="777" y="499" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-28" fill="#FFFFFF" x="888" y="499" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-27" fill="#722671" x="888" y="499" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-40" fill="#20346A" x="444" y="540" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-39" fill="#ED354C" x="555" y="540" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-38" fill="#FFFBF7" x="666" y="540" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-37" fill="#3AB549" x="666" y="540" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-36" fill="#1692B2" x="777" y="540" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-35" fill="#FFFFFF" x="888" y="540" width="110" height="40"></rect>
+                <rect id="Rectangle-11-Copy-34" fill="#722671" x="888" y="540" width="110" height="40"></rect>
+                <text id="Movers" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="472.05" y="565">Movers</tspan>
+                </text>
+                <text id="Flyers/KET" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="570.411" y="565">Flyers/KET</tspan>
+                </text>
+                <text id="PET" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="707.479" y="565">PET</tspan>
+                </text>
+                <text id="FCE" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="818.101" y="565">FCE</tspan>
+                </text>
+                <text id="CAE" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="928.146" y="565">CAE</tspan>
+                </text>
+                <text id="A1" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="491.093" y="524">A1</tspan>
+                </text>
+                <text id="A2" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="601.543" y="524">A2</tspan>
+                </text>
+                <text id="B1" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="712.684" y="524">B1</tspan>
+                </text>
+                <text id="B2" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="822.634" y="524">B2</tspan>
+                </text>
+                <text id="C1" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="934.516" y="524">C1</tspan>
+                </text>
+                <text id="ICR-Plus-1-&amp;-2" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="784.33" y="203">ICR Plus 1 &amp; 2</tspan>
+                </text>
+                <text id="ICR-Plus-3-&amp;-4" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="895.493" y="203">ICR Plus 3 &amp; 4</tspan>
+                </text>
+                <rect id="Rectangle-11-Copy-2" fill="#F5941F" x="111" y="499" width="332" height="40"></rect>
+                <rect id="Rectangle-11-Copy-3" fill="#F5941F" x="111" y="540" width="332" height="40"></rect>
+                <text id="Starters-Copy-3" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="247" y="565">Starters</tspan>
+                </text>
+                <text id="Leading-to-A1-Copy" font-family="PlutoSansRegular, Pluto Sans" font-size="14" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="232" y="524">Leading to A1</tspan>
+                </text>
+            </g>
+        </g>
     </g>
 </svg>
