@@ -595,7 +595,6 @@ footer{
     line-height: normal;
     letter-spacing: normal;
     position: relative;
-    bottom: 20px;
 }
 .course-more a{
     color: #fc384c;
@@ -1218,8 +1217,8 @@ option{
     width: 95%;
     height: 95%;
     left: 20px;
-    padding-left: 210px;
     position: absolute;
+    text-align-last: center;
 }
 .course-detail i{
     position: absolute;
