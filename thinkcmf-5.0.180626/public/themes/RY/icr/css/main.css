@@ -2125,7 +2125,7 @@ select::-ms-expand { display: none; }
     background-color: #000000;
     background-color: rgba(0, 0, 0, 0.4);
     color: #3d4d55;
-    z-index: 1000;
+    z-index: 999999999;
     display: none;
     position: fixed;
 }
