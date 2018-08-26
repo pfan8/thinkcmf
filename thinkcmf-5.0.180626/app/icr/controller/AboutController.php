@@ -14,6 +14,8 @@ class AboutController extends HomebaseController{
 
     // 首页
     public function index(){
+        $data = $this->request->param();
+        hook('switch_theme',$data);
         $head_controller = new HeadController();
         $head_controller->setHeaderActive("about");
         return $this->fetch(':about');

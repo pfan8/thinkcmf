@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>睿育国际英语</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=750){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <link href="/themes/icr_wap/icr/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+<body>
+<section id="layout">
+    <section class="page-wrapper">
+        <section id="left_menu">
+            <ul>
+                <a href="{:url('/icr/course')}"><li>课程内容</li></a>
+                <a href="{:url('/icr/teacher')}"><li>优质师资</li></a>
+                <a href="{:url('/icr/school')}"><li>校区风采</li></a>
+                <a href="{:url('/icr/recruit')}"><li>人才招聘</li></a>
+                <a href="{:url('/icr/join')}"><li>合作加盟</li></a>
+                <a href="{:url('/icr/about')}"><li class="li-last">关于我们</li></a>
+            </ul>
+        </section>
+        <section id="right_content">
+            <header id="header">
+                <div class="head-left" value="none">
+                    <a href="#"><img src="/themes/icr_wap/icr/imgs/menu-icon.svg" alt=""/></a>
+                </div>
+                <div class="head-title">当前位置：广州</div>
+                <div class="head-right" value="none">
+                    <a href="#"><img src="/themes/icr_wap/icr/imgs/location-icon.svg" alt=""/></a>
+                </div>
+            </header>
+            <div class="head_blank"></div>

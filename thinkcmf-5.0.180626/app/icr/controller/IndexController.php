@@ -18,9 +18,10 @@ class IndexController extends HomebaseController{
 
     // 首页
     public function index(){
+        $data = $this->request->param();
+        hook('switch_theme',$data);
         $head_controller = new HeadController();
         $head_controller->setHeaderActive('home');
-        $data = $this->request->param();
         if (!empty($data["login_user"])) {
             $head_controller->setLoginHtml($data["login_user"]);
         }

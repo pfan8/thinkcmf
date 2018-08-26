@@ -12,8 +12,10 @@ use cmf\controller\HomeBaseController;
 
 class UserAgreementController extends HomebaseController{
 
-    // Ê×Ò³
+    // ï¿½ï¿½Ò³
     public function index(){
+        $data = $this->request->param();
+        hook('switch_theme',$data);
         $head_controller = new HeadController();
         $head_controller->setHeaderActive("");
         return $this->fetch(':user_agreement');
