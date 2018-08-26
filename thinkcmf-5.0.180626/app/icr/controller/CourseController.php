@@ -31,7 +31,7 @@ class CourseController extends HomebaseController{
             $s_level = $param['s_level'];
             $s_category = $course_model->getCourseLevelByID($s_level)['category_id'];
         } else {
-            $s_level = 1;
+            $s_level = $course_model->getCourseLevelsByCategoryID($s_category)[0]['id'];
         }
         $level_class = $this->getSearchLevel($s_category);
         $course = $course_model->getCourseByLevel($s_level);
