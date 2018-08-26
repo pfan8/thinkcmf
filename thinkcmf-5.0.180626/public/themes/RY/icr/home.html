@@ -45,7 +45,7 @@
         </div>
         <div class="understand">
                 <div class="circle"><i class="fa fa-play"></i></div>
-                <a href="#"><div class="text">1分钟快速了解I CAN READ</div></a>
+                <a href="#" id="video"><div class="text">7分钟快速了解I CAN READ</div></a>
         </div>
     </div>
     <div class="item">
@@ -161,6 +161,11 @@
         </div>
     </div>
 </div>
+<div class="video">
+    <video src="" controls="controls">
+        您的浏览器不支持 video 标签。
+    </video>
+</div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s0x1Cj9VeZ6bVRI249olQM0V"></script>
 <script type="text/javascript">
     var popup_html="<div id='popup' class='popup'>" +
@@ -229,6 +234,11 @@
             $(this).addClass('active');
             mapini($(this).html());
         });
+        $("#video").click(function(){
+            $(".video video").attr('src',"/themes/RY/icr/video/7min.mp4");
+            $(".video").show();
+            $(".video video").trigger("play")
+        })
         $("#yy_submit").on('click',function(){
             var phone =$("#phone").val();
             if(!phone){
