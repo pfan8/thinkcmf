@@ -1,8 +1,17 @@
 /*
 主css
  */
+@font-face {
+    font-family: 'PingFangBold';
+    src: url('../font/PingFang Bold.eot');
+    src: local('PingFang Regular'),
+    local('PingFang'),
+    url('PingFang.woff') format('woff'),
+    url('PingFang.ttf') format('truetype'),
+    url('PingFang.svg#PingFang') format('svg');
+}
 html {
-    font-family: sans-serif;
+    font-family: PingFangRegular;
     font-size: 16px;
     color: #37474f;
     line-height: 1.15;
@@ -11,6 +20,7 @@ html {
     -ms-overflow-style: scrollbar;
     -webkit-tap-highlight-color: transparent;
 }
+
 body {
     margin: 0;
     font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -163,7 +173,7 @@ ul{
     margin:0 auto;
     overflow: hidden;
     position: relative;
-    margin-top:10px;
+    margin-top:-70px;
     z-index:2;
 }
 .main-img .img_list img{
@@ -573,6 +583,7 @@ footer{
     color: #002f6c;
     font-size:20px;
     margin-top: 10px;
+    text-align: center;
 }
 .h3 p{
     height: 28px;
