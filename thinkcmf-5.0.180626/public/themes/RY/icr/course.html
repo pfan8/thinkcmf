@@ -53,30 +53,12 @@
         </div>
         <div class="item">
             <div class="course-content">
-                <div class="content-item">
-                    <div class="img"><img src=<?=$course[0]['icon']?> /></div>
-                    <div class="title"><?=$course[0]['name']?></div>
-                </div>
-                <div class="content-item">
-                    <div class="img"><img src=<?=$course[1]['icon']?> /></div>
-                    <div class="title"><?=$course[1]['name']?></div>
-                </div>
-                <div class="content-item">
-                    <div class="img"><img src=<?=$course[2]['icon']?> /></div>
-                    <div class="title"><?=$course[2]['name']?></div>
-                </div>
-                <div class="content-item">
-                    <div class="img"><img src=<?=$course[3]['icon']?> /></div>
-                    <div class="title"><?=$course[3]['name']?></div>
-                </div>
-                <div class="content-item">
-                    <div class="img"><img src=<?=$course[4]['icon']?> /></div>
-                    <div class="title"><?=$course[4]['name']?></div>
-                </div>
-                <div class="content-item">
-                    <div class="img"><img src=<?=$course[5]['icon']?> /></div>
-                    <div class="title"><?=$course[5]['name']?></div>
-                </div>
+                <volist name="course" id="vo" length="6">
+                    <div class="content-item">
+                        <div class="img"><img src=<?=$vo['icon']?> /></div>
+                        <div class="title"><?=$vo['name']?></div>
+                    </div>
+                </volist>
                 <div class="clear"></div>
             </div>
         </div>
@@ -84,30 +66,12 @@
             <div class="target">
                 <h1>达成目标</h1>
                 <div class="target-content">
-                    <div class="target-item">
-                        <div class="circle">1</div>
-                        <div class="content"><?=$goal_array[0]?></div>
-                    </div>
-                    <div class="target-item">
-                        <div class="circle">2</div>
-                        <div class="content"><?=$goal_array[1]?></div>
-                    </div>
-                    <div class="target-item">
-                        <div class="circle">3</div>
-                        <div class="content"><?=$goal_array[2]?></div>
-                    </div>
-                    <div class="target-item">
-                        <div class="circle">4</div>
-                        <div class="content"><?=$goal_array[3]?></div>
-                    </div>
-                    <div class="target-item">
-                        <div class="circle">5</div>
-                        <div class="content"><?=$goal_array[4]?></div>
-                    </div>
-                    <div class="target-item">
-                        <div class="circle">6</div>
-                        <div class="content"><?=$goal_array[5]?></div>
-                    </div>
+                    <volist name="goal_array" id="vo" length="6">
+                        <div class="target-item">
+                            <div class="circle">{$i}</div>
+                            <div class="content">{$vo}</div>
+                        </div>
+                    </volist>
                 </div>
             </div>
         </div>
@@ -116,26 +80,13 @@
                 <h1>家长评语</h1>
                 <div class="h2">听一听小朋友的家长们都说了些什么</div>
                 <div class="radios">
-                    <div class="radios-item">
-                        <div class="img"><img src=<?=$feedback_video[0]['icon']?> /></div>
-                        <div class="title"><?=$feedback_video[0]['title']?></div>
-                        <div class="click" data-video="{$feedback_video[0]['content']}"><i class="fa fa-play-circle-o"></i></div>
-                    </div>
-                    <div class="radios-item">
-                        <div class="img"><img src="<?=$feedback_video[1]['icon']?>" /></div>
-                        <div class="title"><?=$feedback_video[1]['title']?></div>
-                        <div class="click" data-video="{$feedback_video[1]['content']}"><i class="fa fa-play-circle-o"></i></div>
-                    </div>
-                    <div class="radios-item">
-                        <div class="img"><img src="<?=$feedback_video[2]['icon']?>" /></div>
-                        <div class="title"><?=$feedback_video[2]['title']?></div>
-                       <div class="click" data-video="{$feedback_video[1]['content']}"><i class="fa fa-play-circle-o"></i></div>
-                    </div>
-                    <div class="radios-item">
-                        <div class="img"><img src="<?=$feedback_video[3]['icon']?>" /></div>
-                        <div class="title" ><?=$feedback_video[3]['title']?></div>
-                        <div class="click" data-video="{$feedback_video[1]['content']}"><i class="fa fa-play-circle-o"></i></div>
-                    </div>
+                    <volist name="feedback_video" id="vo" length="4">
+                        <div class="radios-item">
+                            <div class="img"><img src=<?=$vo['icon']?> /></div>
+                            <div class="title"><?=$vo['title']?></div>
+                            <div class="click" data-video="{$vo['content']}"><i class="fa fa-play-circle-o"></i></div>
+                        </div>    
+                    </volist>
                 </div>
             </div>
         </div>
@@ -143,36 +94,18 @@
             <div class="study">
                 <div class="h2">看一看小朋友们在I Can Read 都学到了些什么</div>
                 <div class="comment">
-                    <div class="comment-item">
-                        <div class="img"><img src="<?=$feedback_text[0]['icon']?>" /></div>
-                        <div class="title"><?=$feedback_text[0]['title']?></div>
-                        <div class="click">
-                            <div class="click-title"><?=$feedback_text[0]['title']?></div>
-                            <div class="click-content">
-                                <?=$feedback_text[0]['content']?>
+                    <volist name="feedback_text" id="vo" length="3">
+                        <div class="comment-item">
+                            <div class="img"><img src="<?=$vo['icon']?>" /></div>
+                            <div class="title"><?=$vo['title']?></div>
+                            <div class="click">
+                                <div class="click-title"><?=$vo['title']?></div>
+                                <div class="click-content">
+                                    <?=$vo['content']?>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="comment-item">
-                        <div class="img"><img src="<?=$feedback_text[1]['icon']?>" /></div>
-                        <div class="title"><?=$feedback_text[1]['title']?></div>
-                        <div class="click">
-                            <div class="click-title"><?=$feedback_text[1]['title']?></div>
-                            <div class="click-content">
-                                <?=$feedback_text[1]['content']?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment-item">
-                        <div class="img"><img src="<?=$feedback_text[2]['icon']?>" /></div>
-                        <div class="title"><?=$feedback_text[2]['title']?></div>
-                        <div class="click">
-                            <div class="click-title"><?=$feedback_text[2]['title']?></div>
-                            <div class="click-content">
-                                <?=$feedback_text[2]['content']?>
-                            </div>
-                        </div>
-                    </div>
+                        </div>    
+                    </volist>
                     <div class="clear"></div>
                 </div>
             </div>
