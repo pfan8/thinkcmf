@@ -20,15 +20,19 @@ class SchoolController extends HomebaseController{
         $head_controller = new HeadController();
         $head_controller->setHeaderActive("school");
         $school_model = new SchoolModel();
-        $school = $school_model->getSchoolList();
-        $this->complementSchool($school);
-        $school_picture_list = $school_model->getPictureList();
-        $this->complementPicture($school_picture_list);
+        $city = session('city');
+        if(!$city){
+            $city = "厦门";
+        }
+        $school = $school_model->getSchoolByCity($city);
+//        $this->complementSchool($school);
+        $school_picture_list = $school_model->getPictureListBySchoolID($school[0]['id']);
+//        $this->complementPicture($school_picture_list);
+//        $this->complementActivity($school_activity);
         $school_picture = $this->transformPictureList($school_picture_list);
-        $school_activity = $school_model->getActivityList();
+        $school_activity = $school_model->getActivityBySchoolID($school[0]['id']);
         $this->assign('school',$school);
         $this->assign('school_picture',$school_picture);
-        $this->complementActivity($school_activity);
         $this->assign('school_activity',$school_activity);
         return $this->fetch(':school');
     }
@@ -327,7 +331,7 @@ class SchoolController extends HomebaseController{
      * @param $picture_list
      * @return
      */
-    private function transformPictureList($picture_list)
+    public function transformPictureList($picture_list)
     {
         $picture = "";
         foreach ($picture_list as $item)

@@ -66,9 +66,9 @@ class CourseController extends HomebaseController{
                 $goal_array[] = "";
             }
         }
-        $this->complementCourse($course);
-        $this->complementFeedback($feedback_video);
-        $this->complementFeedback($feedback_text);
+//        $this->complementCourse($course);
+//        $this->complementFeedback($feedback_video);
+//        $this->complementFeedback($feedback_text);
         $this->assign('levels',$levels);
         $this->assign('level_class', $level_class);
         $this->assign('s_level',$s_level);
@@ -394,43 +394,43 @@ class CourseController extends HomebaseController{
         return $course_model->getBooksAfterTime($time);
     }
 
-    private function complementCourse(&$courses)
-    {
-        for ($i = 0; $i < count($courses); $i++) {
-            $course = $courses->shift();
-            if (empty($feedback['icon'])) {
-                $feedback['icon'] = '/themes/RY/icr/imgs/timg.jpg';
-            }
-            $courses->push($course);
-        }
-        while (count($courses) < 6) {
-            $course = [
-                'icon' => '/themes/RY/icr/imgs/timg.jpg',
-                'name' => '待添加',
-            ];
-            $courses->push($course);
-        }
-    }
-
-    private function complementFeedback(&$feedbacks)
-    {
-        for ($i = 0; $i < count($feedbacks); $i++) {
-            $feedback = $feedbacks->shift();
-            if (empty($feedback['icon'])) {
-                $feedback['icon'] = '/themes/RY/icr/imgs/timg.jpg';
-            }
-            $feedbacks->push($feedback);
-        }
-
-        while (count($feedbacks) < 4) {
-            $feedback = [
-                'icon' => '/themes/RY/icr/imgs/timg.jpg',
-                'title' => '待添加',
-                'content' => '待添加',
-            ];
-            $feedbacks->push($feedback);
-        }
-    }
+//    private function complementCourse(&$courses)
+//    {
+//        for ($i = 0; $i < count($courses); $i++) {
+//            $course = $courses->shift();
+//            if (empty($feedback['icon'])) {
+//                $feedback['icon'] = '/themes/RY/icr/imgs/timg.jpg';
+//            }
+//            $courses->push($course);
+//        }
+//        while (count($courses) < 6) {
+//            $course = [
+//                'icon' => '/themes/RY/icr/imgs/timg.jpg',
+//                'name' => '待添加',
+//            ];
+//            $courses->push($course);
+//        }
+//    }
+//
+//    private function complementFeedback(&$feedbacks)
+//    {
+//        for ($i = 0; $i < count($feedbacks); $i++) {
+//            $feedback = $feedbacks->shift();
+//            if (empty($feedback['icon'])) {
+//                $feedback['icon'] = '/themes/RY/icr/imgs/timg.jpg';
+//            }
+//            $feedbacks->push($feedback);
+//        }
+//
+//        while (count($feedbacks) < 4) {
+//            $feedback = [
+//                'icon' => '/themes/RY/icr/imgs/timg.jpg',
+//                'title' => '待添加',
+//                'content' => '待添加',
+//            ];
+//            $feedbacks->push($feedback);
+//        }
+//    }
 
     private function getCourseLimitFromPage($page)
     {

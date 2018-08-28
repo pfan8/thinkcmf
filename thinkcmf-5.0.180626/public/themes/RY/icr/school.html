@@ -10,16 +10,13 @@
             <div class="map-info">
                 <div class="map" id="map" style="width: 600px;height: 500px;"></div>
                 <div class="point">
-                    <div class="point-item">
-                        <div class="point-title"><?=$school[0]['name']?><i name="back" class="fa fa-chevron-up"></i></div>
-                        <div class="point-content"><i class="fa fa-map-marker"></i><?=$school[0]['location']?></div>
-                        <div class="point-button">免费预约试听<i class="fa fa-angle-double-right"></i></div>
-                    </div>
-                    <div class="point-item">
-                        <div class="point-title"><?=$school[1]['name']?><i name="back" class="fa fa-chevron-up"></i></div>
-                        <div class="point-content"><i class="fa fa-map-marker"></i><?=$school[1]['location']?></div>
-                        <div class="point-button">免费预约试听<i class="fa fa-angle-double-right"></i></div>
-                    </div>
+                    <volist name="school" id='vo' length="2">
+                        <div class="point-item">
+                            <div class="point-title"><?=$vo['name']?><i name="back" class="fa fa-chevron-up"></i></div>
+                            <div class="point-content"><i class="fa fa-map-marker"></i><?=$vo['location']?></div>
+                            <div class="point-button">免费预约试听<i class="fa fa-angle-double-right"></i></div>
+                        </div>
+                    </volist>
                 </div>
             </div>
         </div>
@@ -42,30 +39,12 @@
         <div class="study">
             <h1>文化活动</h1>
             <div class="comment">
-                <div class="comment-item">
-                    <div class="img"><img src="<?=$school_activity[0]['icon']?>" /></div>
-                    <div class="title"><?=$school_activity[0]['name']?></div>
-                </div>
-                <div class="comment-item">
-                    <div class="img"><img src="<?=$school_activity[1]['icon']?>" /></div>
-                    <div class="title"><?=$school_activity[1]['name']?></div>
-                </div>
-                <div class="comment-item">
-                    <div class="img"><img src="<?=$school_activity[2]['icon']?>" /></div>
-                    <div class="title"><?=$school_activity[2]['name']?></div>
-                </div>
-                <div class="comment-item">
-                    <div class="img"><img src="<?=$school_activity[3]['icon']?>" /></div>
-                    <div class="title"><?=$school_activity[3]['name']?></div>
-                </div>
-                <div class="comment-item">
-                    <div class="img"><img src="<?=$school_activity[4]['icon']?>" /></div>
-                    <div class="title"><?=$school_activity[4]['name']?></div>
-                </div>
-                <div class="comment-item">
-                    <div class="img"><img src="<?=$school_activity[5]['icon']?>" /></div>
-                    <div class="title"><?=$school_activity[5]['name']?></div>
-                </div>
+                <volist name="school_activity" id="vo" length="6">
+                    <div class="comment-item">
+                        <div class="img"><img src="<?=$vo['icon']?>" /></div>
+                        <div class="title"><?=$vo['name']?></div>
+                    </div>
+                </volist>
                 <div class="clear"></div>
             </div>
         </div>
