@@ -25,7 +25,7 @@ class TeacherController extends HomebaseController{
         $limit = $this->getTeacherLimitFromPage($page);
         $count = $teacher_model->getTeacherCount();
         $teacher = $teacher_model->getTeacherList($limit);
-        //$this->complementTeacher($teacher);
+//        $this->complementTeacher($teacher);
         $this->assign('count',$count);
         $this->assign('page',$page);
         $this->assign('teacher', $teacher);
@@ -198,37 +198,36 @@ class TeacherController extends HomebaseController{
     private function complementTeacher(&$teachers)
     {
         for ($i = 0; $i < count($teachers); $i++) {
-            $teacher = $teachers->shift();
-            if (empty($teacher['icon'])) {
-                $teacher['icon'] = '/themes/RY/icr/imgs/timg.jpg';
-            }
+            $teacher = $teachers[$i];
+//            if (empty($teacher['icon'])) {
+//                $teacher['icon'] = '/themes/RY/icr/imgs/timg.jpg';
+//            }
             $this->transformToHtml($teacher);
-            $teachers->push($teacher);
         }
-        while (count($teachers) < 9) {
-            $teacher = [
-                'icon' => '/themes/RY/icr/imgs/timg.jpg',
-                'name' => '待添加',
-                'resume' => '待添加',
-                'position' => '待添加',
-                'idea' => '待添加',
-            ];
-            $this->transformToHtml($teacher);
-            $teachers->push($teacher);
-        }
+//        while (count($teachers) < 9) {
+//            $teacher = [
+//                'icon' => '/themes/RY/icr/imgs/timg.jpg',
+//                'name' => '待添加',
+//                'resume' => '待添加',
+//                'position' => '待添加',
+//                'idea' => '待添加',
+//            ];
+//            $this->transformToHtml($teacher);
+//            $teachers->push($teacher);
+//        }
     }
 
     private function transformToHtml(&$teacher)
     {
-        $teacher['position'] = "——" . $teacher['position'];
-//        $resume_array = explode('\n',$teacher['resume']);
-//        $resume = "";
-//        for($i = 0; $i < count($resume_array);$i++)
-//        {
-//            $resume = $resume . $resume_array[$i] + "<br/>";
-//        }
+//        $teacher['position'] = "——" . $teacher['position'];
+        $resume_array = explode("\r\n",$teacher['resume']);
+        $resume = "";
+        for($i = 0; $i < count($resume_array);$i++)
+        {
+            $resume .= $resume_array[$i] + "<br/>";
+        }
 //        echo $resume;
-//        $teacher['resume'] = $resume;
+        $teacher['resume'] = $resume;
     }
 
     private function getTeacherLimitFromPage($page)

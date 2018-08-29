@@ -14,7 +14,7 @@
                         <div class="point-item">
                             <div class="point-title"><?=$vo['name']?><i name="back" class="fa fa-chevron-up"></i></div>
                             <div class="point-content"><i class="fa fa-map-marker"></i><?=$vo['location']?></div>
-                            <div class="point-button">免费预约试听<i class="fa fa-angle-double-right"></i></div>
+                            <div class="point-button" name="yy">免费预约试听<i class="fa fa-angle-double-right"></i></div>
                         </div>
                     </volist>
                 </div>
@@ -51,6 +51,30 @@
     </div>
 </div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s0x1Cj9VeZ6bVRI249olQM0V"></script>
+<script type="text/javascript">
+    var popup_html="<div id='popup' class='popup'>" +
+        "<div class='wd'>" +
+        "<div class='wd-title'>免费预约试听</div>" +
+        "<div class='wd-title2'>思明中心：厦门市思明区莲前西路2号莲富大厦3H</div>" +
+        "<form>" +
+        "<div class='input-text'>" +
+        "<div class='course-level'>" +
+        "<select>" +
+        "<option  hidden selected>预约试听课程级别</option>" +
+        "<option>{$category_list[0]['name']}课程适合2.5～7岁</option>" +
+        "<option>{$category_list[1]['name']}课程适合5～10岁</option>" +
+        "<option>{$category_list[2]['name']}课程适合8～14岁</option>" +
+        "</select>" +
+        "<i class='fa fa-caret-down fa-2x'></i></div>"+
+        "<input type='text' placeholder='输入手机号预约课程试听' />" +
+        "<input type='submit' value='确认预约试听'>" +
+        "</div>" +
+        "</form>" +
+        "<div class='cease'>&times;</div>" +
+        "</div>" +
+        "</div>";
+    $("[name='yy']").click(popup);
+</script>
 <script type="text/javascript">
     // 百度地图API功能
     var map = new BMap.Map("map");

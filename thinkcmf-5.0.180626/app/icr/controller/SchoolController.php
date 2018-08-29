@@ -8,6 +8,7 @@
  */
 namespace app\icr\controller;
 
+use app\icr\model\CourseModel;
 use app\icr\model\SchoolModel;
 use cmf\controller\HomeBaseController;
 
@@ -20,6 +21,8 @@ class SchoolController extends HomebaseController{
         $head_controller = new HeadController();
         $head_controller->setHeaderActive("school");
         $school_model = new SchoolModel();
+        $course_model = new CourseModel();
+        $category_list = $course_model->getCategoryList();
         $city = session('city');
         if(!$city){
             $city = "厦门";
@@ -32,6 +35,7 @@ class SchoolController extends HomebaseController{
         $school_picture = $this->transformPictureList($school_picture_list);
         $school_activity = $school_model->getActivityBySchoolID($school[0]['id']);
         $this->assign('school',$school);
+        $this->assign('category_list',$category_list);
         $this->assign('school_picture',$school_picture);
         $this->assign('school_activity',$school_activity);
         return $this->fetch(':school');
