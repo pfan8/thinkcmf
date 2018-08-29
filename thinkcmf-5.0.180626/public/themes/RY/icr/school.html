@@ -52,6 +52,7 @@
 </div>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s0x1Cj9VeZ6bVRI249olQM0V"></script>
 <script type="text/javascript">
+<<<<<<< HEAD
     var popup_html="<div id='popup' class='popup'>" +
         "<div class='wd'>" +
         "<div class='wd-title'>免费预约试听</div>" +
@@ -94,7 +95,43 @@
     for (var i = 0; i < 25; i ++) {
         var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));
         addMarker(point);
+=======
+    function mapini(city){
+        //获取校区列表
+        var school_list = null;
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+        function editInfo(data){
+            var html =" <div class=\"info-item\">\n" +
+                "                                <div class=\"name\">"+data['name']+"</div>\n" +
+                "                                <div class=\"info-position\">\n" +
+                "                                    <i class=\"fa fa-map-marker\"></i>\n" +
+                "                                    <div>"+data['location']+"</div>\n" +
+                "                                </div>\n" +
+                "                                <div class=\"clear\"></div>\n" +
+                "                                <div class=\"info-submit\" name=\"yy\">免费预约试听</div>\n" +
+                "                            </div>";
+            $(".info").append(html);
+            $("[name='yy']").click(popup);
+        }
+        var map = new BMap.Map("map");
+        $.get("{:url('index/getSchoolList')}?city="+city,function(e){
+            $(".info").html('');
+            for(var i=0;i<e.data.length;i++){
+                if(e.data[i]['coordinate']){
+                    var pint = e.data[i]['coordinate'].split(',');
+                    var point = new BMap.Point(pint[0],pint[1]);
+                    addMarker(point)
+                }
+                editInfo(e.data[i]);
+            }
+            map.centerAndZoom(point, 15);
+        });
+>>>>>>> e1463c3d752df674bbea483787af5bc0f9e80ab4
     }
+    mapini('厦门');
 </script>
 <include file="../public/themes/RY/icr/foot.html" />
 <!--#include virtual="./foot.html" -->

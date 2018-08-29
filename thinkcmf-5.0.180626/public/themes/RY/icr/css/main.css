@@ -2,16 +2,15 @@
 主css
  */
 @font-face {
-    font-family: 'PingFangBold';
-    src: url('../font/PingFang Bold.eot');
+    font-family: 'PingFang';
+    src: url('../font/PingFang Medium.eot');
     src: local('PingFang Regular'),
     local('PingFang'),
-    url('PingFang.woff') format('woff'),
-    url('PingFang.ttf') format('truetype'),
-    url('PingFang.svg#PingFang') format('svg');
+    url('../font/PingFang Medium.woff') format('woff'),
+    url('../font/PingFang Medium.ttf') format('truetype'),
+    url('../font/PingFang Medium.svg#PingFang') format('svg');
 }
 html {
-    font-family: PingFangRegular;
     font-size: 16px;
     color: #37474f;
     line-height: 1.15;
@@ -23,7 +22,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: PingFang;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -86,6 +85,7 @@ ul{
     position: relative;
     left: 60px;
     float: left;
+    display: flex;
 }
 .position{
     font-size: 18px;
@@ -393,7 +393,7 @@ footer{
     font-size: 14px;
 }
 .footer-info{
-    width: 650px;
+    width: 700px;
     margin: 0 auto;
 }
 .footer-info div{
@@ -2011,10 +2011,11 @@ select::-ms-expand { display: none; }
 .hover-img{
     width: 348px;
     height: 438px;
-    position: fixed;
-    top: 200px;
-    right: 400px;
+    top: 0;
+    left: 200px;
     display: none;
+    position: absolute;
+    z-index:9999;
 }
 .hover-img img{
     width: 348px;
@@ -2022,6 +2023,7 @@ select::-ms-expand { display: none; }
 }
 .img-hover{
     display: inline;
+    position: relative;
 }
 .img-hover:hover .hover-img{
     display: block;
