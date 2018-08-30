@@ -31,7 +31,7 @@ html {
 
 body {
     margin: 0;
-    font-family: PingFang;
+    font-family: PingFang !important;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -863,6 +863,14 @@ footer{
     margin:0 auto;
     margin-top: 54px;
     height:1190px;
+}
+.teachers h1{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #3d4d55;
+    font-family: PingFang !important;
 }
 .headteacher{
     height:330px;
@@ -1702,14 +1710,12 @@ margin: 0 auto;
     cursor:hand;
 }
 .wd-title2{
+    width:400px;
+    margin: 0 auto;
     margin-top: 20px;
-    width:100%;
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
 }
 
 .input-text input{
@@ -1739,7 +1745,7 @@ margin: 0 auto;
     width:400px;
     margin: 0 auto;
     margin-top: 25px;
-
+    position: relative;
 }
 .course-level select{
     width:95%;
@@ -1757,8 +1763,8 @@ text-align-last: center;
 }
 .course-level i{
     position: absolute;
-    top: 165px;
-    right: 70px;
+    top: 5px;
+    right: 10px;
 }
 .input-text input[type='submit']{
     border-radius: 8px;
