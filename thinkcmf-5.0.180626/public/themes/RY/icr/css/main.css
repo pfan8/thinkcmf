@@ -902,15 +902,26 @@ footer{
 }
 .information .content{
     font-size:18px;
+<<<<<<< HEAD
+    height: 130px;
+    margin-top: 20px;
+=======
     height: 90px;
     weight: 900px;
+>>>>>>> 779c3d22ece264b825c5f8ff5ec2f9a956c028dc
     font-weight: 500;
-    /*overflow: hidden;*/
+    overflow: hidden;
     text-overflow:ellipsis;
+<<<<<<< HEAD
+    white-space: pre-line;
+=======
+>>>>>>> 779c3d22ece264b825c5f8ff5ec2f9a956c028dc
 }
 .idea{
+    height: 20px;
     font-weight:600;
     margin-top:60px;
+    overflow: hidden;
 }
 .teacher-list{
     width:1020px;
