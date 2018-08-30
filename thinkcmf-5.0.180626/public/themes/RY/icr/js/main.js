@@ -12,8 +12,21 @@ var techthers="                <div class=\"headteacher\">\n" +
     "                        <div class=\"idea\"></div>\n" +
     "                    </div>\n" +
     "                    <div class=\"clear\"></div>\n" +
-    "                </div>"
-
+    "                </div>";
+function itf(obj){
+    var html = $(obj).parent(".teacher-row").html();
+    $(obj).parent(".teacher-row").html(techthers);
+    $(".headteacher").data('html',html);
+    $(".headteacher").find(".teacher-avatar img")[0].src =$(obj).find('img').attr('src');
+    $(".headteacher").css('visibility','visible');
+    var info = $(obj).find(".info");
+    $(".information").find(".name").html(info.find(".name").html());
+    $(".information").find(".content").html(info.data("content"));
+    $(".information").find(".idea").html(info.data('idea'));
+    $(".headteacher").mouseleave(function(){
+        $(this).parent(".teacher-row").html($(this).data('html'))
+    })
+}
 var popup=function(){
     var id  = 'popup';
     if(!$('#'+id).html()){
@@ -86,7 +99,7 @@ $(function(){
 
     })
     $(".img-left").mousedown(function(){
-        var list = $(this).parents('.img-gd').find('.img-list');
+        var list = $(this).parent().find('.img-list');
         var padding = list.css('marginLeft');
         clearTimeout(timeoutId);
         timeoutId = window.setInterval(function(){
@@ -97,12 +110,13 @@ $(function(){
         },1)
     });
     $(".img-right").mousedown(function(){
-        var list = $(this).parents('.img-gd').find('.img-list');
+        var list = $(this).parent().find('.img-list');
+        var max = $(this).parent().width();
         var padding = list.css('marginLeft');
         clearTimeout(timeoutId);
         timeoutId = window.setInterval(function(){
             var newpadding = parseInt(list.css('marginLeft').replace('px',''))-1;
-            if(-newpadding<=(list.width()-1440)){
+            if(-newpadding<=(list.width()-max)){
                 list.css('marginLeft',newpadding+'px')
             }
         },1)
@@ -185,22 +199,7 @@ $(function(){
             xgdiv(page_index);
         })
     }
-    var itf = function(){
-        var html = $(this).parent(".teacher-row").html();
-        $(this).parent(".teacher-row").html(techthers);
-        $(".headteacher").data('html',html);
-        $(".headteacher").find(".teacher-avatar img")[0].src =$(this).find('img').attr('src');
-        $(".headteacher").css('visibility','visible');
-        var info = $(this).find(".info");
-        $(".information").find(".name").html(info.find(".name").html());
-        $(".information").find(".content").html(info.data("content"));
-        $(".information").find(".idea").html(info.data('idea'));
-        $(".headteacher").mouseleave(function(){
-            $(this).parent(".teacher-row").html($(this).data('html'))
-            $(".teacher-item").mouseover(itf);
-        })
-    }
-    $(".teacher-item").mouseover(itf)
+
     $(".video").click(function(){
         $(this).hide();
         $(".video video").trigger("pause")
