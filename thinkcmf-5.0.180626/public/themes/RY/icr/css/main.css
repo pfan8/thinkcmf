@@ -828,19 +828,11 @@ footer{
 }
 .info-position{
     margin-top: 20px;
+    height: 50px;
 }
 .info-position i{
-    display: block;
-    float: left;
     font-size: 20px;
-    height:50px;
     color: #ff9933;
-}
-.info-position div{
-   float: left;
-    margin-left: 20px;
-    font-size: 18px;
-
 }
 .info-submit{
     width: 200px;
@@ -899,7 +891,6 @@ footer{
     font-weight: 500;
     /*overflow: hidden;*/
     text-overflow:ellipsis;
-    white-space: nowrap;
 }
 .idea{
     font-weight:600;
