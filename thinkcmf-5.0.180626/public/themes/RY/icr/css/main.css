@@ -1005,6 +1005,8 @@ option{
     text-align: center;
     color: #37474f;
     font-size:48px;
+    margin-top: 50px;
+    margin-bottom: 40px;
 }
 .recruit-item{
     height: 400px;
