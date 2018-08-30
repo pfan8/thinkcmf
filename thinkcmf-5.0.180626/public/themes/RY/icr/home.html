@@ -39,13 +39,13 @@
         </div>
         <div class="count">
             <div><img src="/themes/RY/icr/imgs/20.svg" /><span>培训超过25万优秀学员</span></div>
-            <div class="img-hover"><img src="/themes/RY/icr/imgs/9.svg" /><div class="hover-img"><img src="/themes/RY/icr/imgs/mmexport.svg"/></div><span>当前品牌覆盖9个国家</span></div>
+            <div class="img-hover"><img src="/themes/RY/icr/imgs/9.svg" /><div class="hover-img"><img src="/themes/RY/icr/imgs/mmexport.svg"/></div><span>当前品牌覆盖10个国家</span></div>
             <div><img src="/themes/RY/icr/imgs/140.svg" /><span>拥有140多间培训中心</span></div>
             <div><img src="/themes/RY/icr/imgs/18.svg" /><span>研究专注英语教育18年</span></div>
         </div>
         <div class="understand">
                 <div class="circle"><i class="fa fa-play"></i></div>
-                <a href="#" id="video"><div class="text">7分钟快速了解I CAN READ</div></a>
+                <a href="#" id="video"><div class="text">7分钟快速了解&nbsp;<span style="font-family:PlutoSans ">I CAN READ</div></a>
         </div>
     </div>
     <div class="item">
@@ -75,28 +75,19 @@
             <h1>我们的专业优势</h1>
             <div class="adv-item">
                 <div class="adv-item-img"><img src="/themes/RY/icr/imgs/adv-1-img.svg"></div>
-                <div class="adv-item-p">ICR教育系统通过<br/>
-                    资深教育心理学专家<br/>
-                    研究长达15年
-                </div>
+                <div class="adv-item-p">ICR教育系统通过<br/>资深教育心理学专家<br/>研究长达15年</div>
             </div>
             <div class="adv-item">
                 <div class="adv-item-img"><img src="/themes/RY/icr/imgs/adv-2-img.svg"></div>
-                <div class="adv-item-p">我们的教材从
-                    语言学、文学、心理学
-                    多方便精心设计
-                </div>
+                <div class="adv-item-p">我们的教材从语言<br/>学、文学、心理学多<br/>方便精心设计</div>
             </div>
             <div class="adv-item">
                 <div class="adv-item-img"><img src="/themes/RY/icr/imgs/adv-3-img.svg"></div>
-                <div class="adv-item-p">严格考核筛选的教学名师资源，为课堂质量保驾护航
-                </div>
+                <div class="adv-item-p">严格考核筛选的教学名<br/>师资源，为课堂质量保<br/>驾护航</div>
             </div>
             <div class="adv-item">
                 <div class="adv-item-img"><img src="/themes/RY/icr/imgs/adv-4-img.svg"></div>
-                <div class="adv-item-p">小班教学不超过8人
-                    让每一个孩子都得到足够的关照
-                </div>
+                <div class="adv-item-p">小班教学不超过8人<br/>让每一个孩子都得到足够<br>的关照</div>
             </div>
         </div>
     </div>
@@ -149,7 +140,7 @@
                                 <div class="name">{$vo.name}</div>
                                 <div class="info-position">
                                     <i class="fa fa-map-marker"></i>
-                                    {$vo.location}
+                                    <span>{$vo.location}</span>
                                 </div>
                                 <div class="clear"></div>
                                 <div class="info-submit" name="yy">免费预约试听</div>
@@ -177,9 +168,9 @@
         "<div class='course-level'>" +
         "<select>" +
         "<option  hidden selected>预约试听课程级别</option>" +
-        "<option>{$category_list[0]['name']}课程适合2.5～7岁</option>" +
-        "<option>{$category_list[1]['name']}课程适合5～10岁</option>" +
-        "<option>{$category_list[2]['name']}课程适合8～14岁</option>" +
+        "<option>{$category_list[0]['name']}初级课程适合2.5 ～ 7岁</option>" +
+        "<option>{$category_list[1]['name']}中级课程适合5 ～ 10岁</option>" +
+        "<option>{$category_list[2]['name']}⾼级课程适合8 ～14岁</option>" +
         "</select>" +
         "<i class='fa fa-caret-down fa-2x'></i></div>"+
         "<input type='text' placeholder='输入手机号预约课程试听' />" +
@@ -205,7 +196,7 @@
                 "                                <div class=\"name\">"+data['name']+"</div>\n" +
                 "                                <div class=\"info-position\">\n" +
                 "                                    <i class=\"fa fa-map-marker\"></i>\n" +
-                                                  data['location']+
+                "                                    <span>"+data['location']+"</span> "+
                 "                                </div>\n" +
                 "                                <div class=\"clear\"></div>\n" +
                 "                                <div class=\"info-submit\" name=\"yy\">免费预约试听</div>\n" +
@@ -224,7 +215,7 @@
                 }
                 editInfo(e.data[i]);
             }
-            map.centerAndZoom(point, 15);
+            map.centerAndZoom(point, 12);
         });
     }
     mapini('{$city_list[0]['city']}');

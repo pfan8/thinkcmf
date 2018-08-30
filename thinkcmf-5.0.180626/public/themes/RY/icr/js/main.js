@@ -24,7 +24,7 @@ var popup=function(){
         $(".course-level i").click(function(){
             $('.course-level select').click();
         });
-        $(".wd-title2").html($(this).parents('.info-item').find(".name").html()+"："+$(this).parents('.info-item').find(".info-position div").html())
+        $(".wd-title2").html($(this).parents('.info-item').find(".name").html()+"："+$(this).parents('.info-item').find(".info-position span").html())
     }
 }
 $(function(){
