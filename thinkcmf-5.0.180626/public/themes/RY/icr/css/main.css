@@ -10,6 +10,15 @@
     url('../font/PingFang Medium.ttf') format('truetype'),
     url('../font/PingFang Medium.svg#PingFang') format('svg');
 }
+@font-face {
+    font-family: 'PlutoSans';
+    src: url('../font/PlutoSansRegular.eot');
+    src: local('PingFang Regular'),
+    local('PingFang'),
+    url('../font/PlutoSansRegular.woff') format('woff'),
+    url('../font/PlutoSansRegular.ttf') format('truetype'),
+    url('../font/PlutoSansRegular.svg#PlutoSans') format('svg');
+}
 html {
     font-size: 16px;
     color: #37474f;
@@ -22,7 +31,7 @@ html {
 
 body {
     margin: 0;
-    font-family: PingFang;
+    font-family: PingFang !important;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -227,7 +236,7 @@ ul{
 }
 .listen{
     position: relative;
-    left: 800px;
+    left: 880px;
     top:20px;
     width: 400px;
     height: 600px;
@@ -309,12 +318,12 @@ footer{
     box-sizing: border-box;
 }
 .footer-main .row{
-    width: 1440px;
+    width: 1100px;
     margin: 0 auto;
 }
 .qrcode{
     float: left;
-    width: 390px;
+    width: 200px;
     margin-left: 170px;
 }
 .qrcode img{
@@ -693,7 +702,7 @@ footer{
     font-size: 18px;
     color: #384850;
     margin: 0 auto;
-
+    background-color: rgba(0,0,0,0);
 }
 .input input::-webkit-input-placeholder{
     text-align: center;
@@ -828,19 +837,11 @@ footer{
 }
 .info-position{
     margin-top: 20px;
+    height: 50px;
 }
 .info-position i{
-    display: block;
-    float: left;
     font-size: 20px;
-    height:50px;
     color: #ff9933;
-}
-.info-position div{
-   float: left;
-    margin-left: 20px;
-    font-size: 18px;
-
 }
 .info-submit{
     width: 200px;
@@ -862,6 +863,14 @@ footer{
     margin:0 auto;
     margin-top: 54px;
     height:1190px;
+}
+.teachers h1{
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #3d4d55;
+    font-family: PingFang !important;
 }
 .headteacher{
     height:330px;
@@ -893,12 +902,20 @@ footer{
 }
 .information .content{
     font-size:18px;
+<<<<<<< HEAD
     height: 130px;
     margin-top: 20px;
+=======
+    height: 90px;
+    weight: 900px;
+>>>>>>> 779c3d22ece264b825c5f8ff5ec2f9a956c028dc
     font-weight: 500;
     overflow: hidden;
     text-overflow:ellipsis;
+<<<<<<< HEAD
     white-space: pre-line;
+=======
+>>>>>>> 779c3d22ece264b825c5f8ff5ec2f9a956c028dc
 }
 .idea{
     height: 20px;
@@ -999,6 +1016,8 @@ option{
     text-align: center;
     color: #37474f;
     font-size:48px;
+    margin-top: 50px;
+    margin-bottom: 40px;
 }
 .recruit-item{
     height: 400px;
@@ -1232,6 +1251,7 @@ option{
     left: 20px;
     position: absolute;
     text-align-last: center;
+    background-color: rgba(0,0,0,0);
 }
 .course-detail i{
     position: absolute;
@@ -1703,10 +1723,11 @@ margin: 0 auto;
     cursor:hand;
 }
 .wd-title2{
+    width:400px;
+    margin: 0 auto;
     margin-top: 20px;
-    width:100%;
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -1737,7 +1758,7 @@ margin: 0 auto;
     width:400px;
     margin: 0 auto;
     margin-top: 25px;
-
+    position: relative;
 }
 .course-level select{
     width:95%;
@@ -1747,6 +1768,7 @@ margin: 0 auto;
     position: relative;
     top:0;
     color: #3d4d55;
+    background-color: rgba(0,0,0,0);
 text-align-last: center;
 }
 .course-level select option{
@@ -1754,8 +1776,8 @@ text-align-last: center;
 }
 .course-level i{
     position: absolute;
-    top: 165px;
-    right: 70px;
+    top: 5px;
+    right: 10px;
 }
 .input-text input[type='submit']{
     border-radius: 8px;

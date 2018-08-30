@@ -6,6 +6,7 @@
 <div class="main">
     <php class="item">
         <div class="teachers">
+            <h1>优质师资</h1>
             <div class="clear"></div>
             <div class="teacher-list">
                 <php>$j=0;</php>
@@ -13,7 +14,7 @@
                    <if condition="$j%3==0"><div class="teacher-row"></if>
                     <div class="teacher-item">
                         <div class="img"><img src="{$vo['icon']}" /></div>
-                        <div class="info"data-content="{$vo['resume']}" data-idea ="{$vo['idea']}" >
+                        <div class="info"data-content="{$vo['resume']|msubstr=0,180}" data-idea ="{$vo['idea']}" >
                             <div class="name">{$vo['name']}</div>
                             <div class="title">{$vo['position']}</div>
                         </div>
