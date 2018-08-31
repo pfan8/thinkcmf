@@ -13,6 +13,11 @@ var techthers="                <div class=\"headteacher\">\n" +
     "                    </div>\n" +
     "                    <div class=\"clear\"></div>\n" +
     "                </div>";
+
+var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+    '<img src="../img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+    '' +
+    '</div>';
 function itf(obj){
     var html = $(obj).parent(".teacher-row").html();
     $(obj).parent(".teacher-row").html(techthers);

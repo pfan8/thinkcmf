@@ -31,7 +31,7 @@ html {
 
 body {
     margin: 0;
-    font-family: PingFang !important;
+    font-family: PlutoSans,PingFang !important;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -415,7 +415,7 @@ footer{
 }
 .right_column{
     width:90px;
-    height:272px;
+    height:180px;
     position:fixed;
     top: 500px;
     right: 0;
@@ -1360,17 +1360,51 @@ option{
 }
 
 .radios{
-    width:1100px;
+    width:1440px;
     height:330px;
     margin: 0 auto;
     margin-top: 40px;
     position: relative;
+    overflow: hidden;
 }
 .radios .img-left,.radios .img-right{
     top:120px;
 }
 .comment .img-left,.comment .img-right{
     top:120px;
+}
+
+@-webkit-keyframes rowup {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(2000px, 0px, 0);
+        transform: translate3d(2000px, 0px, 0);
+    }
+}
+@keyframes rowup {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(2000px, 0px, 0);
+        transform: translate3d(2000px, 0px, 0);
+    }
+}
+
+.rlist{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.rlist .rowup{
+    -webkit-animation: 10s rowup linear infinite normal;
+    animation: 10s rowup linear infinite normal;
+    position: relative;
 }
 .radios-item{
     width:330px;
@@ -1427,9 +1461,10 @@ option{
     margin-top: 60px;
 }
 .study .comment{
-    width:1100px;
+    width:1440px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 .study .comment .comment-item{
     float: left;
