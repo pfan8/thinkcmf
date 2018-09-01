@@ -2239,3 +2239,7 @@ select::-ms-expand { display: none; }
 .detail_content{
     overflow: hidden;
 }
+.ll{
+    margin-top: 40px;
+    font-weight: bold;
+}
