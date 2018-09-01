@@ -46,7 +46,6 @@ class SchoolController extends AdminBaseController
 
 
         $test = preg_match("/^[0-9]+[\.]?[0-9]+,[0-9]+[\.]?[0-9]+$/","11,11.11");
-        echo $test;
         return $this->fetch();
     }
 

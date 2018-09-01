@@ -44,6 +44,27 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label class="col-sm-2 control-label">电话:</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" name="phone" value="{$phone}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">邮箱:</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" name="email" value="{$email}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">营业时间:</label>
+            <div class="col-md-6 col-sm-10">
+                <textarea class="form-control" name="open_hours" rows="10" cols="57">{$open_hours}</textarea>
+            </div>
+        </div>
+
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary js-ajax-submit">{:lang("SAVE")}</button>
             <a class="btn btn-default" href="{:url('school/index')}">返回</a>

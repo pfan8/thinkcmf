@@ -21,18 +21,12 @@ class SchoolModel extends Model
      */
     public function insertSchool($data)
     {
-        $school = [
-            'name' => $data['name'],
-            'location' => $data['location'],
-            'city' => $data['city'],
-            'coordinate' => $data['coordinate'],
-        ];
-        $school_existed = Db::name('icr_school')->where($school)->find();
+        $school_existed = Db::name('icr_school')->where($data)->find();
         if(!empty($school_existed)){
             echo "已添加过！";
             return;
         }
-        Db::name('icr_school')->insert($school);
+        Db::name('icr_school')->insert($data);
     }
 
     /**
@@ -60,8 +54,8 @@ class SchoolModel extends Model
             'sid' => $data['sid'],
             'name' => $data['name'],
             'desc' => $data['desc'],
-            'start_time' => empty($data['start_time']) ? "" : $data['start_time'],
-            'end_time' => empty($data['end_time']) ? "" : $data['end_time'],
+//            'start_time' => empty($data['start_time']) ? "" : $data['start_time'],
+//            'end_time' => empty($data['end_time']) ? "" : $data['end_time'],
         ];
         Db::name('icr_activity')->insert($activity);
     }
@@ -84,12 +78,7 @@ class SchoolModel extends Model
         }
         Db::name('icr_school')
             ->where('id',$sid)
-            ->update([
-                    'name' => $data['name'],
-                    'location' => $data['location'],
-                    'city' => $data['city'],
-                    'coordinate' => $data['coordinate']]
-            );
+            ->update($data);
     }
 
     /**
@@ -115,8 +104,8 @@ class SchoolModel extends Model
                     'name' => $data['name'],
                     'desc' => $data['desc'],
                     'icon' => $data['icon'],
-                    'start_time' => empty($data['start_time']) ? "" : $data['start_time'],
-                    'end_time' => empty($data['end_time']) ? "" : $data['end_time'],
+//                    'start_time' => empty($data['start_time']) ? "" : $data['start_time'],
+//                    'end_time' => empty($data['end_time']) ? "" : $data['end_time'],
                 ]);
     }
 

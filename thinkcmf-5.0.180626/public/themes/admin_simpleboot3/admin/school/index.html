@@ -25,6 +25,9 @@
                 <th>校区名</th>
                 <th>城市</th>
                 <th>位置</th>
+                <th>电话</th>
+                <th>邮箱</th>
+                <th>营业时间</th>
             </tr>
             </thead>
             <tbody>
@@ -34,9 +37,12 @@
                     <td>{$vo.name}</td>
                     <td>{$vo.location}</td>
                     <td>{$vo.city}</td>
-                    <td width="140">
+                    <td>{$vo.phone}</td>
+                    <td>{$vo.email}</td>
+                    <td style="white-space: pre-line">{$vo.open_hours}</td>
+                    <td width="300">
                         <a href="javascript:parent.openIframeLayer('{:url('activity/index',array('sid'=>$vo['id']))}','{$vo.name}活动管理',{});">活动管理</a>
-                        <a href="javascript:parent.openIframeLayer('{:url('picture/index',array('sid '=>$vo['id']))}','{$vo.name}活动管理',{});">图片管理</a>
+                        <a href="javascript:parent.openIframeLayer('{:url('picture/index',array('sid'=>$vo['id']))}','{$vo.name}活动管理',{});">图片管理</a>
                         <a href="{:url('school/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
                         <a class="js-ajax-delete" href="{:url('school/delete',array('id'=>$vo['id']))}">{:lang('DELETE')}</a>
                     </td>

@@ -54,13 +54,7 @@ class RecruitModel extends Model
         }
         Db::name('icr_recruit')
             ->where('id',$rid)
-            ->update([
-                    'position' => $data['position'],
-                    'desc' => $data['desc'],
-                    'require' => $data['require'],
-                    'start_time' => empty($data['start_time']) ? "" : $data['start_time'],
-                    'end_time' => empty($data['end_time']) ? "" : $data['end_time'],]
-                    );
+            ->update($data);
     }
 
     /**
