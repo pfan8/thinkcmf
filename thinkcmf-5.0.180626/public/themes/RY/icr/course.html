@@ -26,9 +26,9 @@
     <div class="item">
         <div class="tab">
             <div class="tab-content">
-                <div class="<?=$level_class[0]?>" id="level1" onclick="searchLevel(this)">初级课程ICR Discover 1 ~ 3</div>
-                <div class="<?=$level_class[1]?>" id="level2" onclick="searchLevel(this)">中级课程ICR Level 1 ~ 6</div>
-                <div class="<?=$level_class[2]?>" id="level3" onclick="searchLevel(this)">高级课程ICR Plus 1 ~ 4</div>
+                <div class="<?=$level_class[0]?>" id="level1" onclick="searchLevel(this)">初级课程&nbsp;&nbsp;ICR Discover 1 ~ 3</div>
+                <div class="<?=$level_class[1]?>" id="level2" onclick="searchLevel(this)">中级课程&nbsp;&nbsp;ICR Level 1 ~ 6</div>
+                <div class="<?=$level_class[2]?>" id="level3" onclick="searchLevel(this)">高级课程&nbsp;&nbsp;ICR Plus 1 ~ 4</div>
             </div>
         </div>
         <div class="item">
@@ -79,7 +79,8 @@
             <div class="comment">
                 <h1>家长评语</h1>
                 <div class="h2">听一听小朋友的家长们都说了些什么</div>
-                <div class="radios">
+                <div class="radios rlist" >
+                    <div class="cc rowup">
                     <volist name="feedback_video" id="vo" length="4">
                         <div class="radios-item">
                             <div class="img"><img src=<?=$vo['icon']?> /></div>
@@ -87,26 +88,31 @@
                             <div class="click" data-video="{$vo['content']}"><i class="fa fa-play-circle-o"></i></div>
                         </div>    
                     </volist>
+                        <div class="clear"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="item">
             <div class="study">
-                <div class="h2">看一看小朋友们在I Can Read 都学到了些什么</div>
-                <div class="comment">
-                    <volist name="feedback_text" id="vo" length="3">
-                        <div class="comment-item">
-                            <div class="img"><img src="<?=$vo['icon']?>" /></div>
-                            <div class="title"><?=$vo['title']?></div>
-                            <div class="click">
-                                <div class="click-title"><?=$vo['title']?></div>
-                                <div class="click-content">
-                                    <?=$vo['content']?>
+                <div class="h2">看一看小朋友们在&nbsp;&nbsp;<span style="font-family: PlutoSans">I Can Read</span> 都学到了些什么</div>
+                <div class="comment rlist">
+                    <div class="cc rowup">
+                        <volist name="feedback_text" id="vo" length="3">
+                            <div class="comment-item">
+                                <div class="img"><img src="<?=$vo['icon']?>" /></div>
+                                <div class="title"><?=$vo['title']?></div>
+                                <div class="click">
+                                    <div class="click-title"><?=$vo['title']?></div>
+                                    <div class="click-content">
+                                        <?=$vo['content']?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>    
-                    </volist>
-                    <div class="clear"></div>
+                        </volist>
+                        <div class="clear"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -129,6 +135,6 @@
             $(".video video").attr('src',$(this).data('video'));
             $(".video").show();
             $(".video video").trigger("play")
-        })
+        });
     });
 </script>

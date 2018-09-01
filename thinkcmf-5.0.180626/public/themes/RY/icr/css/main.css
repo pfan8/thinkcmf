@@ -31,7 +31,7 @@ html {
 
 body {
     margin: 0;
-    font-family: PingFang !important;
+    font-family: PlutoSans,PingFang !important;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -415,7 +415,7 @@ footer{
 }
 .right_column{
     width:90px;
-    height:272px;
+    height:180px;
     position:fixed;
     top: 500px;
     right: 0;
@@ -1358,10 +1358,53 @@ option{
     height:60px;
     line-height:60px;
 }
+
 .radios{
-    width:100%;
+    width:1440px;
     height:330px;
+    margin: 0 auto;
     margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+.radios .img-left,.radios .img-right{
+    top:120px;
+}
+.comment .img-left,.comment .img-right{
+    top:120px;
+}
+
+@-webkit-keyframes rowup {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(2000px, 0px, 0);
+        transform: translate3d(2000px, 0px, 0);
+    }
+}
+@keyframes rowup {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(2000px, 0px, 0);
+        transform: translate3d(2000px, 0px, 0);
+    }
+}
+
+.rlist{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.rlist .rowup{
+    -webkit-animation: 10s rowup linear infinite normal;
+    animation: 10s rowup linear infinite normal;
+    position: relative;
 }
 .radios-item{
     width:330px;
@@ -1369,9 +1412,6 @@ option{
     float: left;
     height:100%;
     margin-left: 25px;
-}
-.radios-item:first-of-type{
-    margin-left: 0;
 }
 .radios-item .img{
     width:330px;
@@ -1421,8 +1461,10 @@ option{
     margin-top: 60px;
 }
 .study .comment{
-    width:1100px;
+    width:1440px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 .study .comment .comment-item{
     float: left;
@@ -1478,7 +1520,7 @@ option{
     margin-top: 60px;
      width:100%;
     text-align: center;
-    color: #002e6d;
+    color: #384850;
     font-size: 48px;
     margin-bottom: 40px;
  }
@@ -1550,7 +1592,7 @@ option{
     margin-top: 60px;
     width:100%;
     text-align: center;
-    color: #002e6d;
+    color: #384850;
     font-size: 48px;
     margin-bottom: 40px;
 }
@@ -1565,12 +1607,13 @@ option{
     height:100%;
     position: relative;
     display: inline-flex;
+    overflow: hidden;
 }
 .img-list .path-img{
     float: left;
     width:480px;
 }
-.img-gd .img-left{
+.img-left{
     position: absolute;
     top: 240px;
     width: 50px;
@@ -1587,7 +1630,7 @@ option{
     cursor:pointer;
     cursor:hand;
 }
-.img-gd .img-right{
+.img-right{
     position: absolute;
     top: 240px;
     right:0;
@@ -1609,7 +1652,7 @@ option{
     margin-top: 60px;
     width:100%;
     text-align: center;
-    color: #002e6d;
+    color: #384850;
     font-size: 48px;
     margin-bottom: 40px;
 }
@@ -1937,15 +1980,27 @@ text-align-last: center;
     min-width: 220px;
     padding-left:15px ;
     font-size: 18px;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0);
 }
 .window-input input[type='password']{
     min-width: 220px;
     padding-left:15px ;
     font-size: 18px;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0);
+}
+.half{
+    width:65%!important;
 }
 .window-input input[type='text']::-webkit-input-placeholder{
     color: #002f6c;
     font-size: 18px;
+}
+.window-input img{
+    height: 100%;
 }
 .input-half[type='text']{
     width: 220px;

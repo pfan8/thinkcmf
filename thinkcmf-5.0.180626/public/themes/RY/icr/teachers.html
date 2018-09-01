@@ -12,7 +12,7 @@
                 <php>$j=0;</php>
                 <volist name="teacher" id="vo">
                    <if condition="$j%3==0"><div class="teacher-row"></if>
-                    <div class="teacher-item">
+                    <div class="teacher-item" onmouseover="itf(this)">
                         <div class="img"><img src="{$vo['icon']}" /></div>
                         <div class="info"data-content="{$vo['resume']|msubstr=0,180}" data-idea ="{$vo['idea']}" >
                             <div class="name">{$vo['name']}</div>
