@@ -1,13 +1,37 @@
+
+@font-face {
+    font-family: 'PingFang';
+    src: url('/font/PingFang Medium.eot');
+    src: local('PingFang Regular'),
+    local('PingFang'),
+    url('/font/PingFang Medium.woff') format('woff'),
+    url('/font/PingFang Medium.ttf') format('truetype'),
+    url('/font/PingFang Medium.svg#PingFang') format('svg');
+}
+@font-face {
+    font-family: 'PlutoSans';
+    src: url('/font/PlutoSansRegular.eot');
+    src: local('PingFang Regular'),
+    local('PingFang'),
+    url('/font/PlutoSansRegular.woff') format('woff'),
+    url('/font/PlutoSansRegular.ttf') format('truetype'),
+    url('/font/PlutoSansRegular.svg#PlutoSans') format('svg');
+}
 html body{
     padding: 0;
     margin: 0;
     font-size: 0.24rem;
     color: #37474f;
     background-color: #ffffff;
+    font-family: PlutoSans,PingFang;
 }
 a{
     text-decoration: none;
     color: inherit;
+}
+p{
+    margin: 0;
+    padding:0;
 }
 ul{
     list-style:none;
@@ -257,6 +281,9 @@ input, button, select, textarea {
     margin-top: 0.18rem;
     box-sizing: border-box;
 }
+.slide {
+    width:100%;
+}
 .slide ul{
     width: auto;
     height:4rem ;
@@ -266,11 +293,183 @@ input, button, select, textarea {
     float: left;
     width: 7.5rem;
     max-height:4rem;
+    height:4rem ;
 }
 .slide img{
-    width: 7.5rem;
+    width: 100%;
+    height:4rem ;
 }
 .head_blank{
     height:0.8rem;
     width:100%;
+}
+.activity_list{
+    margin-top: 0.6rem;
+    width: 100%;
+}
+.activity_item{
+    float: left;
+    margin:0 0.375rem 0 0.375rem;
+    width:3rem;
+    height:3.2rem;
+}
+.activity_img{
+    width:100%;
+    height:2rem;
+}
+.activity_img img{
+    width:100%;
+    height:100%;
+}
+.activity_foot{
+    height:1.2rem;
+    text-align: center;
+    padding-top: 0.2rem;
+    box-sizing: border-box;
+    font-size: 0.28rem;
+    font-weight: bold;
+    color: #37474f;
+}
+/*
+预约弹窗
+ */
+.popup {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #3d4d55;
+    z-index: 1000;
+    position: fixed;
+    top:0;
+}
+.popup .wd{
+    width: 6.9rem;
+    height: 7.2rem;
+    margin: 0 auto;
+    top:3rem;
+    border-radius: 0.2rem;
+    position: relative;
+    background-color: #FFFFFF;
+}
+.wd-title{
+    margin: 0 auto;
+    width:100%;
+    text-align: center;
+    font-size: 0.36rem;
+    padding-top: 1rem;
+}
+.wd .cease{
+    font-size: 1.3rem;
+    position: absolute;
+    right: 0.4rem;
+    top:0;
+    font-weight: 100;
+    cursor:pointer;
+    cursor:hand;
+}
+.wd-title2{
+    width:5.9rem;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+    text-align: center;
+    font-size: 0.24rem;
+    font-weight: 500;
+}
+
+.input-text input{
+    width:5.9rem!important;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.16rem;
+    background-color: #ffffff;
+    border: solid 0.02rem #3d4d55;
+    height:0.92rem !important;
+    margin-top: 0.4rem;
+    text-align: center;
+    font-size: 0.32rem;
+}
+.input-text input:-ms-input-placeholder{
+    text-align: center;
+}
+.input-text input:-moz-placeholder{
+    text-align: center;
+}
+.input-text input::-webkit-input-placeholder{
+    text-align: center;
+}
+.course-level{
+    height:0.92rem;
+    border-radius: 0.16rem;
+    border: solid 0.02rem #3d4d55;
+    width:5.9rem;
+    margin: 0 auto;
+    margin-top:0.4rem ;
+    position: relative;
+}
+.course-level select{
+    width:95%;
+    height:95%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top:0;
+    color: #3d4d55;
+    background-color: rgba(0,0,0,0);
+    text-align-last: center;
+    font-size: 0.32rem;
+}
+.course-level select option{
+    padding-left: 100px;
+}
+.course-level i{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+}
+.input-text input[type='submit']{
+    border-radius: 0.16rem;
+    background-color: #fc384c;
+    font-size: 0.4rem;
+    color: #FFFFFF;
+    border: 0;
+}
+.head-position{
+    position: fixed;
+    width:100%;
+    top: 0.9rem;
+    z-index: 20;
+    display: none;
+    border-radius: 0.08rem;
+}
+.position_list{
+
+    background-color: #f2f2f2;
+    margin: 0 auto;
+    width: 7.18rem;
+    min-height: 1.48rem;
+    position: relative;
+    top:-0.15rem;
+    border-radius: 0.08rem;
+    color: #37474f;
+}
+.position_item{
+    float: left;
+    margin: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+.position_triangle{
+    width:0.2rem;
+    height:0.2rem;
+    transform: rotate(45deg);
+    background-color: #f2f2f2;
+    position: relative;
+    left: 6.5rem;
+}
+.about_content{
+    width:7rem;
+    margin: 0 auto;
+    font-size: .32rem;
+    text-indent:0.64rem;
+    color: #37474f;
+    margin-top: 0.4rem;
 }

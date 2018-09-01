@@ -1,19 +1,19 @@
 <include file="themes/icr_wap/icr/head.html" />
-<link href="themes/icr_wap/icr/css/index.css" rel="stylesheet" type="text/css"/>
+<link href="/themes/icr_wap/icr/css/index.css" rel="stylesheet" type="text/css"/>
             <section id="content">
                 <div class="slide">
                     <ul>
-                        <li><img src="themes/icr_wap/icr/imgs/banner-1.jpg"></li>
-                        <li><img src="themes/icr_wap/icr/imgs/banner-2.jpg"></li>
+                        <li><img src="/themes/icr_wap/icr/imgs/banner-1.jpg"></li>
+                        <li><img src="/themes/icr_wap/icr/imgs/banner-2.jpg"></li>
                     </ul>
                 </div>
                 <div class="reservation">
-                    <img src="themes/icr_wap/icr/imgs/bj-img.svg" />
+                    <img src="/themes/icr_wap/icr/imgs/bj-img.svg" />
                     <input type="text" placeholder="输入手机号预约课程试听" />
                     <input type="button" value="免费预约试听" />
                     <div class="agreement">
                         <i class="fa fa-square-o"></i>
-                        <a href="#">同意《 I CAN READ 用户协议》</a>
+                        <a href="{:url('/icr/user_agreement')}">同意《 I CAN READ 用户协议》</a>
                     </div>
                 </div>
                 <div class="main">
@@ -22,10 +22,10 @@
                             <p>从教育心理学出发，发挥每个孩子的想象，</p><p>充满自信的学习阅读能拓展心灵，</p><p>启发想象力，一生受益</p>
                         </div>
                         <div class="count">
-                            <div><img src="themes/icr_wap/icr//imgs/20.svg" /><span>培训超过25万优秀学员</span></div>
-                            <div><img src="themes/icr_wap/icr//imgs/9.svg" /><span>当前品牌覆盖9个国家</span></div>
-                            <div><img src="themes/icr_wap/icr//imgs/140.svg" /><span>拥有140多间培训中心</span></div>
-                            <div><img src="themes/icr_wap/icr//imgs/18.svg" /><span>研究专注英语教育18年</span></div>
+                            <div><img src="/themes/icr_wap/icr/imgs/20.svg" /><span>培训超过25万优秀学员</span></div>
+                            <div><img src="/themes/icr_wap/icr/imgs/9.svg" /><span>当前品牌覆盖9个国家</span></div>
+                            <div><img src="/themes/icr_wap/icr/imgs/140.svg" /><span>拥有140多间培训中心</span></div>
+                            <div><img src="/themes/icr_wap/icr/imgs/18.svg" /><span>研究专注英语教育18年</span></div>
                         </div>
                         <div class="clear"></div>
                         <div class="understand">
@@ -48,7 +48,7 @@
                             <p>中级课程ICR Level 1 ~ 6</p>
                             <p>高级课程ICR Plus 1 ~ 4</p>
                         </div>
-                        <div class="course-img"><img src="themes/icr_wap/icr//imgs/course-img.svg"></div>
+                        <div class="course-img"><img src="/themes/icr_wap/icr/imgs/course-img.svg"></div>
                         <div class="course-more">
                             <a href="#">
                                 <span>查看更多课程</span>&nbsp;
@@ -59,26 +59,26 @@
                     <div class="item">
                         <div class="h1">我们的专业优势</div>
                         <div class="adv-item">
-                            <div class="adv-item-img"><img src="themes/icr_wap/icr//imgs/adv-1-img.svg"></div>
+                            <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-1-img.svg"></div>
                             <div class="adv-item-p">ICR教育系统通过<br/>
                                 资深教育心理学专家<br/>
                                 研究长达15年
                             </div>
                         </div>
                         <div class="adv-item">
-                            <div class="adv-item-img"><img src="themes/icr_wap/icr//imgs/adv-2-img.svg"></div>
+                            <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-2-img.svg"></div>
                             <div class="adv-item-p">我们的教材从
                                 语言学、文学、心理学
                                 多方便精心设计
                             </div>
                         </div>
                         <div class="adv-item">
-                            <div class="adv-item-img"><img src="themes/icr_wap/icr//imgs/adv-3-img.svg"></div>
+                            <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-3-img.svg"></div>
                             <div class="adv-item-p">严格考核筛选的教学名师资源，为课堂质量保驾护航
                             </div>
                         </div>
                         <div class="adv-item">
-                            <div class="adv-item-img"><img src="themes/icr_wap/icr//imgs/adv-4-img.svg"></div>
+                            <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-4-img.svg"></div>
                             <div class="adv-item-p">小班教学不超过8人
                                 让每一个孩子都得到足够的关照
                             </div>
@@ -153,7 +153,7 @@
                 </div>
             </section>
 <include file="themes/icr_wap/icr/foot.html" />
-<script type="text/javascript" src="themes/icr_wap/icr/http://api.map.baidu.com/api?v=2.0&ak=s0x1Cj9VeZ6bVRI249olQM0V"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s0x1Cj9VeZ6bVRI249olQM0V"></script>
     <script type="text/javascript">
         $(function(){
         // 百度地图API功能
@@ -188,7 +188,7 @@
             mapini($(this).html());
         });
         $("#video").click(function(){
-            $(".video video").attr('src',"/themes/RY/icr/video/7min.mp4");
+            $(".video video").attr('src',"themes/RY/icr/video/7min.mp4");
             $(".video").show();
             $(".video video").trigger("play")
         })

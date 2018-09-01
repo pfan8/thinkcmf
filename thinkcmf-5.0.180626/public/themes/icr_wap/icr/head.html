@@ -22,6 +22,28 @@
             win.addEventListener(resizeEvt, recalc, false);
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
+        //定义预约弹窗
+        var reservation_wd_html = "<div id='popup' class='popup'>" +
+            "<div class='wd'>" +
+            "<div class='wd-title'>免费预约试听</div>" +
+            "<div class='wd-title2'></div>" +
+            "<form>" +
+            "<div class='input-text'>" +
+            "<div class='course-level'>" +
+            "<select>" +
+            "<option  hidden selected>预约试听课程级别</option>" +
+            "<option>初级课程适合2.5 ～ 7岁</option>" +
+            "<option>中级课程适合5 ～ 10岁</option>" +
+            "<option>高级课程适合8 ～14岁</option>" +
+            "</select>" +
+            "<i class='fa fa-caret-down fa-2x'></i></div>"+
+            "<input type='text' name='mobile_no' placeholder='输入手机号预约课程试听' />" +
+            "<input type='submit' name='submit_reservation' value='确认预约试听'>" +
+            "</div>" +
+            "</form>" +
+            "<div class='cease'>&times;</div>" +
+            "</div>" +
+            "</div>";
     </script>
     <link href="/themes/icr_wap/icr/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -31,11 +53,11 @@
     <section class="page-wrapper">
         <section id="left_menu">
             <ul>
+                <!--<a href="{:url('/')}"><li>首页</li></a>-->
                 <a href="{:url('/icr/course')}"><li>课程内容</li></a>
                 <a href="{:url('/icr/teacher')}"><li>优质师资</li></a>
                 <a href="{:url('/icr/school')}"><li>校区风采</li></a>
                 <a href="{:url('/icr/recruit')}"><li>人才招聘</li></a>
-                <a href="{:url('/icr/join')}"><li>合作加盟</li></a>
                 <a href="{:url('/icr/about')}"><li class="li-last">关于我们</li></a>
             </ul>
         </section>
@@ -47,6 +69,21 @@
                 <div class="head-title">当前位置：广州</div>
                 <div class="head-right" value="none">
                     <a href="#"><img src="/themes/icr_wap/icr/imgs/location-icon.svg" alt=""/></a>
+                </div>
+                <div class="head-position">
+                    <div class="position_triangle"></div>
+                    <div class="position_list">
+                        <div class="position_item"><a href="#">广州</a></div>
+                        <div class="position_item">重庆</div>
+                        <div class="position_item">大连</div>
+                        <div class="position_item">西安</div>
+                        <div class="position_item">南通</div>
+                        <div class="position_item">长春</div>
+                        <div class="position_item">济南</div>
+                        <div class="position_item">顺德</div>
+                        <div class="position_item">厦门</div>
+                        <div class="clear"></div>
+                    </div>
                 </div>
             </header>
             <div class="head_blank"></div>
