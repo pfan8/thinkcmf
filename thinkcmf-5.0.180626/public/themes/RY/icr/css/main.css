@@ -2221,3 +2221,21 @@ select::-ms-expand { display: none; }
     height:500px;
     z-index: 9999;
 }
+.teacher_detail{
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left:300px;
+    width: 500px;
+    height:680px;
+    background-color:rgb(183,201,211) ;
+    padding: 30px 20px 30px 20px;
+    display: none;
+}
+.detail_title{
+    font-size: 28px;
+    font-weight: bold;
+}
+.detail_content{
+    overflow: hidden;
+}

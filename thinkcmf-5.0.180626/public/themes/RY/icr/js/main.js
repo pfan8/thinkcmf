@@ -2,35 +2,15 @@
 公共js
  */
 
-var techthers="                <div class=\"headteacher\">\n" +
-    "                    <div class=\"teacher-avatar\">\n" +
-    "                        <img src =\"\"/>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"information\">\n" +
-    "                        <div class=\"name\"></div>\n" +
-    "                        <div class=\"content\"></div>\n" +
-    "                        <div class=\"idea\"></div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"clear\"></div>\n" +
-    "                </div>";
-
 var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
     '<img src="../img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
     '' +
     '</div>';
 function itf(obj){
-    var html = $(obj).parent(".teacher-row").html();
-    $(obj).parent(".teacher-row").html(techthers);
-    $(".headteacher").data('html',html);
-    $(".headteacher").find(".teacher-avatar img")[0].src =$(obj).find('img').attr('src');
-    $(".headteacher").css('visibility','visible');
-    var info = $(obj).find(".info");
-    $(".information").find(".name").html(info.find(".name").html());
-    $(".information").find(".content").html(info.data("content"));
-    $(".information").find(".idea").html(info.data('idea'));
-    $(".headteacher").mouseleave(function(){
-        $(this).parent(".teacher-row").html($(this).data('html'))
-    })
+$(obj).parent().find(".teacher_detail").show();
+}
+function itfs(obj){
+    $(obj).parent().find(".teacher_detail").hide();
 }
 var popup=function(){
     var id  = 'popup';

@@ -12,11 +12,19 @@
                 <php>$j=0;</php>
                 <volist name="teacher" id="vo">
                    <if condition="$j%3==0"><div class="teacher-row"></if>
-                    <div class="teacher-item" onmouseover="itf(this)">
+                    <div class="teacher-item">
                         <div class="img"><img src="{$vo['icon']}" /></div>
-                        <div class="info"data-content="{$vo['resume']|msubstr=0,180}" data-idea ="{$vo['idea']}" >
+                        <div class="info"  onmouseover="itf(this)" onmouseleave="itfs(this)"  data-idea ="{$vo['idea']}" >
                             <div class="name">{$vo['name']}</div>
                             <div class="title">{$vo['position']}</div>
+                        </div>
+                        <div class="teacher_detail">
+                            <div class="detail_title">
+                                {$vo['name']}
+                            </div>
+                            <div class="detail_content">
+                                {$vo['resume']}
+                            </div>
                         </div>
                     </div>
                     <php>$j++;</php>
