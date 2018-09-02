@@ -2290,6 +2290,7 @@ select::-ms-expand { display: none; }
     font-weight: bold;
 }
 .detail_content{
+    white-space: pre-line;
     overflow: hidden;
 }
 .ll{
