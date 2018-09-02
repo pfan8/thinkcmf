@@ -921,6 +921,9 @@ footer{
     padding:30px;
     box-sizing: border-box;
 }
+.resume {
+    white-space: pre-line;
+}
 
 .information .name{
     font-size:32px;
