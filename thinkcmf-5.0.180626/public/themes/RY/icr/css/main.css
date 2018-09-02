@@ -905,15 +905,18 @@ footer{
 }
 .information .content{
     font-size:18px;
-    height: 90px;
-    weight: 900px;
+    height: 130px;
+    margin-top: 20px;
     font-weight: 500;
-    /*overflow: hidden;*/
+    overflow: hidden;
     text-overflow:ellipsis;
+    white-space: pre-line;
 }
 .idea{
+    height: 20px;
     font-weight:600;
     margin-top:60px;
+    overflow: hidden;
 }
 .teacher-list{
     width:1020px;
