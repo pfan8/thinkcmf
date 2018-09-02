@@ -269,8 +269,8 @@
                 "                                </div>\n" +
                 "\n" +
                 "                                <div class=\"clear\"></div>\n" +
-                "                                <div class=\"info-submit info-bule\" data-time_content=\""+data['open_hours']+"\" name=\"open_time\">校区开放时间</div>\n" +
-                "                                <div class=\"info-submit\" name=\"yy\">免费预约试听</div>\n" +
+                "                                <div class=\"info-submit info-bule\" data-location='"+data['location']+"' data-time_content=\""+data['open_hours']+"\" name=\"open_time\">校区开放时间</div>\n" +
+                "                                <div class=\"info-submit\" name=\"yy\" data-name='"+data['name']+"' data-location='"+data['location']+"'>免费预约试听</div>\n" +
                 "                            </div>";
             $(".info").append(html);
             $("[name='yy']").click(popup);
