@@ -81,13 +81,13 @@
                 <div class="h2">听一听小朋友的家长们都说了些什么</div>
                 <div class="radios rlist" >
                     <div class="cc rowup">
-                    <volist name="feedback_video" id="vo">
-                        <div class="radios-item">
-                            <div class="img"><img src=<?=$vo['icon']?> /></div>
-                            <div class="title"><?=$vo['title']?></div>
-                            <div class="click" data-video="{$vo['content']}"><i class="fa fa-play-circle-o"></i></div>
-                        </div>    
-                    </volist>
+                        <volist name="feedback_video" id="vo">
+                            <div class="radios-item">
+                                <div class="img"><img src=<?=$vo['icon']?> /></div>
+                                <div class="title"><?=$vo['title']?></div>
+                                <div class="click" data-video="{$vo['content']}"><i class="fa fa-play-circle-o"></i></div>
+                            </div>
+                        </volist>
                         <div class="clear"></div>
                     </div>
                 </div>

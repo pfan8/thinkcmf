@@ -1,5 +1,25 @@
 <include file="themes/icr_wap/icr/head.html" />
 <link href="/themes/icr_wap/icr/css/course.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+    function searchLevel(self) {
+        var id = self.id;
+        var s_category = 1;
+        switch(id) {
+            case 'level1':
+                s_category = 1;
+                break;
+            case 'level2':
+                s_category = 2;
+                break;
+            case 'level3':
+                s_category = 3;
+                break;
+            default:
+                break;
+        }
+        location.href="{:url('course/index')}?s_category="+s_category;
+    }
+</script>
 <section id="content">
     <div class="slide">
         <ul>
@@ -9,91 +29,77 @@
     <div class="main">
         <div class="item">
             <div class="tab">
-                <div class="tab-item active">
-                    初级课程<br />
-                    ICR Discover
-                </div>
-                <div class="tab-item">
-                    中级课程<br />
-                    ICR
-                </div>
-                <div class="tab-item">
-                    高级课程<br />
-                    ICR Plus
-                </div>
+                <div class="<?=$level_class[0]?>" id="level1" onclick="searchLevel(this)">初级课程<br />ICR Discover</div>
+                <div class="<?=$level_class[1]?>" id="level2" onclick="searchLevel(this)">中级课程<br />ICR Level</div>
+                <div class="<?=$level_class[2]?>" id="level3" onclick="searchLevel(this)">高级课程<br />ICR Plus</div>
             </div>
         </div>
         <div class="item">
             <div class="h1">课程内容</div>
             <div class="input">
-                <select><option selected>ICR Discover 1 专为小童开设的互动课程</option></select>
+                <select id="selectID">
+                    <php>
+                        foreach($levels as $vo)
+                        { if ($s_level != $vo['id']){</php>
+                    <option id="{$vo.id}" class="level-option" style="text-align: center">
+                        <php>}else{</php>
+                    <option id="{$vo.id}" class="level-option" style="text-align: center" selected="selected">
+                        <php>}</php>
+                        {$vo.name}
+                    </option>
+                    <php>}</php>
+                </select>
                 <i class="fa fa-chevron-down"></i>
             </div>
         </div>
         <div class="item" style="padding-top: 0.2rem">
             <volist name="course" id="vo" length="6">
-                <div class="content-item">
+                <div class="course-item">
                     <div class="course-img"><img src=<?=$vo['icon']?> /></div>
                     <div class="title"><?=$vo['name']?></div>
                 </div>
             </volist>
+            <div class="clear"></div>
         </div>
         <div class="item">
             <div class="target">
                 <div class="h1">达成目标</div>
-                <div class="target-item">
-                    <div class="circle">1</div>
-                    <div class="content">运用简单词汇表达简单语句</div>
-                </div>
-                <div class="target-item">
-                    <div class="circle">1</div>
-                    <div class="content">运用简单词汇表达简单语句</div>
-                </div>
-                <div class="target-item">
-                    <div class="circle">1</div>
-                    <div class="content">运用简单词汇表达简单语句</div>
-                </div>
-                <div class="target-item">
-                    <div class="circle">1</div>
-                    <div class="content">运用简单词汇表达简单语句</div>
-                </div>
-                <div class="target-item">
-                    <div class="circle">1</div>
-                    <div class="content">运用简单词汇表达简单语句</div>
-                </div>
-                <div class="target-item">
-                    <div class="circle">1</div>
-                    <div class="content">运用简单词汇表达简单语句</div>
-                </div>
+                <volist name="goal_array" id="vo" length="6">
+                    <div class="target-item">
+                        <div class="circle">{$i}</div>
+                        <div class="content">{$vo}</div>
+                    </div>
+                </volist>
             </div>
         </div>
         <div class="item">
             <div class="h1">家长评语</div>
             <div class="h2">听一听小朋友的家长都说了些什么</div>
             <div class="comment">
-                <div class="comment-item">
-                    <img src="/themes/icr_wap/icr/imgs/banner-1.jpg" />
-                    <div class="title">Amy 小朋友的家长评语</div>
-                    <div class="click-video"><i class="fa fa-play-circle-o"></i></div>
-                </div>
-                <div class="comment-item">
-                    <img src="/themes/icr_wap/icr/imgs/banner-1.jpg" />
-                    <div class="title">Amy 小朋友的家长评语</div>
-                    <div class="click-video"><i class="fa fa-play-circle-o"></i></div>
-                </div>
-                <div class="comment-item">
-                    <img src="/themes/icr_wap/icr/imgs/banner-1.jpg" />
-                    <div class="title">Amy 小朋友的家长评语</div>
-                    <div class="click-video"><i class="fa fa-play-circle-o"></i></div>
-                </div>
-                <div class="comment-item">
-                    <img src="/themes/icr_wap/icr/imgs/banner-1.jpg" />
-                    <div class="title">Amy 小朋友的家长评语</div>
-                    <div class="click-video"><i class="fa fa-play-circle-o"></i></div>
-                </div>
+                <volist name="feedback_video" id="vo">
+                    <div class="comment-item">
+                        <div class="img"><img src=<?=$vo['icon']?> /></div>
+                        <div class="title"><?=$vo['title']?></div>
+                        <div class="click-video" data-video="{$vo['content']}"><i class="fa fa-play-circle-o"></i></div>
+                    </div>
+                </volist>
                 <div class="clear"></div>
             </div>
         </div>
     </div>
 </section>
 <include file="themes/icr_wap/icr/foot.html" />
+<script type="text/javascript">
+    $(function () {
+        $("#selectID").change(function () {
+            // var selectOption = $('#selectOption option:selected');
+            var level_id = $(this).find("option:checked").attr("id");
+            location.href = "{:url('course/index')}?s_level=" + level_id;
+        })
+        $(".radios-item .click").click(function(){
+            $(".video video").attr('src',$(this).data('video'));
+            $(".video").show();
+            $(".video video").trigger("play")
+        });
+    });
+</script>
