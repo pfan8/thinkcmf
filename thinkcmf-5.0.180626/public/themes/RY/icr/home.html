@@ -148,7 +148,7 @@
                                 </div>
 
                                 <div class="clear"></div>
-                                <div class="info-submit info-bule" name="open_time">校区开放时间</div>
+                                <div class="info-submit info-bule" data-time_content="{$vo.open_hours}" name="open_time">校区开放时间</div>
                                 <div class="info-submit" name="yy">免费预约试听</div>
                             </div>
                         </volist>
@@ -264,12 +264,12 @@
                 "                                        <i class=\"fa fa-map-marker\"></i>\n" +
                 "                                        <span>"+data['location']+"</span>\n" +
                 "                                    </div>\n" +
-                "                                    <div class=\"info-tel\">Ph:15962808111/15962761999</div>\n" +
-                "                                    <div class='info-email'>电邮:zhongbanban@icanreaddasia.cn</div>\n" +
+                "                                    <div class=\"info-tel\">Ph:"+data['phone']+"</div>\n" +
+                "                                    <div class='info-email'>电邮:"+data['email']+"</div>\n" +
                 "                                </div>\n" +
                 "\n" +
                 "                                <div class=\"clear\"></div>\n" +
-                "                                <div class=\"info-submit info-bule\" name=\"open_time\">校区开放时间</div>\n" +
+                "                                <div class=\"info-submit info-bule\" data-time_content=\""+data['open_hours']+"\" name=\"open_time\">校区开放时间</div>\n" +
                 "                                <div class=\"info-submit\" name=\"yy\">免费预约试听</div>\n" +
                 "                            </div>";
             $(".info").append(html);
