@@ -14,7 +14,10 @@
                         <div class="point-item">
                             <div class="point-title"><?=$vo['name']?><i name="back" class="fa fa-chevron-up"></i></div>
                             <div class="point-content"><i class="fa fa-map-marker"></i><?=$vo['location']?></div>
-                            <div class="point-button">免费预约试听<i class="fa fa-angle-double-right"></i></div>
+                            <div class="point-tel">{$vo.phone}</div>
+                            <div class="point-email">{$vo.email}</div>
+                            <div class="point-button "  name="open_time" data-name="{$vo.name}" data-location="{$vo.location}" data-time_content="{$vo.open_hours}">校区和开放时间</div>
+                            <div class="point-button right red"  name="yy" data-name="{$vo.name}" data-location="{$vo.location}">免费预约试听<i class="fa fa-angle-double-right"></i></div>
                         </div>
                     </volist>
                 </div>
@@ -54,6 +57,48 @@
 <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
 <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
 <script type="text/javascript">
+    var popup_html="<div id='popup' class='popup'>" +
+        "<div class='wd'>" +
+        "<div class='wd-title'>免费预约试听</div>" +
+        "<div class='wd-title2'>思明中心：厦门市思明区莲前西路2号莲富大厦3H</div>" +
+        "<form>" +
+        "<div class='input-text'>" +
+        "<div class='course-level'>" +
+        "<select>" +
+        "<option  hidden selected>预约试听课程级别</option>" +
+        "<option>{$category_list[0]['name']}课程适合2.5 ～ 7岁</option>" +
+        "<option>{$category_list[1]['name']}课程适合5 ～ 10岁</option>" +
+        "<option>{$category_list[2]['name']}课程适合8 ～14岁</option>" +
+        "</select>" +
+        "<i class='fa fa-caret-down fa-2x'></i></div>"+
+        "<input type='text' name='mobile_no' placeholder='输入手机号预约课程试听' />" +
+        "<input type='submit' onclick='yuyue(this)' value='确认预约试听'>" +
+        "</div>" +
+        "</form>" +
+        "<div class='cease'>&times;</div>" +
+        "</div>" +
+        "</div>";
+    var popup2_html="<div id='popup2' class='popup'>" +
+        "<div class='wd opentime'>" +
+        "<div class='wd-title'>思明校区</div>" +
+        "<div class='wd-title2'>广州市番禺区洛溪新城北环路83号渔人码头·溪新城北环路83号城北环路83号渔人码头·渔人码头·溪新城北环路83号渔人码头·</div>" +
+        "<div class='open_time'>" +
+        "<div class='time_title'>营业时间</div>" +
+        "<div class='time_content'>" +
+        "<p>周一:    10:00am – 8:00pm</p>" +
+        "<p>周二:    休息</p>" +
+        "<p>周三:    休息</p>" +
+        "<p>周四:    10:00am – 8:00pm</p>" +
+        "<p>周五:    10:00am – 8:00pm</p>" +
+        "<p>周六:    8:30am – 6:30pm</p>" +
+        "<p>周日:    8:30am – 6:30pm</p>" +
+        "<p>公共假期:休息</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class='cease'>&times;</div>" +
+        "</div></div>";
+</script>
+<script type="text/javascript">
     function mapini(city){
         //获取校区列表
         var school_list = null;
@@ -81,19 +126,6 @@
             })
             map.addOverlay(marker);
         }
-        function editInfo(data){
-            var html =" <div class=\"info-item\">\n" +
-                "                                <div class=\"name\">"+data['name']+"</div>\n" +
-                "                                <div class=\"info-position\">\n" +
-                "                                    <i class=\"fa fa-map-marker\"></i>\n" +
-                "                                    <div>"+data['location']+"</div>\n" +
-                "                                </div>\n" +
-                "                                <div class=\"clear\"></div>\n" +
-                "                                <div class=\"info-submit\" name=\"yy\">免费预约试听</div>\n" +
-                "                            </div>";
-            $(".info").append(html);
-            $("[name='yy']").click(popup);
-        }
         var map = new BMap.Map("map");
         $.get("{:url('index/getSchoolList')}?city="+city,function(e){
             $(".info").html('');
@@ -103,8 +135,9 @@
                     var point = new BMap.Point(pint[0],pint[1]);
                     addMarker(point,{name:e.data[i]['name'],position:e.data[i]['location']})
                 }
-                editInfo(e.data[i]);
             }
+            $("[name='yy']").click(popup);
+            $("[name='open_time']").click(popup2);
             map.centerAndZoom(point, 12);
         });
     }

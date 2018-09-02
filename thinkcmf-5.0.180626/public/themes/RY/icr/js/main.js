@@ -22,14 +22,14 @@ var popup=function(){
         $(".course-level i").click(function(){
             $('.course-level select').click();
         });
-        $(".wd-title2").html($(this).parents('.info-item').find(".name").html()+"："+$(this).parents('.info-item').find(".info-position span").html())
+        $(".wd-title2").html($(this).data("name")+"："+$(this).data("location"))
     }
 };
 var popup2=function(data){
     var id = 'popup2';
     if(!$('#'+id).html()){
         $('body').prepend(popup2_html);
-        $('#popup2').find(".wd-title2").html($(this).parents('.info-item').find(".info-position span").html());
+        $('#popup2').find(".wd-title2").html($(this).data("location"));
         $('#popup2').find('.time_content').html($(this).data('time_content'));
         $(".cease").click(function(){
             $("#popup2").remove();
