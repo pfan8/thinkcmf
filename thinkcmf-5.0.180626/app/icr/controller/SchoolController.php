@@ -29,10 +29,11 @@ class SchoolController extends HomebaseController{
         }
         $school = $school_model->getSchoolByCity($city);
 //        $this->complementSchool($school);
-        $school_picture_list = $school_model->getPictureListBySchoolID($school[0]['id']);
+        if (count($school) == 0)
+            $school = $school_model->getSchoolList();
+        $school_picture = $school_model->getPictureListBySchoolID($school[0]['id']);
 //        $this->complementPicture($school_picture_list);
 //        $this->complementActivity($school_activity);
-        $school_picture = $this->transformPictureList($school_picture_list);
         $school_activity = $school_model->getActivityBySchoolID($school[0]['id']);
         $this->assign('school',$school);
         $this->assign('category_list',$category_list);
@@ -328,23 +329,6 @@ class SchoolController extends HomebaseController{
     {
         $school_model = new SchoolModel();
         return $school_model->getActivityBeforeEndTime($_GET['end_time']);
-    }
-
-    /**
-     * 转换图片输出到html
-     * @param $picture_list
-     * @return
-     */
-    public function transformPictureList($picture_list)
-    {
-        $picture = "";
-        foreach ($picture_list as $item)
-        {
-            $picture .= "<div class=\"path-img\"><img  src=\"";
-            $picture .= $item['url'];
-            $picture .= "\"/></div>\n";
-        }
-        return $picture;
     }
 
     private function complementActivity(&$activitys)

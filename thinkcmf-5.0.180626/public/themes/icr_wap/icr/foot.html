@@ -25,8 +25,8 @@
     </div>
     <div class="foot-more">
         <ul>
-            <a href="{:url('icr/recruit')}"><li>人才招聘</li></a>
-            <a href="{:url('icr/about')}"><li class="li-last">关于我们</li></a>
+            <a href="{:url('/icr/recruit')}"><li>人才招聘</li></a>
+            <a href="{:url('/icr/about')}"><li class="li-last">关于我们</li></a>
         </ul>
         <div class="triangle"></div>
     </div>
@@ -39,3 +39,11 @@
 <script src="/themes/icr_wap/icr/js/jquery-2.0.3.min.js"></script>
 <script src="/themes/icr_wap/icr/js/jgestures.min.js"></script>
 <script src="/themes/icr_wap/icr/js/index.js"></script>
+<script type="text/javascript">
+    //切换城市
+    $(".position_item,.city_item,.city_item active").click(function(){
+        $.post("{:url('index/saveCity')}",{'city':$(this).html()},function(e){
+            location.reload();
+        })
+    })
+</script>

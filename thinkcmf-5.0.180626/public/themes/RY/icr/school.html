@@ -30,7 +30,9 @@
             <h1>校区环境</h1>
             <div class="img-gd">
                 <div class="img-list">
-                    <?=$school_picture?>
+                    <volist name="school_picture" id="vo">
+                        <div class="path-img"><img src="{$vo.url}"></div>
+                    </volist>
                 </div>
                 <div class="img-left"><i class="fa fa-angle-left"></i></div>
                 <div class="img-right"><i class="fa fa-angle-right"></i></div>

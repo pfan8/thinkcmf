@@ -66,24 +66,21 @@
                 <div class="head-left" value="none">
                     <a href="#"><img src="/themes/icr_wap/icr/imgs/menu-icon.svg" alt=""/></a>
                 </div>
-                <div class="head-title">当前位置：广州</div>
+                <div class="head-title">当前位置：{$city_name}</div>
                 <div class="head-right" value="none">
                     <a href="#"><img src="/themes/icr_wap/icr/imgs/location-icon.svg" alt=""/></a>
                 </div>
                 <div class="head-position">
                     <div class="position_triangle"></div>
                     <div class="position_list">
-                        <div class="position_item"><a href="#">广州</a></div>
-                        <div class="position_item">重庆</div>
-                        <div class="position_item">大连</div>
-                        <div class="position_item">西安</div>
-                        <div class="position_item">南通</div>
-                        <div class="position_item">长春</div>
-                        <div class="position_item">济南</div>
-                        <div class="position_item">顺德</div>
-                        <div class="position_item">厦门</div>
+                        <volist name="city_list" id="vo">
+                            <div class="position_item">{$vo.city}</div>
+                        </volist>
                         <div class="clear"></div>
                     </div>
                 </div>
             </header>
             <div class="head_blank"></div>
+        </section>
+    </section>
+</section>
