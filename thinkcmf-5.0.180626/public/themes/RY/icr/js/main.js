@@ -95,41 +95,7 @@ $(function(){
 
 
     })
-    $(".img-left").mousedown(function(){
-        var list = $(this).parent().find('.img-list');
-        var padding = list.css('marginLeft');
-        clearTimeout(timeoutId);
-        timeoutId = window.setInterval(function(){
-            var newpadding = parseInt(list.css('marginLeft').replace('px','')) + 1;
-            if(newpadding<=0){
-                list.css('marginLeft',newpadding+'px')
-            }
-        },1)
-    });
-    $(".img-right").mousedown(function(){
-        var list = $(this).parent().find('.img-list');
-        var max = $(this).parent().width();
-        var padding = list.css('marginLeft');
-        clearTimeout(timeoutId);
-        timeoutId = window.setInterval(function(){
-            var newpadding = parseInt(list.css('marginLeft').replace('px',''))-1;
-            if(-newpadding<=(list.width()-max)){
-                list.css('marginLeft',newpadding+'px')
-            }
-        },1)
-    });
-    $(".img-left").mouseup(function(){
-        clearTimeout(timeoutId);
-    });
-    $(".img-right").mouseout(function(){
-        clearTimeout(timeoutId);
-    });
-    $(".img-left").mouseout(function(){
-        clearTimeout(timeoutId);
-    });
-    $(".img-right").mouseup(function(){
-        clearTimeout(timeoutId);
-    });
+
     $(".cease").click(function(){
         $(".more-country").hide();
     })

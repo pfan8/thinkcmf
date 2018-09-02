@@ -101,6 +101,77 @@
         "</div></div>";
 </script>
 <script type="text/javascript">
+    $(function(){
+        var timeoutId = null;
+        $("[name='back']").click(function(){
+            var obj = $(this).parents('.point-item');
+            var self = $(this);
+            var isup = $(this).hasClass('fa-chevron-up');
+            clearTimeout(timeoutId);
+            if(isup)
+            {
+                //升
+                timeoutId = window.setInterval(function(){
+                    if(obj.height()>40){
+                        obj.height(obj.height()-1)
+                    }else{
+                        self.removeClass('fa-chevron-up');
+                        self.addClass('fa-chevron-down');
+                        clearInterval(timeoutId)
+                    }
+                },1)
+            }else{
+                //降
+                timeoutId = window.setInterval(function(){
+                    if(obj.height()<177){
+                        obj.height(obj.height()+1)
+                    }else{
+                        self.removeClass('fa-chevron-down');
+                        self.addClass('fa-chevron-up');
+                        clearInterval(timeoutId)
+                    }
+                },1)
+            }
+
+
+        })
+
+        $(".img-left").mousedown(function(){
+            var list = $(this).parent().find('.img-list');
+            var padding = list.css('marginLeft');
+            clearTimeout(timeoutId);
+            timeoutId = window.setInterval(function(){
+                var newpadding = parseInt(list.css('marginLeft').replace('px','')) + 1;
+                if(newpadding<=0){
+                    list.css('marginLeft',newpadding+'px')
+                }
+            },1)
+        });
+        $(".img-right").mousedown(function(){
+            var list = $(this).parent().find('.img-list');
+            var max = $(this).parent().width();
+            var padding = list.css('marginLeft');
+            clearTimeout(timeoutId);
+            timeoutId = window.setInterval(function(){
+                var newpadding = parseInt(list.css('marginLeft').replace('px',''))-1;
+                if(-newpadding<=(list.width()-max)){
+                    list.css('marginLeft',newpadding+'px')
+                }
+            },1)
+        });
+        $(".img-left").mouseup(function(){
+            clearTimeout(timeoutId);
+        });
+        $(".img-right").mouseout(function(){
+            clearTimeout(timeoutId);
+        });
+        $(".img-left").mouseout(function(){
+            clearTimeout(timeoutId);
+        });
+        $(".img-right").mouseup(function(){
+            clearTimeout(timeoutId);
+        });
+    })
     function mapini(city){
         //获取校区列表
         var school_list = null;
