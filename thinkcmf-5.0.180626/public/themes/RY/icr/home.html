@@ -138,11 +138,17 @@
                         <volist name="school_list" id="vo">
                             <div class="info-item">
                                 <div class="name">{$vo.name}</div>
-                                <div class="info-position">
-                                    <i class="fa fa-map-marker"></i>
-                                    <span>{$vo.location}</span>
+                                <div class="info">
+                                    <div class="info-position">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span>{$vo.location}</span>
+                                    </div>
+                                    <div class="info-tel">Ph:15962808111/15962761999</div>
+                                    <div>电邮:zhongbanban@icanreaddasia.cn</div>
                                 </div>
+
                                 <div class="clear"></div>
+                                <div class="info-submit info-bule" data-time_content="{$vo.open_hours}" name="open_time">校区开放时间</div>
                                 <div class="info-submit" name="yy">免费预约试听</div>
                             </div>
                         </volist>
@@ -182,6 +188,25 @@
         "<div class='cease'>&times;</div>" +
         "</div>" +
         "</div>";
+    var popup2_html="<div id='popup2' class='popup'>" +
+        "<div class='wd opentime'>" +
+        "<div class='wd-title'>思明校区</div>" +
+        "<div class='wd-title2'>广州市番禺区洛溪新城北环路83号渔人码头·溪新城北环路83号城北环路83号渔人码头·渔人码头·溪新城北环路83号渔人码头·</div>" +
+        "<div class='open_time'>" +
+        "<div class='time_title'>营业时间</div>" +
+        "<div class='time_content'>" +
+        "<p>周一:    10:00am – 8:00pm</p>" +
+        "<p>周二:    休息</p>" +
+        "<p>周三:    休息</p>" +
+        "<p>周四:    10:00am – 8:00pm</p>" +
+        "<p>周五:    10:00am – 8:00pm</p>" +
+        "<p>周六:    8:30am – 6:30pm</p>" +
+        "<p>周日:    8:30am – 6:30pm</p>" +
+        "<p>公共假期:休息</p>" +
+        "</div>" +
+        "</div>" +
+        "<div class='cease'>&times;</div>" +
+        "</div></div>";
 </script>
 <include file="../public/themes/RY/icr/foot.html" />
 <script type="text/javascript">
@@ -232,17 +257,24 @@
             map.addOverlay(marker);
         }
         function editInfo(data){
-            var html =" <div class=\"info-item\">\n" +
+            var html ="  <div class=\"info-item\">\n" +
                 "                                <div class=\"name\">"+data['name']+"</div>\n" +
-                "                                <div class=\"info-position\">\n" +
-                "                                    <i class=\"fa fa-map-marker\"></i>\n" +
-                "                                    <span>"+data['location']+"</span> "+
+                "                                <div class=\"info_detail\">\n" +
+                "                                    <div class=\"info-position\">\n" +
+                "                                        <i class=\"fa fa-map-marker\"></i>\n" +
+                "                                        <span>"+data['location']+"</span>\n" +
+                "                                    </div>\n" +
+                "                                    <div class=\"info-tel\">Ph:"+data['phone']+"</div>\n" +
+                "                                    <div class='info-email'>电邮:"+data['email']+"</div>\n" +
                 "                                </div>\n" +
+                "\n" +
                 "                                <div class=\"clear\"></div>\n" +
+                "                                <div class=\"info-submit info-bule\" data-time_content=\""+data['open_hours']+"\" name=\"open_time\">校区开放时间</div>\n" +
                 "                                <div class=\"info-submit\" name=\"yy\">免费预约试听</div>\n" +
                 "                            </div>";
             $(".info").append(html);
             $("[name='yy']").click(popup);
+            $("[name='open_time']").click(popup2);
         }
         var map = new BMap.Map("map");
         $.get("{:url('index/getSchoolList')}?city="+city,function(e){

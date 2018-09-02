@@ -24,7 +24,19 @@ var popup=function(){
         });
         $(".wd-title2").html($(this).parents('.info-item').find(".name").html()+"："+$(this).parents('.info-item').find(".info-position span").html())
     }
-}
+};
+var popup2=function(data){
+    var id = 'popup2';
+    if(!$('#'+id).html()){
+        $('body').prepend(popup2_html);
+        $('#popup2').find(".wd-title2").html($(this).parents('.info-item').find(".info-position span").html());
+        $('#popup2').find('.time_content').html($(this).data('time_content'));
+        $(".cease").click(function(){
+            $("#popup2").remove();
+        });
+
+    }
+};
 $(function(){
     $("[name='yy']").click();
     $(".agreement i").click(function(){
