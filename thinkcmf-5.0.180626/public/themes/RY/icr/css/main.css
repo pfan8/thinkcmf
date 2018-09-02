@@ -827,7 +827,7 @@ footer{
 }
 .info .info-item{
     border-bottom: 1px solid #cccccc ;
-    height:150px;
+    height:193px;
     margin-top: 30px;
     width: 470px;
 }
@@ -839,8 +839,18 @@ footer{
     border-bottom: 0;
 }
 .info-position{
-    margin-top: 20px;
-    height: 50px;
+    margin-top: 10px;
+    font-size:18px;
+}
+.info-tel{
+    padding-left: 18px;
+    font-size: 16px;
+    color: #3d4d55;
+}
+.info-email{
+    padding-left: 18px;
+    font-size: 16px;
+    color: #3d4d55;
 }
 .info-position i{
     font-size: 20px;
@@ -854,12 +864,29 @@ footer{
     float: right;
     line-height: 34px;
     color: #fc384c;
+    margin-top: 30px;
     font-size: 18px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     letter-spacing: normal;
     text-align: center;
+    cursor:pointer;
+    cursor:hand;
+}
+.info-bule{
+    float: left;
+    border: solid 2px #002e6d;
+    color: #002e6d;
+}
+.open_time{
+    width:200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.open_time p{
+    margin :0;
+    line-height: 28px;
 }
 .teachers{
     width: 980px;
@@ -1741,6 +1768,13 @@ margin: 0 auto;
     position: relative;
     background-color: #FFFFFF;
 }
+.time_title{
+    text-align: center;
+    font-weight: bold;
+}
+.popup .opentime{
+    height:436px;
+}
 .wd-title{
     margin: 0 auto;
     width:100%;
@@ -1760,7 +1794,7 @@ margin: 0 auto;
 .wd-title2{
     width:400px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 14px;
     font-weight: 500;

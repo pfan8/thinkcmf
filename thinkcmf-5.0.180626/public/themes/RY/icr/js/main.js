@@ -24,7 +24,17 @@ var popup=function(){
         });
         $(".wd-title2").html($(this).parents('.info-item').find(".name").html()+"："+$(this).parents('.info-item').find(".info-position span").html())
     }
-}
+};
+var popup2=function(){
+    var id = 'popup2';
+    if(!$('#'+id).html()){
+        $('body').prepend(popup2_html);
+        $(".cease").click(function(){
+            $("#popup").remove();
+        });
+
+    }
+};
 $(function(){
     $("[name='yy']").click();
     $(".agreement i").click(function(){
