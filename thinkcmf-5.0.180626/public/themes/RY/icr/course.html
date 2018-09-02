@@ -90,6 +90,8 @@
                         </volist>
                         <div class="clear"></div>
                     </div>
+                    <div class="img-left"><i class="fa fa-angle-left"></i></div>
+                    <div class="img-right"><i class="fa fa-angle-right"></i></div>
                 </div>
             </div>
         </div>
@@ -125,6 +127,7 @@
 </div>
 <include file="../public/themes/RY/icr/foot.html" />
 <script type="text/javascript">
+
     $(function () {
         $("#selectID").change(function () {
             // var selectOption = $('#selectOption option:selected');
@@ -136,5 +139,57 @@
             $(".video").show();
             $(".video video").trigger("play")
         });
+        //初始化位置
+        $(".comment-item").each(function(i,v){
+            $(v).css('left',(i)*355+'px')
+        });
+        $(".radios-item").each(function(i,v){
+            $(v).css('left',(i)*355+'px')
+        });
+        //翻动
+        var page_index =1;
+        $(".img-right").click(function(){
+            var max =  parseInt($('.radios-item').eq(-1).css('left'));
+            console.log(max)
+            if(max>1420){
+                $('.radios-item').each(function(i,v){
+                    $(this).css('left',(parseInt($(this).css('left'))-page_index*1420)+'px');
+                })
+                page_index++;
+            }
+
+        })
+        $(".img-left").click(function(){
+            var first = parseInt($('.radios-item:first-of-type').css('left'));
+            console.log(page_index)
+            if(first<0){
+                $('.radios-item').each(function(i,v){
+                    $(this).css('left',(parseInt($(this).css('left'))+(page_index-1)*1420)+'px');
+                })
+                page_index--;
+            }
+
+        })
+
     });
+    //轮播
+    var fun = function(){
+        var max = 0;
+        $(".comment-item").each(function(i,v){
+            var left = parseInt($(this).css('left'))
+            $(this).css('left',(left -1)+'px');
+            if(left>max){
+                max = left;
+            }
+        });
+        $(".comment-item").each(function(i,v){
+            var left = parseInt($(this).css('left'));
+            if(left<-355){
+                max += 355;
+                $(this).css('left',max+'px');
+            }
+        })
+    };
+  setInterval(fun,10);
+
 </script>

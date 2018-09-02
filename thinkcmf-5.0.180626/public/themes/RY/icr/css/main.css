@@ -1394,7 +1394,7 @@ option{
 
 .radios{
     width:1440px;
-    height:330px;
+    height:310px;
     margin: 0 auto;
     margin-top: 40px;
     position: relative;
@@ -1407,26 +1407,6 @@ option{
     top:120px;
 }
 
-@-webkit-keyframes rowup {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        -webkit-transform: translate3d(2000px, 0px, 0);
-        transform: translate3d(2000px, 0px, 0);
-    }
-}
-@keyframes rowup {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        -webkit-transform: translate3d(2000px, 0px, 0);
-        transform: translate3d(2000px, 0px, 0);
-    }
-}
 
 .rlist{
     position: relative;
@@ -1441,10 +1421,11 @@ option{
 }
 .radios-item{
     width:330px;
-    position: relative;
+    position: absolute;
     float: left;
-    height:100%;
-    margin-left: 25px;
+}
+.radios-item:first-of-type{
+    margin-left: 0;
 }
 .radios-item .img{
     width:330px;
@@ -1496,6 +1477,7 @@ option{
 .study .comment{
     width:1440px;
     margin: 0 auto;
+    height:400px;
     position: relative;
     overflow: hidden;
 }
@@ -1505,7 +1487,7 @@ option{
     margin-left: 25px;
     width: 330px;
     height:330px;
-    position: relative;
+    position: absolute;
 }
 .study .comment .comment-item .img{
     width:100%;
