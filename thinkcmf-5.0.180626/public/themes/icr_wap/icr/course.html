@@ -31,39 +31,12 @@
             </div>
         </div>
         <div class="item" style="padding-top: 0.2rem">
-            <div class="course-item">
-                <div class="course-img">
-                    <img src="/themes/icr_wap/icr/imgs/banner-1.jpg" />
+            <volist name="course" id="vo" length="6">
+                <div class="content-item">
+                    <div class="course-img"><img src=<?=$vo['icon']?> /></div>
+                    <div class="title"><?=$vo['name']?></div>
                 </div>
-                <div class="title">
-                    戏剧表演
-                </div>
-            </div>
-            <div class="course-item">
-                <div class="course-img">
-                    <img src="/themes/icr_wap/icr/imgs/banner-1.jpg" />
-                </div>
-                <div class="title">
-                    戏剧表演
-                </div>
-            </div>
-            <div class="course-item">
-                <div class="course-img">
-                    <img src="/themes/icr_wap/icr/imgs/banner-1.jpg" />
-                </div>
-                <div class="title">
-                    戏剧表演
-                </div>
-            </div>
-            <div class="course-item">
-                <div class="course-img">
-                    <img src="/themes/icr_wap/icr/imgs/banner-1.jpg" />
-                </div>
-                <div class="title">
-                    戏剧表演
-                </div>
-            </div>
-            <div class="clear"></div>
+            </volist>
         </div>
         <div class="item">
             <div class="target">
