@@ -1,21 +1,21 @@
 
 @font-face {
     font-family: 'PingFang';
-    src: url('/font/PingFang Medium.eot');
+    src: url('/themes/icr_wap/icr/font/PingFang Medium.eot');
     src: local('PingFang Regular'),
     local('PingFang'),
-    url('/font/PingFang Medium.woff') format('woff'),
-    url('/font/PingFang Medium.ttf') format('truetype'),
-    url('/font/PingFang Medium.svg#PingFang') format('svg');
+    url('/themes/icr_wap/icr/font/PingFang Medium.woff') format('woff'),
+    url('/themes/icr_wap/icr/font/PingFang Medium.ttf') format('truetype'),
+    url('/themes/icr_wap/icr/font/PingFang Medium.svg#PingFang') format('svg');
 }
 @font-face {
     font-family: 'PlutoSans';
-    src: url('/font/PlutoSansRegular.eot');
+    src: url('/themes/icr_wap/icr/font/PlutoSansRegular.eot');
     src: local('PingFang Regular'),
     local('PingFang'),
-    url('/font/PlutoSansRegular.woff') format('woff'),
-    url('/font/PlutoSansRegular.ttf') format('truetype'),
-    url('/font/PlutoSansRegular.svg#PlutoSans') format('svg');
+    url('/themes/icr_wap/icr/font/PlutoSansRegular.woff') format('woff'),
+    url('/themes/icr_wap/icr/font/PlutoSansRegular.ttf') format('truetype'),
+    url('/themes/icr_wap/icr/font/PlutoSansRegular.svg#PlutoSans') format('svg');
 }
 html body{
     padding: 0;
