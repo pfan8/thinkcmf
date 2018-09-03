@@ -102,6 +102,11 @@
 </script>
 <script type="text/javascript">
     $(function(){
+
+        //初始化位置
+        $(".comment-item").each(function(i,v){
+            $(v).css('left',(i)*355+'px')
+        });
         var timeoutId = null;
         $("[name='back']").click(function(){
             var obj = $(this).parents('.point-item');
