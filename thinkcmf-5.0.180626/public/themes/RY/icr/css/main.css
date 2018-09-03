@@ -900,7 +900,6 @@ footer{
     font-size: 48px;
     font-weight: bold;
     color: #3d4d55;
-    font-family: PingFang !important;
 }
 .headteacher{
     height:330px;
@@ -2261,7 +2260,7 @@ select::-ms-expand { display: none; }
     position: absolute;
     top: 0;
     left:300px;
-    width: 500px;
+    width: 340px;
     height:680px;
     background-color:rgb(183,201,211) ;
     padding: 30px 20px 30px 20px;
