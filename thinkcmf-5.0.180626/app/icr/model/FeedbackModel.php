@@ -143,7 +143,7 @@ class FeedbackModel extends Model
             }
         } elseif ($feedback['type'] == 2)
         {
-//            $content_html .= "<video src='" . $feedback['content'] ."' controls='controls' style='width: 200px;height: 200px'></video>";
+            $content_html = $feedback['content'];
         }
         $feedback['content'] = $content_html;
     }
