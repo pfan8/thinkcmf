@@ -151,7 +151,7 @@
         $(".img-right").click(function(){
             var max =  parseInt($('.radios-item').eq(-1).css('left'));
             console.log(max)
-            if(max>1420){
+            if(max>=1420){
                 $('.radios-item').each(function(i,v){
                     $(this).css('left',(parseInt($(this).css('left'))-page_index*1420)+'px');
                 })
