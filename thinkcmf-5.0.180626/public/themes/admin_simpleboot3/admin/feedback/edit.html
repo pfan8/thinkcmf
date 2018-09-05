@@ -7,7 +7,7 @@
         <li><a href="{:url('feedback/add')}">{:lang('ADMIN_FEEDBACK_ADD')}</a></li>
         <li class="active" ><a>{:lang('ADMIN_FEEDBACK_EDIT')}</a></li>
     </ul>
-    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('feedback/editPost')}">
+    <form method="post" enctype="multipart/form-data" class="form-horizontal js-ajax-form margin-top-20" action="{:url('feedback/editPost')}">
 
         <div class="form-group">
             <label class="col-sm-2 control-label"><span class="form-required">*</span>ID:</label>
@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label"><span class="form-required">*</span>类型（文字1/视频2）:</label>
-            <select class="btn btn-primary dropdown-toggle" name="type" value="{$type}" style="margin-left:15px;width: 100px;text-align: center">
+            <select id="type-select" onchange="typeChange()" class="btn btn-primary dropdown-toggle" name="type" value="{$type}" style="margin-left:15px;width: 100px;text-align: center">
                 {$option_html}
             </select>
         </div>
@@ -43,7 +43,10 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">内容（文字/视频URL）:</label>
             <div class="col-md-6 col-sm-10">
-                <textarea class="form-control" name="content" rows="5" cols="57">{$content}</textarea>
+                <label id="file-input" class="btn btn-primary btn-file" style="display: none">
+                    <span>{$content}</span> <input name='content' type="file" style="display: none;">
+                </label>
+                <textarea id="content-input" class="form-control" name="content" rows="5" cols="57" style="display: none">{$content}</textarea>
             </div>
         </div>
         <div class="form-group">
@@ -52,7 +55,6 @@
                 <input type="text" class="form-control" name="icon" value="{$icon}">
             </div>
         </div>
-
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary js-ajax-submit">{:lang("SAVE")}</button>
             <a class="btn btn-default" href="{:url('feedback/index')}">返回</a>
@@ -61,5 +63,33 @@
 
 </div>
 <script src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    function typeChange(){
+        var objS = document.getElementById("type-select");
+        var type = objS.options[objS.selectedIndex].text;
+        if(type == 1){
+            $("#file-input").hide()
+            $("#content-input").show()
+        } else {
+            $("#file-input").show()
+            $("#content-input").hide()
+        }
+    }
+    $(document).on('change', ':file', function() {
+        var input = $(this),
+            numFiles = input.get(0).files ? input.get(0).files.length : 1,
+            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+    });
+    $(document).ready( function() {
+        $(':file').on('fileselect', function(event, numFiles, label) {
+            if(numFiles == 1) {
+                $("#file-input").find("span").html(label);
+            } else {
+                alert("只能上传一个文件")
+            }
+        });
+    });
+</script>
 </body>
 </html>

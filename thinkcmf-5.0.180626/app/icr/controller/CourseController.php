@@ -39,10 +39,6 @@ class CourseController extends HomebaseController{
         $course = $course_model->getCourseByLevel($s_level);
         $feedback_model = new FeedbackModel();
         $feedback_video = $feedback_model->getFeedbackByType(2);
-        foreach ($feedback_video as $fv)
-        {
-            echo $fv['content'] . "\n";
-        }
         $feedback_text = $feedback_model->getFeedbackByType(1);
         for ($i = 0;$i < count($feedback_video); $i++) {
             $feedback = $feedback_video->shift();

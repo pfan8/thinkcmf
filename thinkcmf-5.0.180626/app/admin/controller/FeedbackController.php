@@ -86,23 +86,14 @@ class FeedbackController extends AdminBaseController
     public function addPost()
     {
         $data = $this->request->post();
-//        $file = $this->request->post()->file('content');
-        $file = $_FILES;
-        var_dump($file);exit;
-        move_uploaded_fiele('path',$file['tmp_path']);
+       $file=$this->request->file('content');
         if($file){
             $path = ROOT_PATH . 'public' . DS . 'upload' . DS . "video";
             // 文件大小限制500M
             $max_file_size = 500*1024*1024;
             $info = $file->validate(['size'=>$max_file_size,'ext'=>'mp4'])->move($path);
             if($info){
-                // 成功上传后 获取上传信息
-                // 输出 jpg
-                echo $info->getExtension();
-                // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
-                echo $info->getSaveName();
-                // 输出 42a79759f284b767dfcb2a0197904287.jpg
-                echo $info->getFilename();
+                $data['content'] = DS.'upload'.DS.'video'.DS.$info->getSaveName();
             }else{
                 // 上传失败获取错误信息
                 return $this->error(lang($file->getError()), url('feedback/add'));
@@ -172,16 +163,40 @@ class FeedbackController extends AdminBaseController
      */
     public function editPost()
     {
+        $data = $this->request->post();
+        $file=$this->request->file('content');
+        if($file){
+            $path = ROOT_PATH . 'public' . DS . 'upload' . DS . "video";
+            // 文件大小限制500M
+            $max_file_size = 500*1024*1024;
+            $info = $file->validate(['size'=>$max_file_size,'ext'=>'mp4'])->move($path);
+            if($info){
+                $data['content'] = DS.'upload'.DS.'video'.DS.$info->getSaveName();
+            }else{
+                // 上传失败获取错误信息
+                return $this->error(lang($file->getError()), url('feedback/add'));
+            }
+        } else {
+            return $this->error("获取文件失败", url('feedback/add'));
+        }
 
         $feedback_model = new FeedbackModel();
-        $arrData  = $this->request->post();
+        $course_model = new CourseModel();
+        $user_model = new UserModel();
+        $is_course_exist = $course_model->getCourseByID($data['cid']);
+        if(!$is_course_exist)
+            return $this->error(lang("没有该课程"), url('feedback/add'));
+        $is_user_exist = $user_model->where('id',$data['uid'])->find();
+        if(empty($is_user_exist))
+            return $this->error(lang("没有该用户"), url('feedback/add'));
+
 
         $validate = $this->getFeedbackValidate();
-        if(!$validate->check($arrData)){
+        if(!$validate->check($data)){
             $msg = $validate->getError();
-            $this->error(lang($msg), url('feedback/edit',array('id' => $arrData['id'])));
+            $this->error(lang($msg), url('feedback/edit',array('id' => $data['id'])));
         }
-        $feedback_model->updateFeedback($arrData);
+        $feedback_model->updateFeedback($data);
         $this->success(lang("EDIT_SUCCESS"), url("feedback/index"));
 
     }
