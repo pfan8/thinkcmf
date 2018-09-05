@@ -39,7 +39,12 @@
                     <td>{$vo.uid}</td>
                     <td>{$vo.cid}</td>
                     <td>{$vo.type}</td>
-                    <td>{$vo.content}</td>
+                    <td>
+                        <if condition="$vo.type == 2">
+                            <video height="300" width="300" controls="controls"><source src="{$vo.content}" type="video/mp4"></video>
+                            <else /> {$vo.content}
+                        </if>
+                    </td>
                     <td><img src="{$vo.icon}" height="100" width="100"></td>
                     <td>{$vo.title}</td>
                     <td width="140">

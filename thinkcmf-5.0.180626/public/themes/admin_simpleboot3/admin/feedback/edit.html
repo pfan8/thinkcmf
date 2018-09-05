@@ -43,8 +43,9 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">内容（文字/视频URL）:</label>
             <div class="col-md-6 col-sm-10">
+                <video id="video" height="300" width="300" controls="controls"><source src="{$content}" type="video/mp4"></video>
                 <label id="file-input" class="btn btn-primary btn-file" style="display: none">
-                    <span>{$content}</span> <input name='content' type="file" style="display: none;">
+                    <span>更改</span><input name='content' type="file" style="display: none;">
                 </label>
                 <textarea id="content-input" class="form-control" name="content" rows="5" cols="57" style="display: none">{$content}</textarea>
             </div>
@@ -69,9 +70,11 @@
         var type = objS.options[objS.selectedIndex].text;
         if(type == 1){
             $("#file-input").hide()
+            $("#video").hide()
             $("#content-input").show()
         } else {
             $("#file-input").show()
+            $("#video").show()
             $("#content-input").hide()
         }
     }
@@ -82,6 +85,7 @@
         input.trigger('fileselect', [numFiles, label]);
     });
     $(document).ready( function() {
+        typeChange()
         $(':file').on('fileselect', function(event, numFiles, label) {
             if(numFiles == 1) {
                 $("#file-input").find("span").html(label);
