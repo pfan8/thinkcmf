@@ -86,6 +86,30 @@ class FeedbackController extends AdminBaseController
     public function addPost()
     {
         $data = $this->request->post();
+//        $file = $this->request->post()->file('content');
+        $file = $_FILES;
+        var_dump($file);exit;
+        move_uploaded_fiele('path',$file['tmp_path']);
+        if($file){
+            $path = ROOT_PATH . 'public' . DS . 'upload' . DS . "video";
+            // 文件大小限制500M
+            $max_file_size = 500*1024*1024;
+            $info = $file->validate(['size'=>$max_file_size,'ext'=>'mp4'])->move($path);
+            if($info){
+                // 成功上传后 获取上传信息
+                // 输出 jpg
+                echo $info->getExtension();
+                // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+                echo $info->getSaveName();
+                // 输出 42a79759f284b767dfcb2a0197904287.jpg
+                echo $info->getFilename();
+            }else{
+                // 上传失败获取错误信息
+                return $this->error(lang($file->getError()), url('feedback/add'));
+            }
+        } else {
+            return $this->error("获取文件失败", url('feedback/add'));
+        }
 
         $validate = $this->getFeedbackValidate();
         if(!$validate->check($data)){

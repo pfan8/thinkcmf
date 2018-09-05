@@ -68,7 +68,7 @@ class FeedbackModel extends Model
     public function deleteFeedback($id)
     {
         $result = Db::name('icr_feedback')
-            ->where('id',$fid)
+            ->where('id',$id)
             ->find();
         if(empty($result))
         {

@@ -7,7 +7,7 @@
         <li class="active"><a href="{:url('feedback/add')}">{:lang('ADMIN_FEEDBACK_ADD')}</a></li>
         <!--<li><a  href="{:url('nav/edit')}" >{:lang('ADMIN_NAV_EDIT')}</a></li>-->
     </ul>
-    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('feedback/addPost')}">
+    <form method="post" enctype="multipart/form-data" class="form-horizontal js-ajax-form margin-top-20" action="{:url('feedback/addPost')}">
 
         <div class="form-group">
             <label class="col-sm-2 control-label"><span class="form-required">*</span>UID:</label>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
         <label class="col-sm-2 control-label"><span class="form-required">*</span>类型（文字1/视频2）:</label>
-            <select class="btn btn-primary dropdown-toggle" name="type" style="margin-left:15px;width: 100px;text-align: center">
+            <select id="type-select" onchange="typeChange()" class="btn btn-primary dropdown-toggle" name="type" style="margin-left:15px;width: 100px;text-align: center">
                 {$option_html}
             </select>
         </div>
@@ -36,12 +36,11 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">内容（文字/视频URL）:</label>
             <div class="col-md-6 col-sm-10">
-                <!--<input name="content" type="file" id="uploadFile" multiple class="file-loading" />-->
-                <input id="uploadFile" type="file" class="file" data-preview-file-type="text" name="content">
+                <label id="file-input" class="btn btn-primary btn-file" style="display: none">
+                    浏览.. <input name='content' type="file" style="display: none;">
+                </label>
+                <textarea id="content-input" class="form-control" name="content" rows="5" cols="57" style="display: none"></textarea>
             </div>
-            <!--<div class="col-md-6 col-sm-10">-->
-                <!--<textarea class="form-control" name="content" rows="5" cols="57"></textarea>-->
-            <!--</div>-->
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label">封面URL:</label>
@@ -58,5 +57,34 @@
 
 </div>
 <script src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    function typeChange(){
+        var objS = document.getElementById("type-select");
+        var type = objS.options[objS.selectedIndex].text;
+        if(type == 1){
+            $("#file-input").hide()
+            $("#content-input").show()
+        } else {
+            $("#file-input").show()
+            $("#content-input").hide()
+        }
+    }
+    $(document).on('change', ':file', function() {
+        var input = $(this),
+            numFiles = input.get(0).files ? input.get(0).files.length : 1,
+            label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+    });
+    $(document).ready( function() {
+        $(':file').on('fileselect', function(event, numFiles, label) {
+            if(numFiles == 1) {
+                var element = document.getElementById("file-input");
+                element.innerText = label;
+            } else {
+                alert("只能上传一个文件")
+            }
+        });
+    });
+</script>
 </body>
 </html>
