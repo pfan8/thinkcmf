@@ -9,23 +9,19 @@
     <div class="main">
         <div class="item">
             <div class="join">
-
-
-            <div class="join_item" onclick="location='../icr/recruit_detail?id={$recruit[0][\'id\']}'">
-               <i class="fa fa-user-circle-o blue head_icon"></i>
-                <span>{$recruit[0]['position']}</span>
-                <i class="fa fa-angle-right angle"></i>
-            </div>
-            <div class="join_item" onclick="location='../icr/recruit_detail?id={$recruit[1][\'id\']}'">
-                <i class="fa fa-user-circle-o red head_icon"></i>
-                <span>{$recruit[1]['position']}</span>
-                <i class="fa fa-angle-right angle"></i>
-            </div>
-            <div class="join_item" onclick="location='../icr/recruit_detail?id={$recruit[2][\'id\']}'">
-                <i class="fa fa-user-circle-o orange head_icon"></i>
-                <span>{$recruit[2]['position']}</span>
-                <i class="fa fa-angle-right angle"></i>
-            </div>
+            <volist name="recruit" id="vo">
+                <div class="join_item" onclick="location='../icr/recruit_detail?id={$vo[\'id\']}'">
+                    <if condition="$i % 3 == 1">
+                        <i class="fa fa-user-circle-o blue head_icon"></i>
+                    <elseif condition="$i % 3 == 2">
+                            <i class="fa fa-user-circle-o red head_icon"></i>
+                    </elseif>
+                    <else /> <i class="fa fa-user-circle-o orange head_icon"></i>
+                    </if>
+                    <span>{$vo['position']}</span>
+                    <i class="fa fa-angle-right angle"></i>
+                </div>
+            </volist>
         </div>
         </div>
     </div>

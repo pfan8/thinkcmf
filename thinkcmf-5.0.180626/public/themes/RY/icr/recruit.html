@@ -7,72 +7,79 @@
     <div class="item">
         <div class="recruit">
             <h1>人才招聘</h1>
-            <div class="recruit-item">
-                <div class="title text-blue">
-                    <div class="user">
-                        <i class="fa fa-user-circle-o"></i>
-                    </div>
-                    <div class="job-info"><?=$recruit[0]['position']?></div>
-                    <div class="job-button"><input class="div-blue" type="button" value="查看职位详情"
-                                                   onclick="location='../icr/recruit_detail?id={$recruit[0][\'id\']}'"/></div>
-                </div>
-                <div class="desc div-blue">
-                    <div class="title">
-                        <div>职位描述</div>
-                    </div>
-                    <div class="desc">
-                        <div class="content">
-                            <?=$brief_intro[0]?>
+            <volist name="recruit" id="vo">
+                <if condition="$i % 3 == 1">
+                    <div class="recruit-item">
+                        <div class="title text-blue">
+                            <div class="user">
+                                <i class="fa fa-user-circle-o"></i>
+                            </div>
+                            <div class="job-info"><?=$vo['position']?></div>
+                            <div class="job-button"><input class="div-blue" type="button" value="查看职位详情"
+                                                           onclick="location='../icr/recruit_detail?id={$vo[\'id\']}'"/></div>
                         </div>
-                    </div>
-                </div>
-                <div class="arrow div-blue"></div>
-                <div class="circle"></div>
-            </div>
-            <div class="recruit-item">
-                <div class="title text-red">
-                    <div class="user">
-                        <i class="fa fa-user-circle-o"></i>
-                    </div>
-                    <div class="job-info"><?=$recruit[1]['position']?></div>
-                    <div class="job-button"><input class="div-red" type="button" value="查看职位详情"
-                                                   onclick="location='../icr/recruit_detail?id={$recruit[1][\'id\']}'"/></div>
-                </div>
-                <div class="desc div-red">
-                    <div class="title">
-                        <div>职位描述</div>
-                    </div>
-                    <div class="desc">
-                        <div class="content">
-                            <?=$brief_intro[1]?>
+                        <div class="desc div-blue">
+                            <div class="title">
+                                <div>职位描述</div>
+                            </div>
+                            <div class="desc">
+                                <div class="content">
+                                    <?=$brief_intro[0]?>
+                                </div>
+                            </div>
                         </div>
+                        <div class="arrow div-blue"></div>
+                        <div class="circle"></div>
                     </div>
-                </div>
-                <div class="arrow div-red"></div>
-                <div class="circle"></div>
-            </div>
-            <div class="recruit-item">
-                <div class="title text-orange">
-                    <div class="user">
-                        <i class="fa fa-user-circle-o"></i>
-                    </div>
-                    <div class="job-info"><?=$recruit[2]['position']?></div>
-                    <div class="job-button"><input class="div-orange" type="button" value="查看职位详情"
-                                                   onclick="location='../icr/recruit_detail?id={$recruit[2][\'id\']}'"/></div>
-                </div>
-                <div class="desc div-orange">
-                    <div class="title">
-                        <div>职位描述</div>
-                    </div>
-                    <div class="desc">
-                        <div class="content">
-                            <?=$brief_intro[2]?>
+                <elseif condition="$i % 3 == 2">
+                    <div class="recruit-item">
+                        <div class="title text-red">
+                            <div class="user">
+                                <i class="fa fa-user-circle-o"></i>
+                            </div>
+                            <div class="job-info"><?=$vo['position']?></div>
+                            <div class="job-button"><input class="div-red" type="button" value="查看职位详情"
+                                                           onclick="location='../icr/recruit_detail?id={$vo[\'id\']}'"/></div>
                         </div>
+                        <div class="desc div-red">
+                            <div class="title">
+                                <div>职位描述</div>
+                            </div>
+                            <div class="desc">
+                                <div class="content">
+                                    <?=$brief_intro[1]?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="arrow div-red"></div>
+                        <div class="circle"></div>
                     </div>
-                </div>
-                <div class="arrow div-orange"></div>
-                <div class="circle"></div>
-            </div>
+                </elseif>
+                <else />
+                    <div class="recruit-item">
+                        <div class="title text-orange">
+                            <div class="user">
+                                <i class="fa fa-user-circle-o"></i>
+                            </div>
+                            <div class="job-info"><?=$vo['position']?></div>
+                            <div class="job-button"><input class="div-orange" type="button" value="查看职位详情"
+                                                           onclick="location='../icr/recruit_detail?id={$vo[\'id\']}'"/></div>
+                        </div>
+                        <div class="desc div-orange">
+                            <div class="title">
+                                <div>职位描述</div>
+                            </div>
+                            <div class="desc">
+                                <div class="content">
+                                    <?=$brief_intro[2]?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="arrow div-orange"></div>
+                        <div class="circle"></div>
+                    </div>
+                </if>
+            </volist>
         </div>
     </div>
 </div>

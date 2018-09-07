@@ -86,22 +86,23 @@ class FeedbackController extends AdminBaseController
     public function addPost()
     {
         $data = $this->request->post();
-       $file=$this->request->file('content');
-        if($file){
-            $path = ROOT_PATH . 'public' . DS . 'upload' . DS . "video";
-            // 文件大小限制50M
-            $max_file_size = 50*1024*1024;
-            $info = $file->validate(['size'=>$max_file_size,'ext'=>'mp4'])->move($path);
-            if($info){
-                $data['content'] = DS.'upload'.DS.'video'.DS.$info->getSaveName();
-            }else{
-                // 上传失败获取错误信息
-                return $this->error(lang($file->getError()), url('feedback/add'));
+        if($data['type'] == 2) {
+            $file=$this->request->file('content');
+            if($file){
+                $path = ROOT_PATH . 'public' . DS . 'upload' . DS . "video";
+                // 文件大小限制50M
+                $max_file_size = 50*1024*1024;
+                $info = $file->validate(['size'=>$max_file_size,'ext'=>'mp4'])->move($path);
+                if($info){
+                    $data['content'] = DS.'upload'.DS.'video'.DS.$info->getSaveName();
+                }else{
+                    // 上传失败获取错误信息
+                    return $this->error(lang($file->getError()), url('feedback/add'));
+                }
+            } else {
+                return $this->error(lang("获取文件失败"), url('feedback/add'));
             }
-        } else {
-            return $this->error(lang("获取文件失败"), url('feedback/add'));
         }
-
         $validate = $this->getFeedbackValidate();
         if(!$validate->check($data)){
             $msg = $validate->getError();
