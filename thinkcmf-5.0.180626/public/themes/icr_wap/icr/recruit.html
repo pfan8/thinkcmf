@@ -1,0 +1,33 @@
+<include file="themes/icr_wap/icr/head.html" />
+<link href="/themes/icr_wap/icr/css/recruit.css" rel="stylesheet" type="text/css"/>
+<section id="content">
+    <div class="slide">
+        <ul>
+            <li><img src="/themes/icr_wap/icr/imgs/banner-3.jpg"></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="item">
+            <div class="join">
+
+
+            <div class="join_item" onclick="location='../icr/recruit_detail?id={$recruit[0][\'id\']}'">
+               <i class="fa fa-user-circle-o blue head_icon"></i>
+                <span>{$recruit[0]['position']}</span>
+                <i class="fa fa-angle-right angle"></i>
+            </div>
+            <div class="join_item" onclick="location='../icr/recruit_detail?id={$recruit[1][\'id\']}'">
+                <i class="fa fa-user-circle-o red head_icon"></i>
+                <span>{$recruit[1]['position']}</span>
+                <i class="fa fa-angle-right angle"></i>
+            </div>
+            <div class="join_item" onclick="location='../icr/recruit_detail?id={$recruit[2][\'id\']}'">
+                <i class="fa fa-user-circle-o orange head_icon"></i>
+                <span>{$recruit[2]['position']}</span>
+                <i class="fa fa-angle-right angle"></i>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<include file="themes/icr_wap/icr/foot.html" />

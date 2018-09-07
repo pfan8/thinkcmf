@@ -1,0 +1,142 @@
+<include file="themes/icr_wap/icr/head.html" />
+<link href="/themes/icr_wap/icr/css/school.css" rel="stylesheet" type="text/css"/>
+<section id="content">
+    <div class="slide">
+        <ul>
+            <li><img src="/themes/icr_wap/icr/imgs/banner-4.jpg"></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="item">
+            <div class="h1">校区环境</div>
+            <div class="environment">
+                <ul>
+                    <volist name="school_picture" id="vo">
+                        <li><img src="{$vo.url}"></li>
+                    </volist>
+                    <!--<li><img src="/themes/icr_wap/icr/imgs/icr-us-2-edited.jpg"></li>-->
+                    <!--<li><img src="/themes/icr_wap/icr/imgs/banner-4.jpg"></li>-->
+                </ul>
+                <div class="oval">
+                    <div class="an">
+                        <volist name="school_picture" id="vo">
+                            <if condition="$i == count($school_picture)">
+                                <div id="an-{$vo.id}" class="last-an"></div>
+                                <else />    <div id="an-{$vo.id}"></div>
+                            </if>
+                        </volist>
+                        <!--<div id="an-1"></div>-->
+                        <!--<div id="an-2" class="last-an"></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="city_list">
+                <volist name="city_list" id="vo">
+                    <if condition="$vo.city == $city_name">
+                        <div class="city_item active">{$vo.city}</div>
+                        <else />
+                        <div class="city_item">{$vo.city}</div>
+                    </if>
+                </volist>
+                <div class="clear"></div>
+            </div>
+            <div class="school_list">
+                <volist name="school" id="vo">
+                    <div class="school_item">
+                        <div class="school_name">{$vo.name}</div>
+                        <div class="school_position">
+                            <i class="fa fa-map-marker"></i>
+                            <span>{$vo.location}</span>
+                        </div>
+                        <div class="school_reservation">
+                            <div class="reservation_button" name="yy" data-name="{$vo.name}" data-position="{$vo.location}">免费预约试听</div>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+        </div>
+        <div class="item">
+            <div class="h1">文化活动</div>
+            <div class="activity_list">
+                <volist name="school_activity" id="vo">
+                    <div class="activity_item">
+                        <div class="activity_img">
+                            <img src="{$vo.icon}" />
+                        </div>
+                        <div class="activity_foot">{$vo.name}</div>
+                    </div>
+                </volist>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<include file="themes/icr_wap/icr/foot.html" />
+<script type="text/javascript">
+    $(function(){
+        $('#an-1').css("backgroundColor","#ffffff");
+        var page_size = $(".environment ul li").length;
+        $(".environment ul").width(($(".environment ul li").length*7.5)+'rem');
+        var environment_page = 1;
+        var width = $(".environment ul").width();
+        var changePage =function(page){
+            if(page<1){
+                environment_page=1;
+            }else if(page>page_size){
+                environment_page = page_size;
+            }
+            var marginLeft = (environment_page-1) * -(width/page_size);
+            $(".environment ul").animate({'marginLeft':marginLeft});
+            //修改按钮
+            $('.oval .an div').css("backgroundColor","#b2b2b2");
+
+            $('#an-'+environment_page).css("backgroundColor","#ffffff");
+        };
+        //绑定滑动事件
+        $(".environment").on('touchstart',function(e){
+
+            var $tb = $(this);
+            var startX = e.originalEvent.targetTouches[0].clientX;
+            var marginLeft = parseInt($tb.find('ul').css('marginLeft'));
+            var pullDeltaX = 0;
+            $tb.on('touchmove',function(e){
+                var x = e.originalEvent.targetTouches[0].clientX;
+                pullDeltaX = x-startX;
+                console.log(pullDeltaX);
+                if(!pullDeltaX){
+                    return ;
+                }
+                e.preventDefault();
+
+                var resultMarginLeft = marginLeft+pullDeltaX;
+                if(resultMarginLeft>0||resultMarginLeft<-(width-width/page_size)){
+                    return ;
+                }
+                $tb.find("ul").css('marginLeft',marginLeft+pullDeltaX);
+            })
+            $tb.on('touchend',function(e){
+                $tb.off('touchmove touchend');
+                e.stopPropagation();
+                if(pullDeltaX>30&&environment_page>1){
+                    //右滑
+                    environment_page--;
+                }else if(pullDeltaX<-30 && environment_page<page_size){
+                    //左滑
+                    environment_page++;
+                }
+                changePage(environment_page);
+            })
+        })
+        //轮播事件
+        var environment_solid=function(){
+            environment_page++;
+          if(environment_page>page_size){
+              environment_page = 1;
+          }
+          changePage(environment_page);
+        };
+        setInterval(environment_solid,3000)
+    })
+</script>

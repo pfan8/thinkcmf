@@ -1,0 +1,75 @@
+<include file="themes/icr_wap/icr/head.html" />
+<link href="/themes/icr_wap/icr/css/teachers.css" rel="stylesheet" type="text/css"/>
+<section id="content">
+    <div class="slide">
+        <ul>
+            <li><img src="/themes/icr_wap/icr/imgs/banner-3.jpg"></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="item">
+            <div class="h1">优质师资</div>
+            <div class="teacher_list">
+                <volist name="teacher" id="vo">
+                    <a href="{:url('teacher/fetch_teacher_detail', array('s_teacher'=>$vo['id']))}"><div class="teacher_item">
+                    <div class="teacher_img"><img src="{$vo['icon']}" /></div>
+                    <div class="teacher_info">
+                        <div class="teacher_title">{$vo['name']}{$vo['position']}</div>
+                        <div class="teacher_content">
+                            {$vo['idea']}
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div></a>
+                </volist>
+                <!--<a href="#"><div class="teacher_item">-->
+                    <!--<div class="teacher_img"><img src="/themes/icr_wap/icr/imgs/gerad.jpg" /></div>-->
+                    <!--<div class="teacher_info">-->
+                        <!--<div class="teacher_title">Gerad——英语阅读老师</div>-->
+                        <!--<div class="teacher_content">-->
+                            <!--教学理念：每个人来讲，教学和学习都应该是一件开心的事。-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="clear"></div>-->
+                <!--</div></a>-->
+                <!--<a href="#"><div class="teacher_item">-->
+                    <!--<div class="teacher_img"><img src="/themes/icr_wap/icr/imgs/gerad.jpg" /></div>-->
+                    <!--<div class="teacher_info">-->
+                        <!--<div class="teacher_title">Gerad——英语阅读老师</div>-->
+                        <!--<div class="teacher_content">-->
+                            <!--教学理念：每个人来讲，教学和学习都应该是一件开心的事。-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="clear"></div>-->
+                <!--</div></a>-->
+                <!--<a href="#"><div class="teacher_item">-->
+                    <!--<div class="teacher_img"><img src="/themes/icr_wap/icr/imgs/gerad.jpg" /></div>-->
+                    <!--<div class="teacher_info">-->
+                        <!--<div class="teacher_title">Gerad——英语阅读老师</div>-->
+                        <!--<div class="teacher_content">-->
+                            <!--教学理念：每个人来讲，教学和学习都应该是一件开心的事。-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="clear"></div>-->
+                <!--</div></a>-->
+
+            </div>
+            <div class="teacher_foot">
+                <php>
+                    $page = empty($page) ? 1 : $page;
+                </php>
+                <if condition="$page == 1">
+                    <div class="last_page">上一页</div>
+                    <div class="next_page active" onclick="location='{:url(\'teacher/index\', array(\'page\'=>$page+1))}'">下一页</div>
+                    <elseif condition="$page < ceil(($count/9))" />
+                        <div class="last_page active" onclick="location='{:url(\'teacher/index\', array(\'page\'=>$page-1))}'">上一页</div>
+                        <div class="next_page active" onclick="location='{:url(\'teacher/index\', array(\'page\'=>$page+1))}'">下一页</div>
+                    <else />
+                        <div class="last_page active" onclick="location='{:url(\'teacher/index\', array(\'page\'=>$page-1))}'">上一页</div>
+                        <div class="next_page">上一页</div>
+                </if>
+            </div>
+        </div>
+    </div>
+</section>
+<include file="themes/icr_wap/icr/foot.html" />

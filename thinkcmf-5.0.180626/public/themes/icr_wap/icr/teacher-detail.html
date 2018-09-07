@@ -1,0 +1,30 @@
+<include file="themes/icr_wap/icr/head.html" />
+<link href="/themes/icr_wap/icr/css/teachers.css" rel="stylesheet" type="text/css"/>
+<section id="content">
+    <div class="slide">
+        <ul>
+            <li><img src="/themes/icr_wap/icr/imgs/banner-3.jpg"></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="item">
+            <div class="teacher-detail">
+                <div class="detail_head">
+                    <div class="detail_img">
+                        <img src="{$s_teacher['icon']}" />
+                    </div>
+                    <div class="detail_title">
+                        {$s_teacher['name']}{$s_teacher['position']}
+                    </div>
+                </div>
+                <div class="detail_content">
+                    {$s_teacher['resume']}
+                    <br/>
+                    <p>教学理念：</p>
+                    {$s_teacher['idea']}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<include file="themes/icr_wap/icr/foot.html" />

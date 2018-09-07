@@ -1,0 +1,89 @@
+.teacher_list{
+    width: 100%;
+}
+.teacher_item{
+    width:100%;
+    height:2.2rem;
+    margin-top: 0.4rem;
+}
+.teacher_img{
+    width:2rem;
+    height:2.2rem;
+    float: left;
+}
+.teacher_img img{
+    width:100%;
+    height:100%;
+}
+.teacher_info{
+    width:5.5rem ;
+    height:2.2rem;
+    float: left;
+    background-color: #fc5868;
+    color: #FFFFFF;
+    padding: 0.2rem;
+    box-sizing: border-box;
+}
+.teacher_content{
+    margin-top: 0.2rem;
+    max-height: 1rem;
+    font-size: .24rem;
+    white-space: pre-line;
+    overflow: scroll;
+}
+.teacher_foot{
+    width: 3.86rem;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+}
+.teacher_foot div{
+    width:1.6rem;
+    height:0.52rem;
+    border-radius: 0.08rem;
+    background-color: #d8d8d8;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 0.52rem;
+}
+.teacher_foot .active{
+    background-color: #fc384c;
+}
+.last_page{
+    float: left;
+}
+.next_page{
+    float: right;
+}
+.teacher-detail{
+    width: 100%;
+    margin-top: 0.6rem;
+}
+.detail_head{
+    width:4.12rem;
+    margin: 0 auto ;
+}
+.detail_img{
+    width:2rem;
+    height:2.2rem;
+    margin: 0 auto;
+}
+.detail_img img{
+    width:100%;
+    height:100%;
+}
+.detail_title{
+    text-align: center;
+    font-size: 0.28rem;
+    color: #3d4d55;
+    margin-top:0.2rem;
+}
+.detail_content{
+    width: 6.92rem;
+    margin: 0 auto;
+    font-size: 0.28rem;
+
+    margin-top: 0.4rem;
+}
+.detail_content p{
+    margin: 0;
+}

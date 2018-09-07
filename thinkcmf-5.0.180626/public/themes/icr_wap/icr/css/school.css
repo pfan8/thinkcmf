@@ -1,0 +1,111 @@
+.environment{
+    width: 7.5rem;
+    height:7.5rem;
+    margin-top: 0.1rem;
+    position: relative;
+}
+.environment ul{
+    height:100%;
+}
+.environment ul li{
+    float: left;
+    width: 7.5rem;
+    height:100%;
+}
+.environment ul li img{
+    width:100%;
+    height:100%;
+}
+.oval{
+    position: absolute;
+    top:7rem;
+    width:100%;
+    height: 0.06rem;
+}
+.oval .an{
+    margin: 0 auto;
+    height:0.06rem;
+    display: table;
+}
+.oval .an div{
+    float: left;
+    width: 0.06rem;
+    height:0.06rem;
+    border-radius: 50%;
+    margin-right: 0.1rem;
+    background-color: #bdbdbd;
+}
+.last-an{
+    margin-right: 0!important;
+}
+.city_list{
+    width:100%;
+    padding-top: 0.4rem;
+    height:2rem;
+}
+.city_list .active{
+    background-color: #fc384c;
+    color: #ffffff;
+    border: 0;
+}
+.city_item{
+    background-color: #ffffff;
+    width: 1.4rem;
+    height: 0.52rem;
+    border-radius: 0.3rem;
+    border: solid 0.01rem #37474f;
+    float: left;
+    margin: 0 0.22rem 0.52rem 0.22rem;
+    text-align: center;
+    line-height: 0.52rem;
+    color: #37474f;
+    font-weight: 500;
+    box-sizing: border-box;
+    font-size: 0.28rem;
+}
+.school_list{
+    width:100%;
+    box-sizing: border-box;
+}
+.school_item{
+    height:2.2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    width:7.06rem;
+    margin: 0 auto;
+    border-bottom:0.02rem solid #cccccc;
+    margin-top: 0.4rem;
+}
+.school_name{
+    width: 100%;
+    color: #37474f;
+    font-size: 0.36rem;
+    height:0.5rem;
+    line-height: 0.5rem;
+    box-sizing: border-box;
+}
+.school_position{
+    box-sizing: border-box;
+    height:0.7rem;
+    color: #37474f;
+    font-size: 0.24rem;
+    overflow: hidden;
+}
+.school_position i{
+    color: #ff9933;
+}
+.school_reservation{
+    width: 100%;
+    height:0.52rem;
+}
+.school_reservation .reservation_button{
+    height:100%;
+    width: 2.8rem;
+    border-radius: 0.08rem;
+    border: solid 0.02rem #fc384c;
+    color: #fc384c;
+    text-align: center;
+    line-height: 0.52rem;
+    float: right;
+    font-weight: bold;
+}
