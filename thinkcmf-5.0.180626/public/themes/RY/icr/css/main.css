@@ -881,7 +881,8 @@ footer{
     color: #002e6d;
 }
 .open_time{
-    width:200px;
+    width:400px;
+	white-space: pre-line;
     margin: 0 auto;
     margin-top: 20px;
 }

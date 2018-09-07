@@ -41,7 +41,7 @@
 <script src="/themes/icr_wap/icr/js/index.js"></script>
 <script type="text/javascript">
     //切换城市
-    $(".position_item,.city_item,.city_item active").click(function(){
+    $(".position_item").click(function(){
         $.post("{:url('index/saveCity')}",{'city':$(this).html()},function(e){
             location.reload();
         })

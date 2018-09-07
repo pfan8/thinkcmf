@@ -154,36 +154,67 @@
             </section>
 <include file="themes/icr_wap/icr/foot.html" />
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s0x1Cj9VeZ6bVRI249olQM0V"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s0x1Cj9VeZ6bVRI249olQM0V"></script>
     <script type="text/javascript">
         $(function(){
         // 百度地图API功能
         function mapini(city){
             //获取校区列表
             var school_list = null;
-            function addMarker(point){
+            function addMarker(point,data){
                 var marker = new BMap.Marker(point);
+                var searchInfoWindow =null;
+                var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+                    '<img src="/themes/RY/icr/imgs/map.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+                    '地址：' +data.position+
+                    '</div>';
+                searchInfoWindow=new BMapLib.SearchInfoWindow(map, content, {
+                    title  : data.name,      //标题
+                    width  : 290,             //宽度
+                    height : 105,              //高度
+                    panel  : "panel",         //检索结果面板
+                    enableAutoPan : true,     //自动平移
+                    searchTypes   :[
+                        BMAPLIB_TAB_SEARCH,   //周边检索
+                        BMAPLIB_TAB_TO_HERE,  //到这里去
+                        BMAPLIB_TAB_FROM_HERE //从这里出发
+                    ]
+                });
+                marker.addEventListener("click",function(e){
+                    searchInfoWindow.open(marker);
+                })
                 map.addOverlay(marker);
             }
             function editInfo(data){
-
+                var html ="                            <div class=\"school_info\">\n" +
+                    "                                <div class=\"name\">"+data['name']+"</div>\n" +
+                    "                                <div class=\"position\">\n" +
+                    "                                    <i class=\"fa fa-map-marker\"></i>\n" +
+                    "                                    <div>"+data['location']+"</div>\n" +
+                    "                                </div>\n" +
+                    "                                <div class=\"position-submit\" name=\"yy\">免费预约试听</div>\n" +
+                    "                            </div>";
+                $(".school_reservation").append(html);
+                $("[name='yy']").click(popup);
             }
             var map = new BMap.Map("map");
-            var e = {
-                "data":[{"coordinate":"1111111,11111"}]
-            };
-            for(var i=0;i<e.data.length;i++){
-                if(e.data[i]['coordinate']){
-                    var pint = e.data[i]['coordinate'].split(',');
-                    var point = new BMap.Point(pint[0],pint[1]);
-                    addMarker(point)
+            $.get("{:url('index/getSchoolList')}?city="+city,function(e){
+                $(".school_reservation").html('');
+                for(var i=0;i<e.data.length;i++){
+                    if(e.data[i]['coordinate']){
+                        var pint = e.data[i]['coordinate'].split(',');
+                        var point = new BMap.Point(pint[0],pint[1]);
+                        addMarker(point,{name:e.data[i]['name'],position:e.data[i]['location']})
+                    }
+                    editInfo(e.data[i]);
                 }
-                editInfo(e.data[i]);
-            }
-            map.centerAndZoom(point, 15);
+                map.centerAndZoom(point, 12);
+            });
         }
-    mapini('');
-        $(".list .list-item").on('click',function(){
-            $(".list .list-item").removeClass('active');
+        mapini('{$city_list[0]['city']}');
+        $(".city_item").on('click',function(){
+            $(".city_item").removeClass('active');
             $(this).addClass('active');
             mapini($(this).html());
         });
