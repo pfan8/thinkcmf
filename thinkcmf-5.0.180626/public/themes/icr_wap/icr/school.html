@@ -94,6 +94,37 @@
 
             $('#an-'+environment_page).css("backgroundColor","#ffffff");
         };
+        function mapini(city){
+            //获取校区列表
+            var school_list = null;
+            function editInfo(data){
+                var html ="<div class=\"school_item\">\n" +
+                    "                        <div class=\"school_name\">"+data['name']+"</div>\n" +
+                    "                        <div class=\"school_position\">\n" +
+                    "                            <i class=\"fa fa-map-marker\"></i>\n" +
+                    "                            <span>"+data['location']+"</span>\n" +
+                    "                        </div>\n" +
+                    "                        <div class=\"school_reservation\">\n" +
+                    "                            <div class=\"reservation_button\" name=\"yy\" data-name=\""+data['name']+"\" data-position=\""+data['location']+"\">免费预约试听</div>\n" +
+                    "                        </div>\n" +
+                    "                    </div>";
+                $(".school_list").append(html);
+                $("[name='yy']").click(popup);
+            }
+            $.get("{:url('index/getSchoolList')}?city="+city,function(e){
+                $(".school_list").html('');
+                for(var i=0;i<e.data.length;i++){
+                    editInfo(e.data[i]);
+                }
+            });
+        }
+
+        mapini('{$city_list[0]['city']}');
+        $(".city_item").on('click',function(){
+            $(".city_item").removeClass('active');
+            $(this).addClass('active');
+            mapini($(this).html());
+        });
         //绑定滑动事件
         $(".environment").on('touchstart',function(e){
 
