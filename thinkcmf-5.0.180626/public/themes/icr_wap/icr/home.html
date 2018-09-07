@@ -119,18 +119,15 @@
                         </div>
                         <div class="map" id="map"></div>
                         <div class="city_list">
-                            <div class="city_item">厦门</div>
-                            <div class="city_item">西安</div>
-                            <div class="city_item">南通</div>
-                            <div class="city_item clear-right">大连</div>
+                            <volist name="city_list" id="vo">
+                                <if condition="$vo.city == $city_name">
+                                    <div class="city_item active">{$vo.city}</div>
+                                    <else />
+                                    <div class="city_item">{$vo.city}</div>
+                                </if>
+                            </volist>
+                            <div class="clear"></div>
                         </div>
-                        <div class="city_list">
-                            <div class="city_item">广州</div>
-                            <div class="city_item">重庆</div>
-                            <div class="city_item">长春</div>
-                            <div class="city_item clear-right">顺德</div>
-                        </div>
-
                         <div class="school_reservation">
                             <div class="school_info">
                                 <div class="name">思明中心</div>
