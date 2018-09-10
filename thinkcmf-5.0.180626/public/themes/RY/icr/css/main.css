@@ -415,6 +415,7 @@ footer{
     margin-right: 20px;
 }
 .right_column{
+    display:none;
     width:90px;
     height:180px;
     position:fixed;
@@ -1150,12 +1151,20 @@ option{
     width: 550px;
     padding-top: 46px;
     color: #ffffff;
+    position:relative;
+}
+.desc .div-hidden{
+    position: absolute;
+    height: 350px;
+    width: 50px;
+    left: 465px;
 }
 .desc .desc .content{
     width: 482px;
+    max-height:300px;
     font-size: 20px;
     font-weight: 300;
-    height: 28px;
+    overflow-y: scroll;
 }
 .desc .desc .content p{
 
@@ -1850,7 +1859,7 @@ text-align-last: center;
     top: 5px;
     right: 10px;
 }
-.input-text input[type='submit']{
+.input-text input[type='button']{
     border-radius: 8px;
     background-color: #fc384c;
     font-size: 20px;
