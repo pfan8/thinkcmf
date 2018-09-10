@@ -1757,7 +1757,7 @@ margin: 0 auto;
     color: #3d4d55;
     z-index: 1000;
     position: fixed;
-
+    display:none
 }
 .popup .wd{
     width: 500px;

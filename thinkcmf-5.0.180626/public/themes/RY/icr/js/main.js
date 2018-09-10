@@ -24,6 +24,7 @@ var popup=function(){
         });
         $(".wd-title2").html($(this).data("name")+"："+$(this).data("location"))
     }
+    $("#popup").show();
 };
 var popup2=function(data){
     var id = 'popup2';
