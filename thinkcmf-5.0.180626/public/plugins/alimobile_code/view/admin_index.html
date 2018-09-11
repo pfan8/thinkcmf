@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <include file="public/head"/>
+    <title>百度SMS短信插件</title>
+    <meta name="description" content="百度SMS短信插件">
+    <meta name="keywords" content="百度SMS短信插件">
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>短信模板管理</a></li>
+        <li><a href="{:cmf_plugin_url('AlimobileCode://AdminAlisms/add')}">添加短信模板</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form margin-top-20" action="#">
+        <div class="table_list">
+            <table width="100%" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>模板 CODE</th>
+                    <th>模板使用场景</th>
+                    <th width="120">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <foreach name="alisms" item="vo">
+                    <tr>
+                        <td>{$vo.name|default=''}</td>
+                        <td>{$vo.template_code|default=''}</td>
+                        <td>{$scenes[$vo.scene]|default=''}({$vo.scene})</td>
+                        <td>
+                            <a href="{:cmf_plugin_url('AlimobileCode://AdminAlisms/edit',['scene'=>$vo.scene])}">编辑</a>
+                            <a  class="js-ajax-delete" href="{:cmf_plugin_url('AlimobileCode://AdminAlisms/delete',['scene'=>$vo.scene])}">删除</a>
+                        </td>
+                    </tr>
+                </foreach>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+<include file="public/scripts"/>
+</body>
+</html>
