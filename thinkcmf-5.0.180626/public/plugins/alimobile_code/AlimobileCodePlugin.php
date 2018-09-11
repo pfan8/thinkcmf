@@ -78,7 +78,6 @@ class AlimobileCodePlugin extends Plugin {
 		// fixme 必填: 请参阅 https://ak-console.aliyun.com/ 取得您的AK信息
 		$accessKeyId = $config['AccessKeyId'];
 		$accessKeySecret = $config['AccessKeySecret'];
-        var_dump($config);exit;
 		// fixme 必填: 短信接收号码
 		$params["PhoneNumbers"] = $mobile;
 
@@ -86,14 +85,14 @@ class AlimobileCodePlugin extends Plugin {
 		$params["SignName"] = $config['SignName'];
 
 		// fixme 必填: 短信模板Code，应严格按"模板CODE"填写, 请参考: https://dysms.console.aliyun.com/dysms.htm#/develop/template
-		$params["TemplateCode"] = $template_code;
+		$params["ContentCode"] = $template_code;
 
 		// fixme 可选: 设置模板参数, 假如模板中存在变量需要替换则为必填项
-		$params['TemplateParam'] = $template_param;
+		$params['ContentParam'] = $template_param;
 
 		// *** 需用户填写部分结束, 以下代码若无必要无需更改 ***
-		if (!empty($params["TemplateParam"]) && is_array($params["TemplateParam"])) {
-			$params["TemplateParam"] = json_encode($params["TemplateParam"], JSON_UNESCAPED_UNICODE);
+		if (!empty($params["ContentParam"]) && is_array($params["ContentParam"])) {
+			$params["ContentParam"] = json_encode($params["ContentParam"], JSON_UNESCAPED_UNICODE);
 		}
 
 		// 初始化SignatureHelper实例用于设置参数，签名以及发送请求
@@ -103,11 +102,11 @@ class AlimobileCodePlugin extends Plugin {
 		$content = $helper->request(
 			$accessKeyId,
 			$accessKeySecret,
-			"dysmsapi.aliyuncs.com",
+			"dysmsapi.ap-southeast-1.aliyuncs.com",
 			array_merge($params, array(
-				"RegionId" => "cn-beijing",
+				"RegionId" => "ap-southeast-1",
 				"Action" => "SendSms",
-				"Version" => "2017-05-25",
+				"Version" => "2018-05-01",
 			))
 			// fixme 选填: 启用https
 			, $isHttps
