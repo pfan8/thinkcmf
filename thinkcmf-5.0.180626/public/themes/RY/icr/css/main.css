@@ -1,4 +1,4 @@
-/*
+﻿/*
 主css
  */
 @font-face {
@@ -241,7 +241,7 @@ ul{
 .listen{
     position: relative;
     left: 880px;
-    top:20px;
+    top:-60px;
     width: 400px;
     height: 600px;
     background-image: url("../imgs/listen-img.svg");
@@ -322,7 +322,7 @@ footer{
     box-sizing: border-box;
 }
 .footer-main .row{
-    width: 1100px;
+    width: 1280px;
     margin: 0 auto;
 }
 .qrcode{
