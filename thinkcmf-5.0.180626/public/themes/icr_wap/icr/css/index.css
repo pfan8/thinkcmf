@@ -247,7 +247,7 @@
     font-size:0.24rem;
     color:#b7c9d3;
 }
-.submit input[type='submit']{
+.submit input[type='button']{
     height:0.68rem;
     width:2.2rem;
     background-color: #fc384c;
@@ -323,11 +323,18 @@
 .position div{
     float: left;
     margin-left: 0.1rem;
+    width: 6.65rem;
+}
+.position div p{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .position-submit{
     width: 2.8rem;
     height:0.52rem;
-    margin-bottom: 0.4rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
     position: absolute;
     right: 0.2rem;
     bottom: 0;
@@ -335,6 +342,21 @@
     font-size: 0.28rem;
     border-radius: 0.08rem;
     border: solid 0.02rem #fc384c;
+    text-align: center;
+    line-height: 0.52rem;
+}
+.opening-hours{
+    width: 2.8rem;
+    height:0.52rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0;
+    color: #002e6d;
+    font-size: 0.28rem;
+    border-radius: 0.08rem;
+    border: solid 0.02rem #002e6d;
     text-align: center;
     line-height: 0.52rem;
 }

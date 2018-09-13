@@ -105,10 +105,12 @@
                     "                            <span>"+data['location']+"</span>\n" +
                     "                        </div>\n" +
                     "                        <div class=\"school_reservation\">\n" +
+                    "                            <div class=\"open_time_button\" name=\"open_time\" data-name=\""+data['name']+"\" data-position=\""+data['location']+"\"  data-time_content='"+data['open_hours']+"'>校区开放时间</div>\n" +
                     "                            <div class=\"reservation_button\" name=\"yy\" data-name=\""+data['name']+"\" data-position=\""+data['location']+"\">免费预约试听</div>\n" +
                     "                        </div>\n" +
                     "                    </div>";
                 $(".school_list").append(html);
+                $("[name='open_time']").click(popup2);
                 $("[name='yy']").click(popup);
             }
             $.get("{:url('index/getSchoolList')}?city="+city,function(e){

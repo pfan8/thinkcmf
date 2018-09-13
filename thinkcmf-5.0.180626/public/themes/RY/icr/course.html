@@ -1,4 +1,4 @@
-<include file="../public/themes/RY/icr/head.html" />
+<include file="./themes/RY/icr/head.html" />
 <script type="text/javascript">
     function searchLevel(self) {
         var id = self.id;
@@ -97,7 +97,7 @@
         </div>
         <div class="item">
             <div class="study">
-                <div class="h2">看一看小朋友们在&nbsp;&nbsp;<span style="font-family: PlutoSans">I Can Read</span> 都学到了些什么</div>
+                <div class="h2">看一看小朋友们在&nbsp;&nbsp;I Can Read 都学到了些什么</div>
                 <div class="comment rlist">
                     <div class="cc rowup">
                         <volist name="feedback_text" id="vo">
@@ -125,7 +125,7 @@
         您的浏览器不支持 video 标签。
     </video>
 </div>
-<include file="../public/themes/RY/icr/foot.html" />
+<include file="./themes/RY/icr/foot.html" />
 <script type="text/javascript">
 
     $(function () {
@@ -170,26 +170,33 @@
             }
 
         })
+        $(".comment").mouseover(function(){
+            window.clearInterval(si);
+        });
+        $(".comment").mouseleave(function(){
+            si = setInterval(fun,10)
+        });
+        //轮播
+        var fun = function(){
+            var max = 0;
+            $(".comment-item").each(function(i,v){
+                var left = parseInt($(this).css('left'))
+                $(this).css('left',(left -1)+'px');
+                if(left>max){
+                    max = left;
+                }
+            });
+            $(".comment-item").each(function(i,v){
+                var left = parseInt($(this).css('left'));
+                if(left<-355){
+                    max += 355;
+                    $(this).css('left',max+'px');
+                }
+            })
+        };
+        var si = setInterval(fun,10);
 
     });
-    //轮播
-    var fun = function(){
-        var max = 0;
-        $(".comment-item").each(function(i,v){
-            var left = parseInt($(this).css('left'))
-            $(this).css('left',(left -1)+'px');
-            if(left>max){
-                max = left;
-            }
-        });
-        $(".comment-item").each(function(i,v){
-            var left = parseInt($(this).css('left'));
-            if(left<-355){
-                max += 355;
-                $(this).css('left',max+'px');
-            }
-        })
-    };
-  setInterval(fun,10);
+
 
 </script>

@@ -75,7 +75,7 @@
             <h1>我们的专业优势</h1>
             <div class="adv-item">
                 <div class="adv-item-img"><img src="/themes/RY/icr/imgs/adv-1-img.svg"></div>
-                <div class="adv-item-p">ICR教育系统通过<br/>资深教育心理学专家<br/>研究长达15年</div>
+                <div class="adv-item-p">ICR&nbsp;&nbsp;教育系统通过<br/>资深教育心理学专家<br/>研究长达15年</div>
             </div>
             <div class="adv-item">
                 <div class="adv-item-img"><img src="/themes/RY/icr/imgs/adv-2-img.svg"></div>
@@ -169,8 +169,8 @@
 <script type="text/javascript">
     var popup_html="<div id='popup' class='popup'>" +
         "<div class='wd'>" +
-        "<div class='wd-title'>免费预约试听</div>" +
-        "<div class='wd-title2'>思明中心：厦门市思明区莲前西路2号莲富大厦3H</div>" +
+        "<div class='wd-title3'>免费预约试听</div>" +
+        "<div class='wd-title4'>思明中心：厦门市思明区莲前西路2号莲富大厦3H</div>" +
         "<form>" +
         "<div class='input-text'>" +
         "<div class='course-level'>" +
@@ -216,12 +216,15 @@
         var level = $(obj).prevAll(".course-level").find('select').val();
         if(!phone){
             alert('请填写手机号');
+            return false;
         }
         if(level=='-1'||!level){
             alert('请选择等级');
         }
-        $.get("{:url('course/bookCourse')}",{'phone':phone,'level':level});
-        alert('预约成功!');
+        $.get("{:url('course/bookCourse')}",{'phone':phone,'level':level},function(){
+            alert('预约成功!');
+        });
+    return false;
     }
     function mapini(city){
         //获取校区列表

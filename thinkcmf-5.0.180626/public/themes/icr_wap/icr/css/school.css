@@ -109,3 +109,14 @@
     float: right;
     font-weight: bold;
 }
+.school_reservation .open_time_button{
+    height:100%;
+    width: 2.8rem;
+    border-radius: 0.08rem;
+    border: solid 0.02rem #002e6d;
+    color: #002e6d;
+    text-align: center;
+    line-height: 0.52rem;
+    float: left;
+    font-weight: bold;
+}
