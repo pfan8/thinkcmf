@@ -1,4 +1,4 @@
-﻿/*
+/*
 主css
  */
 @font-face {
@@ -843,7 +843,6 @@ footer{
 .info-position{
     margin-top: 10px;
     font-size:18px;
-    height: 54px;
 }
 .info-tel{
     padding-left: 12px;
@@ -858,9 +857,9 @@ footer{
 .info-position i{
     font-size: 20px;
     color: #ff9933;
-    height: 100%;
     float: left;
     padding-top: 3px;
+    height:50px
 }
 .info-submit{
     width: 200px;
