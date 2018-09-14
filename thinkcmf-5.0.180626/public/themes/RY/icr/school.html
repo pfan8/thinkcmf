@@ -45,7 +45,7 @@
             <h1>文化活动</h1>
             <div class="comment">
                 <volist name="school_activity" id="vo" length="6">
-                    <div class="comment-item" id="{vo.id}">
+                    <div class="comment-item" onclick="actclick('{$vo.id}');">
                         <div class="img"><img src="<?=$vo['icon']?>" /></div>
                         <div class="title"><?=$vo['name']?></div>
                     </div>
@@ -176,11 +176,11 @@
         $(".img-right").mouseup(function(){
             clearTimeout(timeoutId);
         });
-        $(".comment-item").on('click', function (e) {
-            var ai = $(this);
-            redirect("{url('activity/')}?aid=" + ai.getId())
-        })
     })
+    function actclick(aid){
+        // alert(aid);
+        redirect("activity/?aid=" + aid);
+    }
     function mapini(city){
         //获取校区列表
         var school_list = null;

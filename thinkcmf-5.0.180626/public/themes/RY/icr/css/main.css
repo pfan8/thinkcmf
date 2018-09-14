@@ -2309,7 +2309,7 @@ select::-ms-expand { display: none; }
     margin-top: 40px;
     font-weight: bold;
 }
-.activity h1{
+.activity .h1{
     font-size: 24px;
     font-weight: 500;
     font-style: normal;
