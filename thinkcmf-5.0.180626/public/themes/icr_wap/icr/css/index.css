@@ -333,10 +333,7 @@
 .position-submit{
     width: 2.4rem;
     height:0.52rem;
-<<<<<<< HEAD
-=======
     margin-top: 0.2rem;
->>>>>>> dcb9bb277f85dea402d58e505ab7ac52edd0405f
     margin-bottom: 0.2rem;
     position: absolute;
     right: 0.2rem;
@@ -349,27 +346,18 @@
     text-align: center;
     line-height: 0.52rem;
 }
-<<<<<<< HEAD
 
 .opening-hours{
     width: 2.4rem;
     height:0.52rem;
-=======
-.opening-hours{
-    width: 2.8rem;
-    height:0.52rem;
     margin-top: 0.2rem;
->>>>>>> dcb9bb277f85dea402d58e505ab7ac52edd0405f
     margin-bottom: 0.2rem;
     position: absolute;
     left: 0.2rem;
     bottom: 0;
     color: #002e6d;
     font-size: 0.28rem;
-<<<<<<< HEAD
     font-weight: bold;
-=======
->>>>>>> dcb9bb277f85dea402d58e505ab7ac52edd0405f
     border-radius: 0.08rem;
     border: solid 0.02rem #002e6d;
     text-align: center;

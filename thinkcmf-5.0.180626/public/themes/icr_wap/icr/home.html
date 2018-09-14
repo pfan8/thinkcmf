@@ -177,13 +177,8 @@
                     "                                    <p>Ph:"+data['phone']+"</p>" +
                     "                                    <p>电邮:"+data['email']+"</p></div>" +
                     "                                </div>\n" +
-<<<<<<< HEAD
-                    "                                <div class=\"opening-hours\" onclick=\"\">校区开放时间</div>\n" +
-                    "                                <div class=\"position-submit\" name=\"yy\">免费预约试听</div>\n" +
-=======
                     "                                <div class=\"opening-hours\" name=\"open_time\" data-name='"+data['name']+"' data-position='"+data['location']+"' data-time_content='"+data['open_hours']+"'>校区开放时间</div>\n" +
                     "                                <div class=\"position-submit\" name=\"yy\"  data-name='"+data['name']+"' data-position='"+data['location']+"'>免费预约试听</div>\n" +
->>>>>>> dcb9bb277f85dea402d58e505ab7ac52edd0405f
                     "                            </div>";
                 $(".school_reservation").append(html);
                 $("[name='yy']").click(popup);
