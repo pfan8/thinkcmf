@@ -1,4 +1,4 @@
-/*
+﻿/*
 主css
  */
 @font-face {
@@ -241,7 +241,7 @@ ul{
 .listen{
     position: relative;
     left: 880px;
-    top:20px;
+    top:-60px;
     width: 400px;
     height: 600px;
     background-image: url("../imgs/listen-img.svg");
@@ -322,7 +322,7 @@ footer{
     box-sizing: border-box;
 }
 .footer-main .row{
-    width: 1100px;
+    width: 1280px;
     margin: 0 auto;
 }
 .qrcode{
@@ -415,6 +415,7 @@ footer{
     margin-right: 20px;
 }
 .right_column{
+    display:none;
     width:90px;
     height:180px;
     position:fixed;
@@ -844,18 +845,21 @@ footer{
     font-size:18px;
 }
 .info-tel{
-    padding-left: 18px;
+    padding-left: 12px;
     font-size: 16px;
     color: #3d4d55;
 }
 .info-email{
-    padding-left: 18px;
+    padding-left: 12px;
     font-size: 16px;
     color: #3d4d55;
 }
 .info-position i{
     font-size: 20px;
     color: #ff9933;
+    float: left;
+    padding-top: 3px;
+    height:50px
 }
 .info-submit{
     width: 200px;
@@ -1150,12 +1154,20 @@ option{
     width: 550px;
     padding-top: 46px;
     color: #ffffff;
+    position:relative;
+}
+.desc .div-hidden{
+    position: absolute;
+    height: 350px;
+    width: 50px;
+    left: 465px;
 }
 .desc .desc .content{
     width: 482px;
+    max-height:300px;
     font-size: 20px;
     font-weight: 300;
-    height: 28px;
+    overflow-y: scroll;
 }
 .desc .desc .content p{
 
@@ -1757,7 +1769,7 @@ margin: 0 auto;
     color: #3d4d55;
     z-index: 1000;
     position: fixed;
-
+    display:none
 }
 .popup .wd{
     width: 500px;
@@ -1771,7 +1783,7 @@ margin: 0 auto;
     background-color: #FFFFFF;
 }
 .time_title{
-    text-align: center;
+    text-align: left;
     font-weight: bold;
 }
 .popup .opentime{
@@ -1779,7 +1791,17 @@ margin: 0 auto;
 }
 .wd-title{
     margin: 0 auto;
-    width:100%;
+    width:400px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 24px;
+    padding-top: 50px;
+    border-radius: 10px;
+}
+.wd-title3{
+    margin: 0 auto;
+    width:400px;
+    font-weight: bold;
     text-align: center;
     font-size: 24px;
     padding-top: 50px;
@@ -1797,11 +1819,18 @@ margin: 0 auto;
     width:400px;
     margin: 0 auto;
     margin-top: 10px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+}
+.wd-title4{
+    width:400px;
+    margin: 0 auto;
+    margin-top: 10px;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
 }
-
 .input-text input{
     width:400px!important;
     margin: 0 auto;
@@ -1850,7 +1879,7 @@ text-align-last: center;
     top: 5px;
     right: 10px;
 }
-.input-text input[type='submit']{
+.input-text input[type='button']{
     border-radius: 8px;
     background-color: #fc384c;
     font-size: 20px;

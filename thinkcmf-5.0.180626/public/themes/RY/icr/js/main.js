@@ -22,13 +22,16 @@ var popup=function(){
         $(".course-level i").click(function(){
             $('.course-level select').click();
         });
+
         $(".wd-title2").html($(this).data("name")+"："+$(this).data("location"))
     }
+    $("#popup").show();
 };
 var popup2=function(data){
     var id = 'popup2';
     if(!$('#'+id).html()){
         $('body').prepend(popup2_html);
+        $('#popup2').find(".wd-title").html($(this).data("name"));
         $('#popup2').find(".wd-title2").html($(this).data("location"));
         $('#popup2').find('.time_content').html($(this).data('time_content'));
         $(".cease").click(function(){
@@ -36,6 +39,7 @@ var popup2=function(data){
         });
 
     }
+    $("#popup2").show()
 };
 $(function(){
     $("[name='yy']").click();

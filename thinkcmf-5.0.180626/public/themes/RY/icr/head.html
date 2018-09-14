@@ -70,15 +70,22 @@
             <div class="window-tab-item active" id="tab-login">
                 <form class="js-ajax-form" action="{:url('user/login/doLogin')}" method="post">
                     <div class="window-input">
-                        <input type="text" id="input_username" name="username" placeholder="手机号/邮箱/用户名" class="form-control">
+                        <input type="text" id="input_username" name="username" placeholder="请输入您的手机号" class="form-control">
                     </div>
-                <div class="window-input">
-                    <input type="password" id="input_password" name="password" placeholder="密码" class="form-control">
-                </div>
-                <div class="window-input">
-                    <input type="text" name="captcha" placeholder="验证码" class="form-control captcha half">
-                    <captcha height="50" width="120" font-size="18" />
-                </div>
+                    <empty name="is_open_registration">
+                        <div class="form-group">
+                            <div style="position: relative;">
+                                <input type="text" name="code" placeholder="手机验证码" style="width:170px;"
+                                       class="form-control">
+                                <a class="btn btn-success js-get-mobile-code"
+                                   style="width: 163px;position: absolute;top:0;right: 0;"
+                                   data-wait-msg="[second]秒后才能再次获取" data-mobile-input="#js-mobile-input"
+                                   data-url="{:url('user/VerificationCode/send')}"
+                                   daty-type="register"
+                                   data-init-second-left="60">获取手机验证码</a>
+                            </div>
+                        </div>
+                    </empty>
                 <div class="window-button">
                     <input type="submit" value="登录" />
                 </div>

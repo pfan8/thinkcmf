@@ -359,6 +359,13 @@ input, button, select, textarea {
     font-size: 0.36rem;
     padding-top: 1rem;
 }
+.wd-title3{
+    margin: 0 auto;
+    width:6rem;
+    text-align: left;
+    font-size: 0.36rem;
+    padding-top: 1rem;
+}
 .wd .cease{
     font-size: 1.3rem;
     position: absolute;
@@ -368,6 +375,22 @@ input, button, select, textarea {
     cursor:pointer;
     cursor:hand;
 }
+.open_time{
+    width: 6rem;
+    white-space: pre-line;
+    margin: 0 auto;
+    margin-top: 0.2rem;
+}
+.time_content{
+    margin: 0 auto;
+    width: 6rem;
+}
+.time_title{
+    width: 6rem;
+    margin: 0 auto;
+    text-align: left;
+    font-weight: bold;
+}
 .wd-title2{
     width:5.9rem;
     margin: 0 auto;
@@ -376,7 +399,14 @@ input, button, select, textarea {
     font-size: 0.24rem;
     font-weight: 500;
 }
-
+.wd-title4{
+    width:5.9rem;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+    text-align: left;
+    font-size: 0.24rem;
+    font-weight: 500;
+}
 .input-text input{
     width:5.9rem!important;
     margin: 0 auto;
@@ -472,4 +502,10 @@ input, button, select, textarea {
     text-indent:0.64rem;
     color: #37474f;
     margin-top: 0.4rem;
+}
+#video{
+    display: none;
+    width: 100%;
+    position: fixed;
+    top:3rem;
 }

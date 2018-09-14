@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <include file="public/head"/>
+    <title>阿里云SMS短信插件</title>
+    <meta name="description" content="阿里云SMS短信插件">
+    <meta name="keywords" content="阿里云SMS短信插件">
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:cmf_plugin_url('AlimobileCode://AdminIndex/index')}">短信模板管理</a></li>
+        <li class="active"><a href="">添加短信模板</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20"
+          action="{:cmf_plugin_url('AlimobileCode://AdminAlisms/addPost')}">
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="form-required">*</span>名称</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" name="name" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="form-required">*</span>模板CODE</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" name="template_code" value="">
+            </div>
+            <p class="help-block">上线之前使用审核通过模版CODE进行访问<a href="https://help.aliyun.com/document_detail/55330.html?spm=a2c4g.11186623.6.550.7ujUEq" target="_blank">查看帮助文档</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://help.aliyun.com/document_detail/55324.html?spm=5176.sms-template.form.4.32281cbeOlNohS" target="_blank">标准规范</a></p>
+        </div>
+       
+        <div class="form-group">
+            <label class="col-sm-2 control-label">使用场景</label>
+            <div class="col-md-6 col-sm-10">
+                <select class="form-control valid" name="scene" id="input-parent" aria-invalid="false">
+                    {$scenes}
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary js-ajax-submit">{:lang("SAVE")}</button>
+        </div>
+    </form>
+</div>
+<include file="public/scripts"/>
+</body>
+</html>

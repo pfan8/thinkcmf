@@ -87,6 +87,7 @@
             </div>
         </div>
     </div>
+    <video src="" id="video"></video>
 </section>
 <include file="themes/icr_wap/icr/foot.html" />
 <script type="text/javascript">
@@ -95,11 +96,19 @@
             // var selectOption = $('#selectOption option:selected');
             var level_id = $(this).find("option:checked").attr("id");
             location.href = "{:url('course/index')}?s_level=" + level_id;
-        })
-        $(".radios-item .click").click(function(){
-            $(".video video").attr('src',$(this).data('video'));
-            $(".video").show();
-            $(".video video").trigger("play")
         });
+        $(".comment-item").click(function(){
+            $("#video").attr('src',$(this).find(".click-video").data('video'));
+            $("#video").show();
+            $("#video").trigger("play")
+        });
+        var body = document.getElementById("video");
+        body.addEventListener('touchend',function(event){
+            setTimeout(function(){
+                $("#video").hide();
+                $("#video").trigger("pause")
+            },100)
+        },false);
+
     });
 </script>

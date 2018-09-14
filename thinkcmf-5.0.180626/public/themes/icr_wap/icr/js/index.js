@@ -1,22 +1,41 @@
 var popup=function(){
     var school_name = $(this).data('name');
     var school_position=$(this).data('position');
-    if($('body').find('#reservation_wd').length){
+    if($('body').find('#popup').length){
         //存在显示
         $(".wd-title2").html(school_name+"："+school_position);
-        $('#reservation_wd').show();
+        $('#popup').show();
     }else{
         //不存在加载
 
         $('body').append(reservation_wd_html);
         $(".wd-title2").html(school_name+"："+school_position);
-        $("#reservation_wd").show();
+        $("#popup").show();
     }
     $(".cease").click(function(){
         $("#popup").remove();
     });
+};
+var popup2=function(){
+    var school_name = $(this).data('name');
+    var school_position=$(this).data('position');
+    var school_open_hours=$(this).data('time_content');
+    if($('body').find('#popup2').length){
+        //存在显示
+    }else{
+        //不存在加载
 
-}
+        $('body').append(open_time_html);
+
+    }
+    $(".wd-title3").html(school_name);
+    $(".wd-title4").html(school_position);
+    $(".time_content").html(school_open_hours);
+    $("#popup2").show();
+    $(".cease").click(function(){
+        $("#popup2").remove();
+    });
+};
 $(function(){
     $(".head-left").click(function(){
         $("#left_menu").toggle();
@@ -57,6 +76,7 @@ $(function(){
 
     //预约弹窗定义
     $("[name='yy']").click(popup);
+    $("[name='open_time']").click(popup2);
     $("[name='submit_reservation']").click(function(){
         //在这绑定预约请求
     });

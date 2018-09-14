@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <include file="public/head"/>
+    <title>阿里云SMS短信插件</title>
+    <meta name="description" content="阿里云SMS短信插件">
+    <meta name="keywords" content="阿里云SMS短信插件">
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:cmf_plugin_url('AlimobileCode://AdminIndex/index')}">短信模板管理</a></li>
+        <li><a href="{:cmf_plugin_url('AlimobileCode://AdminAlisms/add')}">添加短信模板</a></li>
+        <li class="active"><a>编辑短信模板</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20"
+          action="{:cmf_plugin_url('AlimobileCode://AdminAlisms/editPost')}">
+        <input type="hidden" name="scene" id="scene" value="{$scene}" />
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="form-required">*</span>名称</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" name="name" value="{$alisms.name|default=''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="form-required">*</span>模板CODE</label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" name="template_code" value="{$alisms.template_code|default=''}" readonly>
+            </div>
+            <p class="help-block">上线之前使用审核通过模板CODE进行访问<a href="https://help.aliyun.com/document_detail/55330.html?spm=a2c4g.11186623.6.550.7ujUEq" target="_blank">查看帮助文档</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://help.aliyun.com/document_detail/55324.html?spm=5176.sms-template.form.4.32281cbeOlNohS" target="_blank">标准规范</a></p>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">使用场景</label>
+            <div class="col-md-6 col-sm-10">
+                <select class="form-control valid" name="scene" id="input-selector" aria-invalid="false">
+                    {$scenes}
+                </select>
+            </div>
+            <p class="help-block" id="scene-check" style="color:red;"></p>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary js-ajax-submit">{:lang("SAVE")}</button>
+        </div>
+    </form>
+</div>
+<include file="public/scripts"/>   
+</body>
+</html>

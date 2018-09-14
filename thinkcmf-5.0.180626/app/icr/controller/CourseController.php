@@ -219,11 +219,16 @@ class CourseController extends HomebaseController{
      */
     public function bookCourse(){
 
+        $get = $this->request->get();
+        if(empty($get['phone'])){
+            return false;
+        }
         $data = [
             'cid' => 1,
-            'phone' => $_GET['phone'],
+            'phone' => $get['phone'],
             'has_notified' => false,
             'time' => date("Y-m-d H:i:s"),
+            'level'=>isset($get['level'])?$get['level']:''
         ];
 
         //验证

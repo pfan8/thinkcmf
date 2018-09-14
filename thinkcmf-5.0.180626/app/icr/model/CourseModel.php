@@ -95,9 +95,9 @@ class CourseModel extends Model
      */
     public function bookCourse($data)
     {
-        if (empty($data['time']))
-            $data['time'] = new \DateTime('now');
-            $data['time'] = $data['time']->format('Y-m-d H:i:s');
+        if (empty($data['time'])){
+            $data['time'] = date('Y-m-d H:i:s');
+        }
             $book = [
                 'cid' => $data['cid'],
                 'phone' => $data['phone'],

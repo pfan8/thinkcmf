@@ -9,8 +9,8 @@
                 </div>
                 <div class="reservation">
                     <img src="/themes/icr_wap/icr/imgs/bj-img.svg" />
-                    <input type="text" placeholder="输入手机号预约课程试听" />
-                    <input type="button" value="免费预约试听" />
+                    <input type="text" name="phone" placeholder="输入手机号预约课程试听" />
+                    <input type="button" name="yy_submit" value="免费预约试听" />
                     <div class="agreement">
                         <i class="fa fa-square-o"></i>
                         <a href="{:url('/icr/user_agreement')}">同意《 I CAN READ 用户协议》</a>
@@ -60,7 +60,7 @@
                         <div class="h1">我们的专业优势</div>
                         <div class="adv-item">
                             <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-1-img.svg"></div>
-                            <div class="adv-item-p">ICR教育系统通过<br/>
+                            <div class="adv-item-p">ICR&nbsp;&nbsp;教育系统通过<br/>
                                 资深教育心理学专家<br/>
                                 研究长达15年
                             </div>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="adv-item">
                             <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-4-img.svg"></div>
-                            <div class="adv-item-p">小班教学不超过8人
+                            <div class="adv-item-p">小班教学不超过12人
                                 让每一个孩子都得到足够的关照
                             </div>
                         </div>
@@ -105,8 +105,8 @@
                                     <i class="fa fa-caret-down fa-2x"></i>
                                 </div>
                                 <div class="submit">
-                                    <input type="text" id="phone" placeholder="请输入您的手机号" />
-                                    <input type="submit" id="yy_submit" value="预约免费测试">
+                                    <input type="text" name="phone" placeholder="请输入您的手机号" />
+                                    <input type="button" name="yy_submit" value="预约免费测试">
                                 </div>
                             </div>
                     </div>
@@ -119,18 +119,15 @@
                         </div>
                         <div class="map" id="map"></div>
                         <div class="city_list">
-                            <div class="city_item">厦门</div>
-                            <div class="city_item">西安</div>
-                            <div class="city_item">南通</div>
-                            <div class="city_item clear-right">大连</div>
+                            <volist name="city_list" id="vo">
+                                <if condition="$vo.city == $city_name">
+                                    <div class="city_item active">{$vo.city}</div>
+                                    <else />
+                                    <div class="city_item">{$vo.city}</div>
+                                </if>
+                            </volist>
+                            <div class="clear"></div>
                         </div>
-                        <div class="city_list">
-                            <div class="city_item">广州</div>
-                            <div class="city_item">重庆</div>
-                            <div class="city_item">长春</div>
-                            <div class="city_item clear-right">顺德</div>
-                        </div>
-
                         <div class="school_reservation">
                             <div class="school_info">
                                 <div class="name">思明中心</div>
@@ -165,22 +162,6 @@
             function addMarker(point,data){
                 var marker = new BMap.Marker(point);
                 var searchInfoWindow =null;
-                var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
-                    '<img src="/themes/RY/icr/imgs/map.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
-                    '地址：' +data.position+
-                    '</div>';
-                searchInfoWindow=new BMapLib.SearchInfoWindow(map, content, {
-                    title  : data.name,      //标题
-                    width  : 290,             //宽度
-                    height : 105,              //高度
-                    panel  : "panel",         //检索结果面板
-                    enableAutoPan : true,     //自动平移
-                    searchTypes   :[
-                        BMAPLIB_TAB_SEARCH,   //周边检索
-                        BMAPLIB_TAB_TO_HERE,  //到这里去
-                        BMAPLIB_TAB_FROM_HERE //从这里出发
-                    ]
-                });
                 marker.addEventListener("click",function(e){
                     searchInfoWindow.open(marker);
                 })
@@ -189,15 +170,24 @@
             function editInfo(data){
                 var html ="                            <div class=\"school_info\">\n" +
                     "                                <div class=\"name\">"+data['name']+"</div>\n" +
-                    "                                <div class=\"position\">\n" +
+                    "                                <div class=\"position\">" +
                     "                                    <i class=\"fa fa-map-marker\"></i>\n" +
-                    "                                    <div>"+data['location']+"</div>\n" +
+                    "<div>" +
+                    "                                    <p>"+data['location']+"</p>" +
+                    "                                    <p>Ph:"+data['phone']+"</p>" +
+                    "                                    <p>电邮:"+data['email']+"</p></div>" +
                     "                                </div>\n" +
+<<<<<<< HEAD
                     "                                <div class=\"opening-hours\" onclick=\"\">校区开放时间</div>\n" +
                     "                                <div class=\"position-submit\" name=\"yy\">免费预约试听</div>\n" +
+=======
+                    "                                <div class=\"opening-hours\" name=\"open_time\" data-name='"+data['name']+"' data-position='"+data['location']+"' data-time_content='"+data['open_hours']+"'>校区开放时间</div>\n" +
+                    "                                <div class=\"position-submit\" name=\"yy\"  data-name='"+data['name']+"' data-position='"+data['location']+"'>免费预约试听</div>\n" +
+>>>>>>> dcb9bb277f85dea402d58e505ab7ac52edd0405f
                     "                            </div>";
                 $(".school_reservation").append(html);
                 $("[name='yy']").click(popup);
+                $("[name='open_time']").click(popup2);
             }
             var map = new BMap.Map("map");
             $.get("{:url('index/getSchoolList')}?city="+city,function(e){
@@ -224,22 +214,15 @@
             $(".video").show();
             $(".video video").trigger("play")
         })
-        $("#yy_submit").on('click',function(){
-            var phone =$("#phone").val();
+        $("[name='yy_submit']").on('click',function(){
+            var phone = $(this).prevAll("[name='phone']").val();
             if(!phone){
                 alert('请填写手机号');
+                return false;
             }
-            $.ajax({
-                'url':"",
-                // 'data':{'name':phone_number,
-                //     'describe':phone_number,
-                //     'level':1,
-                //     'goal':phone_number,},
-                'data':{'phone':phone,},
-                'success':function(e){
-                    alert("预约成功！")
-                }
-            })
+            $.get("{:url('course/bookCourse')}",{'phone':phone},function(){
+                alert('预约成功!');
+            });
             return false;
         })
         $(".input_button").on('click',function(){
@@ -250,7 +233,7 @@
                 return false;
             }
             $.ajax({
-                'url':"",
+                'url':"{:url('course/bookCourse')}",
                 // 'data':{'name':phone_number,
                 //     'describe':phone_number,
                 //     'level':1,

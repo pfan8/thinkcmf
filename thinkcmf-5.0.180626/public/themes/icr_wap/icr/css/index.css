@@ -247,7 +247,7 @@
     font-size:0.24rem;
     color:#b7c9d3;
 }
-.submit input[type='submit']{
+.submit input[type='button']{
     height:0.68rem;
     width:2.2rem;
     background-color: #fc384c;
@@ -265,29 +265,29 @@
     width: 100%;
     height:6rem;
 }
-.city_list {
-    width: 7.1rem;
-    margin: 0 auto;
-    height:1rem;
-    padding-top:0.2rem ;
-    box-sizing: border-box;
+.city_list{
+    width:100%;
+    padding-top: 0.4rem;
+}
+.city_list .active{
+    background-color: #fc384c;
+    color: #ffffff;
+    border: 0;
 }
 .city_item{
-    float: left;
+    background-color: #ffffff;
     width: 1.4rem;
-    height:0.52rem;
+    height: 0.52rem;
     border-radius: 0.3rem;
-    border: solid 1px #37474f;
+    border: solid 0.01rem #37474f;
+    float: left;
+    margin: 0 0.22rem 0.52rem 0.22rem;
     text-align: center;
-    font-size: 0.28rem;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
     line-height: 0.52rem;
-    letter-spacing: normal;
     color: #37474f;
-    margin-right: 0.5rem;
+    font-weight: 500;
     box-sizing: border-box;
+    font-size: 0.28rem;
 }
 .clear-right{
     margin-right: 0;
@@ -323,10 +323,20 @@
 .position div{
     float: left;
     margin-left: 0.1rem;
+    width: 6.65rem;
+}
+.position div p{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .position-submit{
     width: 2.4rem;
     height:0.52rem;
+<<<<<<< HEAD
+=======
+    margin-top: 0.2rem;
+>>>>>>> dcb9bb277f85dea402d58e505ab7ac52edd0405f
     margin-bottom: 0.2rem;
     position: absolute;
     right: 0.2rem;
@@ -339,17 +349,27 @@
     text-align: center;
     line-height: 0.52rem;
 }
+<<<<<<< HEAD
 
 .opening-hours{
     width: 2.4rem;
     height:0.52rem;
+=======
+.opening-hours{
+    width: 2.8rem;
+    height:0.52rem;
+    margin-top: 0.2rem;
+>>>>>>> dcb9bb277f85dea402d58e505ab7ac52edd0405f
     margin-bottom: 0.2rem;
     position: absolute;
     left: 0.2rem;
     bottom: 0;
     color: #002e6d;
     font-size: 0.28rem;
+<<<<<<< HEAD
     font-weight: bold;
+=======
+>>>>>>> dcb9bb277f85dea402d58e505ab7ac52edd0405f
     border-radius: 0.08rem;
     border: solid 0.02rem #002e6d;
     text-align: center;

@@ -35,6 +35,8 @@ class TeacherController extends HomebaseController{
     public function fetch_teacher_detail(){
         $data = $this->request->param();
         hook('switch_theme',$data);
+        $head_controller = new HeadController();
+        $head_controller->setHeaderActive("teacher");
         $teacher_model = new TeacherModel();
         $s_teacher = empty($data['s_teacher']) ? 1 : $data['s_teacher'];
         $s_teacher = $teacher_model->getTeacherByID($s_teacher);
