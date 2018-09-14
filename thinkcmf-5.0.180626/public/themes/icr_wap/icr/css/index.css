@@ -325,16 +325,33 @@
     margin-left: 0.1rem;
 }
 .position-submit{
-    width: 2.8rem;
+    width: 2.4rem;
     height:0.52rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
     position: absolute;
     right: 0.2rem;
     bottom: 0;
     color: #fc384c;
     font-size: 0.28rem;
+    font-weight: bold;
     border-radius: 0.08rem;
     border: solid 0.02rem #fc384c;
+    text-align: center;
+    line-height: 0.52rem;
+}
+
+.opening-hours{
+    width: 2.4rem;
+    height:0.52rem;
+    margin-bottom: 0.2rem;
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0;
+    color: #002e6d;
+    font-size: 0.28rem;
+    font-weight: bold;
+    border-radius: 0.08rem;
+    border: solid 0.02rem #002e6d;
     text-align: center;
     line-height: 0.52rem;
 }
