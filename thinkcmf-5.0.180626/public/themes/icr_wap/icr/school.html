@@ -61,7 +61,7 @@
             <div class="h1">文化活动</div>
             <div class="activity_list">
                 <volist name="school_activity" id="vo">
-                    <div class="activity_item">
+                    <div class="activity_item" id="{$vo.id}">
                         <div class="activity_img">
                             <img src="{$vo.icon}" />
                         </div>
@@ -102,7 +102,9 @@
                     "                        <div class=\"school_name\">"+data['name']+"</div>\n" +
                     "                        <div class=\"school_position\">\n" +
                     "                            <i class=\"fa fa-map-marker\"></i>\n" +
-                    "                            <span>"+data['location']+"</span>\n" +
+                    "                            <span>"+data['location']+"<br />\n" +
+                    "                                   Ph:"+data['phone']+"<br />\n" +
+                    "                                    电邮:"+data['email']+"</span>" +
                     "                        </div>\n" +
                     "                        <div class=\"school_reservation\">\n" +
                     "                            <div class=\"open_time_button\" name=\"open_time\" data-name=\""+data['name']+"\" data-position=\""+data['location']+"\"  data-time_content='"+data['open_hours']+"'>校区开放时间</div>\n" +
@@ -171,5 +173,9 @@
           changePage(environment_page);
         };
         setInterval(environment_solid,3000)
+        $('.activity_item').on('click', function (e) {
+            var ai = $(this);
+            redirect("{url('activity/')}?aid=" + ai.getId())
+        })
     })
 </script>

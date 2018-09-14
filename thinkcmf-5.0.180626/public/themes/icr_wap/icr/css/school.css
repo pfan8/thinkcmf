@@ -68,7 +68,7 @@
     box-sizing: border-box;
 }
 .school_item{
-    height:2.2rem;
+    height:2.4rem;
     box-sizing: border-box;
     overflow: hidden;
     width:7.06rem;
@@ -86,7 +86,7 @@
 }
 .school_position{
     box-sizing: border-box;
-    height:0.7rem;
+    height:1.1rem;
     color: #37474f;
     font-size: 0.24rem;
     overflow: hidden;

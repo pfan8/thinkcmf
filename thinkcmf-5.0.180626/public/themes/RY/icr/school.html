@@ -14,8 +14,8 @@
                         <div class="point-item">
                             <div class="point-title"><?=$vo['name']?><i name="back" class="fa fa-chevron-up"></i></div>
                             <div class="point-content"><i class="fa fa-map-marker"></i><?=$vo['location']?></div>
-                            <div class="point-tel">{$vo.phone}</div>
-                            <div class="point-email">{$vo.email}</div>
+                            <div class="point-tel">Ph:{$vo.phone}</div>
+                            <div class="point-email">电邮:{$vo.email}</div>
                             <div class="point-button "  name="open_time" data-name="{$vo.name}" data-location="{$vo.location}" data-time_content="{$vo.open_hours}">校区和开放时间</div>
                             <div class="point-button right red"  name="yy" data-name="{$vo.name}" data-location="{$vo.location}">免费预约试听<i class="fa fa-angle-double-right"></i></div>
                         </div>
@@ -45,7 +45,7 @@
             <h1>文化活动</h1>
             <div class="comment">
                 <volist name="school_activity" id="vo" length="6">
-                    <div class="comment-item">
+                    <div class="comment-item" id="{vo.id}">
                         <div class="img"><img src="<?=$vo['icon']?>" /></div>
                         <div class="title"><?=$vo['name']?></div>
                     </div>
@@ -176,6 +176,10 @@
         $(".img-right").mouseup(function(){
             clearTimeout(timeoutId);
         });
+        $(".comment-item").on('click', function (e) {
+            var ai = $(this);
+            redirect("{url('activity/')}?aid=" + ai.getId())
+        })
     })
     function mapini(city){
         //获取校区列表
