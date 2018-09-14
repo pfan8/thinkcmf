@@ -2309,3 +2309,16 @@ select::-ms-expand { display: none; }
     margin-top: 40px;
     font-weight: bold;
 }
+.activity h1{
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3d4d55;
+}
+.activity_content{
+    width:1100px;
+    margin: 0 auto;
+}
