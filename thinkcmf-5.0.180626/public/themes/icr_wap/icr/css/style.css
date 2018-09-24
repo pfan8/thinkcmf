@@ -418,6 +418,7 @@ input, button, select, textarea {
     margin-top: 0.4rem;
     text-align: center;
     font-size: 0.32rem;
+    padding: 0;
 }
 .input-text input:-ms-input-placeholder{
     text-align: center;

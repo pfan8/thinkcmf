@@ -88,22 +88,18 @@
                     <div class="item reservation_wd">
                             <div class="h1 text-red">实测孩子英语水平</div>
                             <div class="reservation-form">
-                                <div class="input clear-margin">
-                                    <select><option hidden selected>您的孩子多大了？</option><option>10岁了</option></select>
-                                    <i class="fa fa-caret-down fa-2x"></i>
-                                </div>
-                                <div class="input">
-                                    <select><option hidden selected>您的孩子能识别字母吗？</option><option>10岁了</option></select>
-                                    <i class="fa fa-caret-down fa-2x"></i>
-                                </div>
-                                <div class="input">
-                                    <select><option hidden selected>您的孩子可以阅读英语吗？</option><option>10岁了</option></select>
-                                    <i class="fa fa-caret-down fa-2x"></i>
-                                </div>
-                                <div class="input">
-                                    <select><option hidden selected>您希望孩子学习英语的原因是？</option><option>10岁了</option></select>
-                                    <i class="fa fa-caret-down fa-2x"></i>
-                                </div>
+                                <volist name="question_list" id="vo">
+                                    <div class="input <if condition="$i==1">clear-margin</if>">
+                                        <select>
+                                            <option hidden selected>{$vo.question}</option>
+                                            <option>{$vo.answer1==""?"空":$vo.answer1}</option>
+                                            {$vo.answer2==""?"空":"<option>" . $vo.answer2 . "</option>"}
+                                            {$vo.answer3==""?"空":"<option>" . $vo.answer3 . "</option>"}
+                                            {$vo.answer4==""?"空":"<option>" . $vo.answer4 . "</option>"}
+                                        </select>
+                                        <i class="fa fa-caret-down fa-2x"></i>
+                                    </div>
+                                </volist>
                                 <div class="submit">
                                     <input type="text" name="phone" placeholder="请输入您的手机号" />
                                     <input type="button" name="yy_submit" value="预约免费测试">
