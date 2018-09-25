@@ -4,7 +4,7 @@
                 <div class="slide">
                     <ul>
                         <li><img src="/themes/icr_wap/icr/imgs/banner-1.jpg"></li>
-                        <li><img src="/themes/icr_wap/icr/imgs/banner-2.jpg"></li>
+                        <li><img src="/themes/icr_wap/icr/imgs/banner-kc.jpg"></li>
                     </ul>
                 </div>
                 <div class="reservation">
@@ -30,7 +30,7 @@
                         <div class="clear"></div>
                         <div class="understand">
                             <div class="circle"><i class="fa fa-play"></i></div>
-                            <a href="#" id="video"><div class="text">7分钟快速了解I CAN READ</div></a>
+                           <div class="text" id="click-video">7分钟快速了解&nbsp;&nbsp;I CAN READ</div>
                         </div>
                     </div>
                     <div class="item">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <div class="h1">我们的专业优势</div>
+                        <div class="h1" style="margin-bottom: 0.3rem">我们的专业优势</div>
                         <div class="adv-item">
                             <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-1-img.svg"></div>
                             <div class="adv-item-p">ICR&nbsp;&nbsp;教育系统通过<br/>
@@ -67,9 +67,7 @@
                         </div>
                         <div class="adv-item">
                             <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-2-img.svg"></div>
-                            <div class="adv-item-p">我们的教材从
-                                语言学、文学、心理学
-                                多方便精心设计
+                            <div class="adv-item-p">我们的教材从语言学、文学、心理学多方便精心设计
                             </div>
                         </div>
                         <div class="adv-item">
@@ -79,8 +77,7 @@
                         </div>
                         <div class="adv-item">
                             <div class="adv-item-img"><img src="/themes/icr_wap/icr/imgs/adv-4-img.svg"></div>
-                            <div class="adv-item-p">小班教学不超过12人
-                                让每一个孩子都得到足够的关照
+                            <div class="adv-item-p">小班教学不超过12人让每一个孩子都得到足够的关照
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -144,6 +141,7 @@
                         </div>
                     </div>
                 </div>
+                <video id="video" src="/themes/RY/icr/video/7min.mp4"></video>
             </section>
 <include file="themes/icr_wap/icr/foot.html" />
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s0x1Cj9VeZ6bVRI249olQM0V"></script>
@@ -200,10 +198,9 @@
             $(this).addClass('active');
             mapini($(this).html());
         });
-        $("#video").click(function(){
-            $(".video video").attr('src',"themes/RY/icr/video/7min.mp4");
-            $(".video").show();
-            $(".video video").trigger("play")
+        $("#click-video").click(function(){
+            $("video").show();
+            $("video").trigger("play")
         })
         $("[name='yy_submit']").on('click',function(){
             var phone = $(this).prevAll("[name='phone']").val();
@@ -215,7 +212,14 @@
                 alert('预约成功!');
             });
             return false;
-        })
+        });
+            var body = document.getElementById("video");
+            body.addEventListener('touchend',function(event){
+                setTimeout(function(){
+                    $("#video").hide();
+                    $("#video").trigger("pause")
+                },100)
+            },false);
         $(".input_button").on('click',function(){
             var phone =$(".input_text").val();
             var has_elect = $(".fa-check-square-o").length;
