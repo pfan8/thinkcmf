@@ -2315,6 +2315,8 @@ select::-ms-expand { display: none; }
     font-stretch: normal;
     letter-spacing: normal;
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
     color: #3d4d55;
 }
 .activity_content{
