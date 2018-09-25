@@ -45,10 +45,12 @@
             <h1>文化活动</h1>
             <div class="comment">
                 <volist name="school_activity" id="vo" length="6">
-                    <div class="comment-item" onclick="actclick('{$vo.id}');">
-                        <div class="img"><img src="<?=$vo['icon']?>" /></div>
-                        <div class="title"><?=$vo['name']?></div>
-                    </div>
+                    <a href="activity/?aid={$vo.id}">
+                        <div class="comment-item">
+                            <div class="img"><img src="<?=$vo['icon']?>" /></div>
+                            <div class="title"><?=$vo['name']?></div>
+                        </div>
+                    </a>
                 </volist>
                 <div class="clear"></div>
             </div>
@@ -177,10 +179,6 @@
             clearTimeout(timeoutId);
         });
     })
-    function actclick(aid){
-        // alert(aid);
-        redirect("activity/?aid=" + aid);
-    }
     function mapini(city){
         //获取校区列表
         var school_list = null;
