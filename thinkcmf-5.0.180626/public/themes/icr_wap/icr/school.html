@@ -62,10 +62,12 @@
             <div class="activity_list">
                 <volist name="school_activity" id="vo">
                     <div class="activity_item" id="{$vo.id}">
+                        <a href="activity/?aid={$vo.id}">
                         <div class="activity_img">
                             <img src="{$vo.icon}" />
                         </div>
                         <div class="activity_foot">{$vo.name}</div>
+                        </a>
                     </div>
                 </volist>
                 <div class="clear"></div>
