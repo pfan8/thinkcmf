@@ -109,15 +109,17 @@
         $(".comment-item").each(function(i,v){
             $(v).css('left',(i)*355+'px')
         });
-        var timeoutId = null;
+        var timeoutId = null;            var height;
         $("[name='back']").click(function(){
             var obj = $(this).parents('.point-item');
             var self = $(this);
             var isup = $(this).hasClass('fa-chevron-up');
             clearTimeout(timeoutId);
+
             if(isup)
             {
                 //升
+               height = obj.height();
                 timeoutId = window.setInterval(function(){
                     if(obj.height()>40){
                         obj.height(obj.height()-1)
@@ -130,7 +132,7 @@
             }else{
                 //降
                 timeoutId = window.setInterval(function(){
-                    if(obj.height()<177){
+                    if(obj.height()<height){
                         obj.height(obj.height()+1)
                     }else{
                         self.removeClass('fa-chevron-down');

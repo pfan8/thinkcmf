@@ -157,7 +157,7 @@
                 var marker = new BMap.Marker(point);
                 var searchInfoWindow =null;
                 marker.addEventListener("click",function(e){
-                    searchInfoWindow.open(marker);
+                    location.href='http://api.map.baidu.com/marker?location='+data['point']+'&title='+data['name']+'&content='+data['position']+'&output=html&src=webapp.yy.icanread'
                 })
                 map.addOverlay(marker);
             }
@@ -185,7 +185,7 @@
                     if(e.data[i]['coordinate']){
                         var pint = e.data[i]['coordinate'].split(',');
                         var point = new BMap.Point(pint[0],pint[1]);
-                        addMarker(point,{name:e.data[i]['name'],position:e.data[i]['location']})
+                        addMarker(point,{name:e.data[i]['name'],position:e.data[i]['location'],point:e.data[i]['coordinate']})
                     }
                     editInfo(e.data[i]);
                 }
