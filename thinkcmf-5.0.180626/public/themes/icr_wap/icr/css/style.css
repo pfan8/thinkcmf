@@ -311,11 +311,10 @@ input, button, select, textarea {
     float: left;
     margin:0 0.375rem 0 0.375rem;
     width:3rem;
-    height:3.2rem;
 }
 .activity_img{
     width:100%;
-    height:2rem;
+    height:2.82rem;
 }
 .activity_img img{
     width:100%;
