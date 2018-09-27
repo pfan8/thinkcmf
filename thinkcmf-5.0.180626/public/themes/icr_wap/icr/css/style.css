@@ -509,3 +509,64 @@ input, button, select, textarea {
     position: fixed;
     top:3rem;
 }
+.about-item{
+    width:100%;
+    height:6rem;
+    position: relative;
+}
+.about-item .title{
+    position: absolute;
+    top: 2.2rem;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    font-size: 0.32rem;
+    font-weight: bold;
+}
+.about-item .img{
+    position: absolute;
+    top: 0.8rem;
+    left: 3.15rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.about-item .img img{
+    width: 100%;
+    height:100%;
+}
+.about-item .content{
+    position: absolute;
+    font-size:0.24rem;
+    width: 100%;
+    margin: 0 auto;
+    top:3rem;
+
+}
+.about-item .content div{
+    margin: 0 auto;
+    width:4rem;
+}
+.bg-1{
+    background-image: url(../imgs/banner7.svg);
+    background-position: 0 0;
+    background-size: auto 100%;
+    color: #ffffff;
+}
+.bg-2{
+    background-image: url(../imgs/banner7.svg);
+    background-position: 7.5rem 0;
+    background-size: auto 100%;
+    color: #ffffff;
+}
+.about_item .img{
+    margin: 0 auto;
+    width:1.72rem;
+}
+.about_item .img img{
+    width:100%;
+    height:100%;
+    margin-top: 0.3rem;
+}
+.about_item .title{
+    text-align: center;
+}
