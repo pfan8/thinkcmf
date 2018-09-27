@@ -86,6 +86,26 @@
                 <div class="clear"></div>
             </div>
         </div>
+
+         <div class="item">
+            <div class="h2">看一看小朋友们在&nbsp;&nbsp;I Can Read 都学到了些什么</div>
+            <div class="comment">
+                <volist name="feedback_text" id="vo">
+                            <div class="comment-item">
+                                <div class="img"><img src="<?=$vo['icon']?>" /></div>
+                                <div class="title"><?=$vo['title']?></div>
+                                <div class="click">
+                                    <div class="click-title"><?=$vo['title']?></div>
+                                    <div class="click-content">
+                                        <?=$vo['content']?>
+                                    </div>
+                                </div>
+                            </div>
+                        </volist>
+                <div class="clear"></div>
+            </div>
+        </div>
+
     </div>
     <video src="" id="video"></video>
 </section>
